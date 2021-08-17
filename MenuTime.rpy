@@ -1,5 +1,5 @@
 
-
+#init comment
 init -900 python:
     config.developer = True
     from os import path
