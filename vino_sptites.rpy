@@ -111,3 +111,19 @@ init:
             True,
 "mods/MenuTime/sprites/nstl_pio_norm_norm.png"
 )
+    image mi sport normal = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/mi_normal_sport.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/mi_normal_sport.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/mi_normal_sport.png"
+)
+
+
