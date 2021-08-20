@@ -55,7 +55,7 @@ label crimson_team:
     scene black with dissolve
     stop music fadeout 2
     $renpy.pause(3.5)
-    $ vino_backdrop('Пролог')
+    $ vino_backdrop('Пролог', 'mods/MenuTime/bg/pole.jpg')
     scene klass_1 with dissolve
     window show
     play sound karand
