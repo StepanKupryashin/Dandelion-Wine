@@ -126,7 +126,7 @@ init:
     $ evgnll = Character (u'Евгений', color = "9400D3")
     $ elmisl = Character (u'...', color = "ffff00")
     $ macksya = Character (u'Макс', color = "d41114")
-    
+    $ misskaty = Character (u'Катя', color = "556B2F")
     
     
     
