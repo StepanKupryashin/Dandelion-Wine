@@ -125,5 +125,33 @@ init:
             True,
 "mods/MenuTime/sprites/mi_normal_sport.png"
 )
+    image max pi normal = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/maks_normal.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/maks_normal.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/maks_normal.png"
+)
+    image max pi serious = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/maks_xz.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/maks_xz.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/maks_xz.png"
+)
 
 
