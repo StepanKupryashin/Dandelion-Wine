@@ -127,6 +127,7 @@ init:
     $ elmisl = Character (u'...', color = "ffff00")
     $ macksya = Character (u'Макс', color = "d41114")
     $ misskaty = Character (u'Катя', color = "556B2F")
+    $ povr = Character(u'Повар', color="ffff00")
     
     
     
