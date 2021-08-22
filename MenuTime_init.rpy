@@ -132,5 +132,12 @@ init:
     define loxqr = Character('Миша', kind=nvl, color="#DB7093")
     $ povr = Character(u'Повар', color="ffff00")
     
+    transform vio_runn():
+        anchor (0.0, 0.0) pos (0.0, 0.0)
+        linear 0.1 pos (-6, -5)
+        linear 0.1 pos (0, 0)
+        linear 0.1 pos (-6, -5)
+        linear 0.1 pos (0, 0))
+        repeat             
     
     
