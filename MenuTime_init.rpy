@@ -112,21 +112,24 @@ init:
 
     $ config.developer = True
 
-    $ dnll = Character (u'Даниил', color = "00FF7F", what_color="A9A9A9")
-    $ momsd= Character (u'Мама', color = "00BFFF", what_color="A9A9A9")
-    $ loxqt= Character (u'Миша', color = "DB7093", what_color="A9A9A9")
-    $ nstl = Character(u'Настя', color = "00FFFF", what_color="A9A9A9")
-    $ neznakqqwy = Character (u'...', color = "DB7093", what_color="A9A9A9")
+    $ dnll = Character (u'Даниил', color = "00FF7F", what_color="f2f2f2")
+    $ momsd= Character (u'Мама', color = "00BFFF", what_color="f2f2f2")
+    $ loxqt= Character (u'Миша', color = "DB7093", what_color="f2f2f2")
+    $ nstl = Character(u'Настя', color = "00FFFF", what_color="f2f2f2")
+    $ neznakqqwy = Character (u'...', color = "DB7093", what_color="f2f2f2")
     define mimikumi = Character('Я', kind=nvl, color="#c8c8ff")
-    $ xzktoqtwqwe = Character (u'Отголоски', color = "191970", what_color="A9A9A9")
-    $ silxvahfy = Character (u'Силуэт', color = "FF1493", what_color="A9A9A9")
+    $ xzktoqtwqwe = Character (u'Отголоски', color = "191970", what_color="f2f2f2")
+    $ silxvahfy = Character (u'Силуэт', color = "FF1493", what_color="f2f2f2")
     $ mirasll = Character (u'...', color = "00deff")
     $ mamecki = Character (u'Мама', color = "4682B4")
     $ otecki = Character (u'Папа', color = "4169E1")
     $ evgnll = Character (u'Евгений', color = "9400D3")
     $ elmisl = Character (u'...', color = "ffff00")
     $ macksya = Character (u'Макс', color = "d41114")
-    $ misskaty = Character (u'Катя', color = "556B2F")
+    define nei = Character('...', kind=nvl, color="#00deff")
+    define danilg = Character('Даниил', kind=nvl, color="#00FF7F")
+    define misskaty = Character('Катя', kind=nvl, color="#556B2F")
+    define loxqr = Character('Миша', kind=nvl, color="#DB7093")
     $ povr = Character(u'Повар', color="ffff00")
     
     
