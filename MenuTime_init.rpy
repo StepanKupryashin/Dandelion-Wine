@@ -137,7 +137,7 @@ init:
         linear 0.1 pos (-6, -5)
         linear 0.1 pos (0, 0)
         linear 0.1 pos (-6, -5)
-        linear 0.1 pos (0, 0))
+        linear 0.1 pos (0, 0)
         repeat             
     
     

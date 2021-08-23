@@ -153,6 +153,13 @@ init -2 python:
         'mods/MenuTime/music/berega_minus.mp3' : 'monte -  Нас замыкали берега(minus)',
         'mods/MenuTime/music/future.mp3' : 'The Offspring - The Future Is Now',
         'mods/MenuTime/music/vino_main_menu_music.mp3' : 'Музыка из главного меню',
+        'mods/MenuTime/music/ki.mp3' : 'White Zombie - Thunder Kiss 65',
+        'mods/MenuTime/music/imagine.mp3' : 'John Lennon - Imagine',
+        'mods/MenuTime/music/anarchist_m.mp3' : 'UNGBLUD - Anarchist (Minus)',
+        'mods/MenuTime/music/tutu.mp3' : 'Whitley Houtson - Saving All My Love For You',
+        'mods/MenuTime/music/asia.mp3' : 'Domitori Taranofu - Breath of Asia',
+        'mods/MenuTime/music/payback.mp3' : 'Shiiva Raw - Payback',
+        'mods/MenuTime/music/moonlight.mp3' : 'Domitori Taranofu - Moonlight',
         vino_music_path + 'afterlife.mp3' : 'Cilver - Afterlife',
         vino_music_path + 'akira.mp3' : 'Exyz, Namadzu - Akira',
         vino_music_path + 'alone_1.mp3' : 'Dummy Feelings - Alone',
@@ -770,7 +777,7 @@ screen vino_authors:
             action OpenURL("https://vk.com/awalone_13")
         textbutton "Сценарист" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text":
             hover_sound vino_hover
-            action OpenURL("https://vk.com/kytikt")
+            action OpenURL("https://vk.com/soviet_guy410")
         textbutton "Кодер (виз. часть)" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text":
             hover_sound vino_hover
             action OpenURL("https://vk.com/onlymayve")
@@ -1097,4 +1104,4 @@ screen vino_days_developer:
         textbutton 'День 1' style "vino_button_none" text_style "vino_text" hover_sound vino_hover action Start('vino_day1')
         textbutton 'День 2' style "vino_button_none" text_style "vino_text" hover_sound vino_hover action Start('vino_day2')
         textbutton 'День 3' style "vino_button_none" text_style "vino_text" hover_sound vino_hover action Start('vino_day3')
-
+        textbutton 'День 4' style "vino_button_none" text_style "vino_text" hover_sound vino_hover action Start('vino_day4')
