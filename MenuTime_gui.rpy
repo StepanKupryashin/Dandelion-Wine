@@ -180,17 +180,6 @@ init -2 python:
         'Error' : 'Шазам не знает такого трека:('
         #'mods/MenuTime/music/fon_2.mp3' : 'Фоновая'
     }
-    volniy_music_play_true = None
-    music_is_play_vino = None  
-    def What_play_vino():
-        global vino_what_music, music_is_play_vino
-        music_is_play_vino = renpy.music.is_playing(channel='music')
-        if music_is_play_vino == True:
-            vino_what_music = renpy.music.get_playing(channel='music')
-            if vino_what_music not in vino_music_data:
-                vino_what_music = 'Error'
-        else:
-            pass
     def vino_show_music(text, time):
         """
         Функция показа играемого трека
@@ -1004,12 +993,6 @@ screen vino_game_menu_selector:
     $ timeofday = persistent.timeofday
     tag menu modal True
     add 'vino_playing_music'
-    # on 'show':
-    #     action Function(What_play_vino)
-    # button style "blank_button" xpos 0 ypos 0 xfill True yfill True action Return()
-    # if music_is_play_vino:
-    #     text 'Сейчас играет:' style 'vino_text' size 70 xalign 0.5 yalign 0.2 outlines [ (absolute(2), '#696969', absolute(1), absolute(1))] 
-    #     text vino_music_data[vino_what_music] style 'vino_text' size 30 xalign 0.5 yalign 0.26 color '#FF0000FF' outlines [ (absolute(2), '#696969', absolute(1), absolute(1))] 
     add 'mods/MenuTime/gui/quick_menu/'+timeofday+'/quick_menu_ground.png' xalign 0.5 yalign 0.5
     vbox spacing 25 align(0.5,0.5):
         textbutton 'В главное меню' xalign 0.5 style "vino_button_none" text_style "vino_game_menu_selector_%s" % timeofday hover_sound vino_hover  action MainMenu(confirm=True) at vino_button_anim
