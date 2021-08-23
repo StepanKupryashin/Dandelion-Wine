@@ -1,0 +1,13 @@
+'#' Ignore objects and archives.
+
+*.[oa]
+
+.idea/
+
+.target/
+
+.out/
+
+.rpyc
+
+*.rpyc
