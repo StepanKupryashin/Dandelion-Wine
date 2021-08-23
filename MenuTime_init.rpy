@@ -73,6 +73,16 @@ init python:
     style.vino_game_menu_selector_sunset.color = '#fcbab1'
     style.vino_game_menu_selector_sunset.hover_color = '#ab5450'
     ##########################################
+    style.vino_play_music_text = Style(style.default)
+    style.vino_play_music_text.font = "mods/MenuTime/vino_font.ttf"
+    style.vino_play_music_text.size = 60
+    style.vino_play_music_text.color = "#FFFFFF"
+    style.vino_play_music_text.hover_color = "#EB0707"
+    style.vino_play_music_text.selected_color = "#EB0707"
+    style.vino_play_music_text.outlines = [ (absolute(2), '#696969', absolute(1), absolute(1))] 
+    #########################################
+
+    
 transform vino_button_anim:
     on idle:
         ease 0.5 zoom 1.00

@@ -191,6 +191,31 @@ init -2 python:
                 vino_what_music = 'Error'
         else:
             pass
+    def vino_show_music(text, time):
+        """
+        Функция показа играемого трека
+        Две локальных переменных обязательны, чтобы могли возвращать текст с играемым треком и время ожидания перед повторным вызовом функции.
+        В time будем возвращать .1, чтобы не было времени ожидания перед ещё одним вызовом функции.
+        """
+        music_is_play = renpy.music.is_playing(channel="music")  # Узнаём, играет ли сейчас музыка в канале 'music'
+        if music_is_play:  # Если играет, то…
+            what_music_play = renpy.music.get_playing(channel="music")  # …узнаём что играет (возвращает нам путь до трека)
+            if ( what_music_play not in vino_music_data):  # Проверяем, есть ли такой трек в словаре.
+                return (
+                    Text("Шазам не знает такого трека:(", style=style.vino_play_music_text,xalign=0.5, yalign=0.2),
+                    0.1,
+                )  # Если его нет, появится эта строка вместо названия трека
+            else:
+                what_music_play = vino_music_data[what_music_play]  # Если есть такой трек в словаре, то нашим выводом на экран станет значение словаря (то бишь, название трека)
+                return (
+                    Text("{size=70}Сейчас играет:{/size}\n{size=30}{color=#FF0000FF}%s{/color}{/size}" % (what_music_play), style=style.vino_play_music_text,xalign=0.55, yalign=0.2),
+                    0.1,
+                )  # Возвращаем (показываем) название (или любой другой текст) песни, что сейчас играет
+        else:
+            return Text(""), 0.1  # Если музыка не играет, то мы возвращаем пустой текст
+
+    renpy.image("vino_playing_music", DynamicDisplayable(vino_show_music))
+
     vino_music_box ={
     'mods/MenuTime/music/believer.mp3' : 'Imagine Dragons - Believer',
     'mods/MenuTime/music/brok_w.mp3' : 'D-A-L - Broken Wings',
@@ -978,12 +1003,13 @@ screen vino_nvl:
 screen vino_game_menu_selector:
     $ timeofday = persistent.timeofday
     tag menu modal True
-    on 'show':
-        action Function(What_play_vino)
-    button style "blank_button" xpos 0 ypos 0 xfill True yfill True action Return()
-    if music_is_play_vino:
-        text 'Сейчас играет:' style 'vino_text' size 70 xalign 0.5 yalign 0.2 outlines [ (absolute(2), '#696969', absolute(1), absolute(1))] 
-        text vino_music_data[vino_what_music] style 'vino_text' size 30 xalign 0.5 yalign 0.26 color '#FF0000FF' outlines [ (absolute(2), '#696969', absolute(1), absolute(1))] 
+    add 'vino_playing_music'
+    # on 'show':
+    #     action Function(What_play_vino)
+    # button style "blank_button" xpos 0 ypos 0 xfill True yfill True action Return()
+    # if music_is_play_vino:
+    #     text 'Сейчас играет:' style 'vino_text' size 70 xalign 0.5 yalign 0.2 outlines [ (absolute(2), '#696969', absolute(1), absolute(1))] 
+    #     text vino_music_data[vino_what_music] style 'vino_text' size 30 xalign 0.5 yalign 0.26 color '#FF0000FF' outlines [ (absolute(2), '#696969', absolute(1), absolute(1))] 
     add 'mods/MenuTime/gui/quick_menu/'+timeofday+'/quick_menu_ground.png' xalign 0.5 yalign 0.5
     vbox spacing 25 align(0.5,0.5):
         textbutton 'В главное меню' xalign 0.5 style "vino_button_none" text_style "vino_game_menu_selector_%s" % timeofday hover_sound vino_hover  action MainMenu(confirm=True) at vino_button_anim
