@@ -44,7 +44,7 @@ init python:
 
     style.vino_backdrop_style = Style(style.default)
     style.vino_backdrop_style.font = 'mods/MenuTime/vino_backdrop_font.ttf'
-    style.vino_backdrop_style.color = '#b3b3b3'
+    style.vino_backdrop_style.color = '#FFFF'
     style.vino_backdrop_style.size = 80
     style.vino_backdrop_style.bold = True
     style.vino_backdrop_style.outlines = [ (absolute(2), '#282828', absolute(1), absolute(1))]

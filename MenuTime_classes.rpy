@@ -66,7 +66,7 @@ init python:
             renpy.show('vino_backdrop_1')
             renpy.transition(dissolve2)
             renpy.pause(3.0, hard=True)
-            renpy.show('vino_day_num', what=Text(''+str(vino_day), style=style.vino_backdrop_style,xpos=450,ypos=900))
+            renpy.show('vino_day_num', what=Text(''+str(vino_day), style=style.vino_backdrop_style,xpos=460,ypos=900))
             renpy.transition(dissolve2)
             renpy.pause(5.0, hard=True)
             renpy.scene()
