@@ -317,10 +317,7 @@ screen vino_music:
     tag menu
     modal True 
     frame:
-        if persistent.vino_bg == None:
-            add 'mods/MenuTime/gui/menu/vino_bg.jpg' at vino_menu_anim
-        else:
-            add persistent.vino_bg at vino_menu_anim
+        add 'vino_menu_bg' at vino_menu_anim
         textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
             hover_sound vino_hover
             action (Hide('vino_music', Dissolve(1.0)), Return(), Play('music', 'mods/MenuTime/music/vino_main_menu_music.mp3'))
@@ -342,15 +339,9 @@ screen vino_music:
 screen vino_mainmenu:
     tag menu
     modal True
-    #on 'show':
-     #   action Function(what_time)
     key 'game_menu':
         action NullAction() 
     add 'vino_menu_bg' at vino_menu_anim
-    # if persistent.vino_bg == None:
-    #     add 'mods/MenuTime/gui/menu/vino_bg.jpg' at vino_menu_anim
-    # else:
-    #     add persistent.vino_bg at vino_menu_anim
     textbutton "Crimson Team" text_size 100 align(0.48,0.05) style "vino_button_none" text_style "vino_text":
         hover_sound vino_hover
         action OpenURL("https://vk.com/crimsoteam")
@@ -396,10 +387,7 @@ screen vino_preferences:
     tag menu
     modal True
     window at vino_on_show_authors_menu:
-        if persistent.vino_bg == None:
-            add 'mods/MenuTime/gui/menu/vino_bg.jpg' at vino_menu_anim
-        else:
-            add persistent.vino_bg at vino_menu_anim
+        add 'vino_menu_bg' at vino_menu_anim
         textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
             hover_sound vino_hover
             action (Hide('vino_preferences', Dissolve(1.0)), Return())
@@ -484,10 +472,7 @@ screen vino_save:
     tag menu
     modal True
     window at vino_on_show_authors_menu:
-        if persistent.vino_bg == None:
-            add 'mods/MenuTime/gui/menu/vino_bg.jpg' at vino_menu_anim
-        else:
-            add persistent.vino_bg at vino_menu_anim
+        add 'vino_menu_bg' at vino_menu_anim
         textbutton '>' xalign 0.95 yalign 0.5 style "vino_button_none" text_style "vino_text" text_size 80 at vino_button_anim:
             hover_sound vino_hover
             action ShowMenu('vino_load', Dissolve(1.0))
@@ -552,10 +537,7 @@ screen vino_load:
     modal True
     $ layout.LOADING = "Потерять несохраненые данные?"
     window at vino_on_show_authors_menu:
-        if persistent.vino_bg == None:
-            add 'mods/MenuTime/gui/menu/vino_bg.jpg' at vino_menu_anim
-        else:
-            add persistent.vino_bg at vino_menu_anim
+        add 'vino_menu_bg' at vino_menu_anim
         if not main_menu:
             textbutton '>' xalign 0.95 yalign 0.5 style "vino_button_none" text_style "vino_text" text_size 80 at vino_button_anim:
                 hover_sound vino_hover
@@ -622,10 +604,7 @@ screen vino_pre_menu:
 screen vino_exit:
     tag menu
     modal True 
-    if persistent.vino_bg == None:
-        add 'mods/MenuTime/gui/menu/vino_bg.jpg' at vino_menu_anim
-    else:
-        add persistent.vino_bg at vino_menu_anim
+    add 'vino_menu_bg' at vino_menu_anim
     text "{font=mods/MenuTime/vino_font.ttf}Ты хочешь уйти?{/font}":
         size 100
         text_align 0.5
@@ -651,10 +630,7 @@ screen vino_set_bg:
     tag menu
     modal True
     window at vino_on_show_authors_menu:
-        if persistent.vino_bg == None:
-            add 'mods/MenuTime/gui/menu/vino_bg.jpg' at vino_menu_anim
-        else:
-            add persistent.vino_bg at vino_menu_anim
+        add 'vino_menu_bg' at vino_menu_anim
         textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
             hover_sound vino_hover
             action (Hide('vino_set_bg', Dissolve(1.0)), Return())
@@ -773,10 +749,7 @@ screen vino_set_bg:
 screen vino_authors:
     tag menu 
     modal True
-    if persistent.vino_bg == None:
-        add 'mods/MenuTime/gui/menu/vino_bg.jpg' at vino_menu_anim
-    else:
-        add persistent.vino_bg at vino_menu_anim
+    add 'vino_menu_bg' at vino_menu_anim
     textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
         hover_sound vino_hover
         action (Hide('vino_authors', Dissolve(1.0)), Return())
@@ -811,10 +784,7 @@ screen vino_dlc_story:
     key 'game_menu':
         action NullAction()
     key "K_ESCAPE" action (Hide('vino_dlc_story', Dissolve(1.0)), Return())
-    if persistent.vino_bg == None:
-        add 'mods/MenuTime/gui/menu/vino_bg.jpg' at vino_menu_anim
-    else:
-        add persistent.vino_bg at vino_menu_anim
+    add 'vino_menu_bg' at vino_menu_anim
     textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
         hover_sound vino_hover
         action (Hide('vino_dlc_story', Dissolve(1.0)), Return())
@@ -1057,10 +1027,7 @@ screen vino_gallery:
     key "game_menu":
         action NullAction()
     key "K_ESCAPE" action (Hide('vino_gallery', Dissolve(1.0)), Return())
-    if persistent.vino_bg == None:
-        add 'mods/MenuTime/gui/menu/vino_bg.jpg' at vino_menu_anim
-    else:
-        add persistent.vino_bg at vino_menu_anim
+    add 'vino_menu_bg' at vino_menu_anim
     textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
         hover_sound vino_hover
         action (Hide('vino_dlc_story', Dissolve(1.0)), Return(), SetVariable('vino_gallery_bg_page', 1))
@@ -1098,10 +1065,7 @@ screen vino_days_developer:
     tag menu 
     modal True 
     key "K_ESCAPE" action (Hide('vino_days_developer', Dissolve(1.0)), Return())
-    if persistent.vino_bg == None:
-        add 'mods/MenuTime/gui/menu/vino_bg.jpg' at vino_menu_anim
-    else:
-        add persistent.vino_bg at vino_menu_anim
+    add 'vino_menu_bg' at vino_menu_anim
     textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text" hover_sound vino_hover action (Hide('vino_days_developer', Dissolve(1.0)), Return()) at vino_button_anim
 
     hbox align(0.5, 0.5) spacing 20:
