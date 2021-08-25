@@ -74,7 +74,13 @@ init python:
             renpy.transition(fade2)
             save_name = 'Вино из одуванчиков: '+str(vino_day)
 
+    def vino_main_menu_bg(st,at):
+        from time import strftime
+        t = int(strftime('%H'))
+        if t in range(1,7) or (t in range(20,23)):
+            return At((persistent.vino_bg if persistent.vino_bg != None else 'mods/MenuTime/gui/menu/vino_bg.jpg'), vino_menu_bg_darkness), 0.1
+        else:
+            return Image((persistent.vino_bg if persistent.vino_bg != None else 'mods/MenuTime/gui/menu/vino_bg.jpg')), 0.1
 
-
-
+    renpy.image('vino_menu_bg', DynamicDisplayable(vino_main_menu_bg))
 

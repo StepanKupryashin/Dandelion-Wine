@@ -346,15 +346,11 @@ screen vino_mainmenu:
      #   action Function(what_time)
     key 'game_menu':
         action NullAction() 
-    if persistent.vino_bg == None:
-        add 'mods/MenuTime/gui/menu/vino_bg.jpg' at vino_menu_anim
-    else:
-        add persistent.vino_bg at vino_menu_anim
-    #add 'black':
-     #   if time in range(7,12):
-      #      alpha 0.3
-       # else:
-        #    alpha 1.0
+    add 'vino_menu_bg' at vino_menu_anim
+    # if persistent.vino_bg == None:
+    #     add 'mods/MenuTime/gui/menu/vino_bg.jpg' at vino_menu_anim
+    # else:
+    #     add persistent.vino_bg at vino_menu_anim
     textbutton "Crimson Team" text_size 100 align(0.48,0.05) style "vino_button_none" text_style "vino_text":
         hover_sound vino_hover
         action OpenURL("https://vk.com/crimsoteam")
