@@ -1110,3 +1110,4 @@ screen vino_days_developer:
         textbutton 'День 2' style "vino_button_none" text_style "vino_text" hover_sound vino_hover action Start('vino_day2')
         textbutton 'День 3' style "vino_button_none" text_style "vino_text" hover_sound vino_hover action Start('vino_day3')
         textbutton 'День 4' style "vino_button_none" text_style "vino_text" hover_sound vino_hover action Start('vino_day4')
+        textbutton 'День 5' style "vino_button_none" text_style "vino_text" hover_sound vino_hover action Start('vino_day5')
