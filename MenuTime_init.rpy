@@ -119,7 +119,7 @@ transform vino_plate_anim:
         ease 0.3 zoom 0.8 rotate 0.0
 
 transform vino_menu_bg_darkness: 
-    matrixcolor TintMatrix('#252d31') *BrightnessMatrix(-0.1)#*SaturationMatrix(.5)
+    matrixcolor.TintMatrix('#252d31')*BrightnessMatrix(-0.1)#*SaturationMatrix(.5)
 
 init:
 
