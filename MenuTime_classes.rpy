@@ -78,7 +78,7 @@ init python:
         from time import strftime
         t = int(strftime('%H'))
         if t in range(1,7) or (t in range(20,23)):
-            return At((persistent.vino_bg if persistent.vino_bg != None else 'mods/MenuTime/gui/menu/vino_bg.jpg'), vino_menu_bg_darkness), 0.1
+            return im.MatrixColor((persistent.vino_bg if persistent.vino_bg != None else 'mods/MenuTime/gui/menu/vino_bg.jpg'), im.matrix.tint(0.15, 0.18, 0.19)*im.matrix.brightness(-0.015)), 0.1
         else:
             return Image((persistent.vino_bg if persistent.vino_bg != None else 'mods/MenuTime/gui/menu/vino_bg.jpg')), 0.1
 
