@@ -421,11 +421,7 @@ screen vino_preferences:
                     action SetField(persistent,"font_size","small")
                 textbutton "Большой" text_size 35 style "vino_button_none" text_style "vino_text":
                     action SetField(persistent,"font_size","large")
-            null height 40
-            text "Автосохранение" style "vino_text" size 45 xalign 0.5
-            hbox spacing 10 xalign 0.5:
-                text "Скоро :)" style "vino_text" size 35
-            null height 40
+            null height 80
             text "Скорость текста" style "vino_text" size 45 xalign 0.5
             bar value Preference("text speed") xalign 0.5 maximum(442,42):
                 right_bar ImageReference("vino_bar_nofull")

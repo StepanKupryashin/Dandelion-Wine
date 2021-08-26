@@ -1,4 +1,5 @@
 init python:
+    from time import strftime
     class Vino_Continue(Action):
         def __call__(self):
             Function(renpy.load(renpy.newest_slot("vino_FilePage_")))
@@ -75,7 +76,6 @@ init python:
             save_name = 'Вино из одуванчиков: '+str(vino_day)
 
     def vino_main_menu_bg(st,at):
-        from time import strftime
         t = int(strftime('%H'))
         if t in range(1,7) or (t in range(20,23)):
             return im.MatrixColor((persistent.vino_bg if persistent.vino_bg != None else 'mods/MenuTime/gui/menu/vino_bg.jpg'), im.matrix.tint(0.15, 0.18, 0.19)*im.matrix.brightness(-0.015)), 0.1
