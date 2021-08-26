@@ -635,13 +635,11 @@ screen vino_set_bg:
             hover_sound vino_hover
             action (Hide('vino_set_bg', Dissolve(1.0)), Return())
         key "K_ESCAPE" action (Hide('vino_set_bg', Dissolve(1.0)), Return())
-        if vino_g_page_menu < 2:
+        if vino_g_page_menu < 3:
             textbutton '>' xalign 0.9 yalign 0.35 style "vino_button_none" text_style "vino_text" at vino_button_anim:
                hover_sound vino_hover
 
                action SetVariable('vino_g_page_menu', vino_g_page_menu+1)
-        else:
-            pass
         if vino_g_page_menu != 1:
             textbutton '<' xalign 0.1 yalign 0.35 style "vino_button_none" text_style "vino_text" at vino_button_anim:
                hover_sound vino_hover
