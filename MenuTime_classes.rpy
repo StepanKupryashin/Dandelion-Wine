@@ -76,11 +76,11 @@ init python:
             save_name = 'Вино из одуванчиков: '+str(vino_day)
 
     def vino_main_menu_bg(st,at):
-        t = int(strftime('%H'))
-        if t in range(1,7) or (t in range(20,23)):
-            return im.MatrixColor((persistent.vino_bg if persistent.vino_bg != None else 'mods/MenuTime/gui/menu/vino_bg.jpg'), im.matrix.tint(0.15, 0.18, 0.19)*im.matrix.brightness(-0.015)), 0.1
+        t = int(strftime('%H')) # Получаем время пользователя.
+        if t in range(1,7) or (t in range(20,23)): #Если время пользователя от 1 до 7 или в промежутке от 20 до 23....
+            return im.MatrixColor((persistent.vino_bg if persistent.vino_bg != None else 'mods/MenuTime/gui/menu/vino_bg.jpg'), im.matrix.tint(0.15, 0.18, 0.19)*im.matrix.brightness(-0.015)), 0.1 #Возращаем изображение бг меню, с эффектом затемнения.
         else:
-            return Image((persistent.vino_bg if persistent.vino_bg != None else 'mods/MenuTime/gui/menu/vino_bg.jpg')), 0.1
+            return Image((persistent.vino_bg if persistent.vino_bg != None else 'mods/MenuTime/gui/menu/vino_bg.jpg')), 0.1 #Иначе возвращается обычное изображение
 
     renpy.image('vino_menu_bg', DynamicDisplayable(vino_main_menu_bg))
 
