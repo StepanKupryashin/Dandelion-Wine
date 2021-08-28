@@ -2840,8 +2840,8 @@ label vino_day2:
         xcenter 0.70 ycenter 0.50
     "Славя нахмурилась и грозно посмотрела на рыжеволосую."
     sl "Дай им сказать."
-    show nstl pio normal with dissolve
-    us "Зануда…! "
+    show nstl pioneer normal with dissolve
+    us "Зануда…!"
     show us angry sport far:
         xcenter 0.31 ycenter 0.50
     "Вставила свои пять копеек Ульяна."
@@ -5029,7 +5029,7 @@ label vino_day3:
     sh "А мы…"
     "Почти про себя сказал Шурик."
     hide sh
-    show mi_normal_sport at left with dissolve
+    show mi sport normal at left with dissolve
     with dissolve
     
     mi "А мы будем лучше!"
@@ -5912,10 +5912,10 @@ label vino_day3:
     $ set_mode_adv()
     scene bg ext_island_night with dissolve
     "Толчок.{w} Девушка недовольно хмурится, но еще никак не проснется. Второй толчок.{w} Настя не перестает хмурится, и делает довольно странное движение рукой, словно подтягивая невидимое одеяло. Беда лишь в том, что оно было невидимым не только для меня.{w} Шатенка продрала глаза."
-    show nstl pio sad normal with get_up_fast at vio_sit_center
+    show nstl pio shocked normal with easeintop
     nstl "Где я?"
     "Резко вскочила она, вглядываясь в водную гладь и противоположный берег. Кажется, я слышу ее ускоренное дыхание. Она резко оборачивается на меня. Я продолжал сидеть неподвижно, опершись о дуб."
-    show nstl pio normal normal with dspr at vio_sit_center
+    show nstl pio normal normal with dspr
     nstl "Ты…"
     "Было отчетливо видно недоумение в ее глазах."
     dnll "Да, я."
@@ -5929,9 +5929,9 @@ label vino_day3:
     dnll "Понятия не имею, но, со слов очевидцев, тебя не было на ужине."
     "Настя, казалось, не была удивлена этому, сколь моему присутствию."
     nstl "Ох… Ладно, все равно меня никто не хватится искать. Скажут, что я в художественном."
-    show nstl pio sad normal with dspr at vio_sit_center
+    show nstl pio sad normal with dspr
     "Она глубоко вздохнула."
-    show nstl pio normal normal with dspr at vio_sit_center
+    show nstl pio normal normal with dspr
     nstl "А ты тут как оказался?"
     dnll "Я?{w} – Самому бы знать, если честно."
     dnll "Ну, волею судеб, я приплыл сюда на лодке сразу после выполнения лагерной работы."
@@ -5951,6 +5951,7 @@ label vino_day3:
     window hide
     scene black with dissolve
     pause(2)
+    scene bg ext_island_night with dissolve
     window show
     "Вот мы уже пришли к берегу реки. На нем были “припаркованы” две лодки. Одна – моя, другая, соответственно, Настина."
     nstl "Ты – на своей."
@@ -5968,7 +5969,7 @@ label vino_day3:
     nstl "Тогда попробуй…"
     "Она бросила на меня неоднозначный взгляд."
     nstl "Догони...!"
-    scene bg boat_semen with dissolve
+    scene boat_semen with dissolve
     play sound greblya fadein 1
     "Она резко взялась за весла, и помчалась в сторону пристани. Я последовал ее примеру, но…{w} Моя неопытность в управлении лодкой дает о себе знать, и я еле поспеваю за ней."
     dnll "П-помедленнее…"
@@ -6089,7 +6090,7 @@ label vino_day3:
     dv "А теперь идите отсюда, я хочу побыть наедине с собою."
     dnll "А не многого ли ты…"
     th "Начал было возникать я, как тут же мне прикрыла рот Настя, уводя подальше от рыжеволосой."
-    scene bg centr_2 with dissolve
+    scene centr_2 with dissolve
     play ambience ambience_camp_entrance_night fadein 1
     nstl "Молчи{w}, лучше молчи, если не знаешь."
     hide dv with dspr
@@ -6140,8 +6141,8 @@ label vino_day3:
     "Безнадежно промямлил я, отпирая дверь в наш домик."
     dnll "Видимо, мне не стоило этого говорить."
     nstl "Н-нет!"
-    hide nstl with dspr
     with Shake((0, 0, 0, 0), 1.0, dist=1)
+    hide nstl with dspr
     th "Возникла она, обхватив мою руку." 
     play sound sfx_lock_open_close_1
     "Щелчок дверного замка."
@@ -6158,7 +6159,7 @@ label vino_day3:
     "Улыбнулся я, открыв дверь в наш домик, и приглашая соседку внутрь. Она зашла первой."
     hide nstl with dspr
     pause(1)
-    scene hata_g_night
+    scene hata_g_night with dissolve
     play sound sfx_close_door_campus_1
     dnll "Ты так и не сказала…"
     show nstl pio normal normal with dspr

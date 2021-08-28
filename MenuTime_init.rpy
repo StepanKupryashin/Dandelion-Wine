@@ -208,17 +208,3 @@ init:
         linear 0.1 pos (-6, -5)
         linear 0.1 pos (0, 0)
         repeat
-    
-    transform vio_sit_center:
-        xalign 0.5
-        yanchor 0.0
-        ypos 0.22
-    
-    transform vio_get_up_fast:
-        subpixel True
-        parallel:
-            ease 0.3 ypos 0.0
-        parallel:
-            ease 0.2 zoom 1.05
-            ease 0.07 zoom 1.0
-    
