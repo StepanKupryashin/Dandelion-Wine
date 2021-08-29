@@ -197,7 +197,7 @@ init:
 
         Shake = renpy.curry(_Shake)
 
-    $ mods["vino1"]=u"{b}Вино из одуванчиков.{/b}"
+    #$ mods["vino1"]=u"{b}Вино из одуванчиков.{/b}" #зачем вообще?
     
     $ sshake = Shake((0, 0, 0, 0), 1.0, dist=15)
     
