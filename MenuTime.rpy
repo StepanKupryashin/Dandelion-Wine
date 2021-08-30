@@ -5900,7 +5900,7 @@ label vino_day3:
     "Выдохнув с облегчением, я сел рядом с ней."
     
     # Вношу 5 день.
-label vino_day5:
+label vino_day4_prod:
     window hide
     pause(2)
     window show
@@ -6297,7 +6297,7 @@ label vino_day5:
     dnll "А долго вы купаться собрались?"
     "Напялив на себя шорты с рубашкой и повязав на руке галстук, ибо к зеркалу сейчас не протолкнуться из-за девчонок на проходе, обратился я к Насте."
     hide nstl
-    show nstl_pio_z
+    show nstl pio z
     nstl "А тебя это не касается!"
 
     dnll "П… Почему?"
@@ -6322,7 +6322,7 @@ label vino_day5:
     
     play sound sfx_open_dooor_campus_1
     
-    show nstl_pio_norm with dissolve
+    show nstl pio norm with dissolve
     
     show  dv normal pioneer2 far at right with dissolve
     show us laugh pioneer at left  with dissolve
@@ -6336,7 +6336,7 @@ label vino_day5:
 
     hide nstl
     
-    show nstl_pio_smile
+    show nstl pio smile
     
     nstl "Девчонки, ну хватит. Ольга Дмитриевна сегодня уехала по каким-то важным делам в райцентр и, наверное, до вечера не появится."
 
@@ -6520,7 +6520,7 @@ label vino_day5:
     
     "Пионеры продолжили звенеть ложками и о чем-то переговариваться, изредка кидая взгляды на наш столик. Алиса сидела на стуле совершенно опустошенной и смотрела невидящим взглядом куда-то мимо тарелки. Я скромно допивал свой компот, а сидящая рядом Настя опустила лицо на вытянутые вертикально руки. Как только я разделался с едой, ко мне обратилась Настя:"
     
-    show nstl_pio_norm with dissolve
+    show nstl pio norm with dissolve
 
     nstl "Возьми поднос и иди за мной."
 
@@ -6544,7 +6544,7 @@ label vino_day5:
     
     window show
     
-    show nstl_pio_norm with discard
+    show nstl pio norm with discard
 
     "Ну и? "
     
