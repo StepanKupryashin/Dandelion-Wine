@@ -1,87 +1,138 @@
 init:
-    image nstl pio norm = ConditionSwitch(
+  #from sprites
+  image mama close = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
-"mods/MenuTime/sprites/nstl_pio_norm.png",
+"mods/MenuTime/sprites/mama_close.png",
                     im.matrix.tint(0.94, 0.82, 1.0)
                     ),
             "persistent.sprite_time=='night'",
                 im.MatrixColor(
-"mods/MenuTime/sprites/nstl_pio_norm.png",
+"mods/MenuTime/sprites/mama_close.png",
                     im.matrix.tint(0.63, 0.78, 0.82)
                 ),
             True,
-"mods/MenuTime/sprites/nstl_pio_norm.png"
+"mods/MenuTime/sprites/mama_close.png"
 )
-    image nstl pio angry = ConditionSwitch(
+
+    image nstl ku happy = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
-"mods/MenuTime/sprites/nstl_pio_z.png",
+"mods/MenuTime/sprites/nstl_ku_happy.png",
                     im.matrix.tint(0.94, 0.82, 1.0)
                     ),
             "persistent.sprite_time=='night'",
                 im.MatrixColor(
-"mods/MenuTime/sprites/nstl_pio_z.png",
+"mods/MenuTime/sprites/nstl_ku_happy.png",
                     im.matrix.tint(0.63, 0.78, 0.82)
                 ),
             True,
-"mods/MenuTime/sprites/nstl_pio_z.png"
+"mods/MenuTime/sprites/nstl_ku_happy.png"
 )
-    image nstl pio shy = ConditionSwitch(
+
+    image nstl ku norm = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
-"mods/MenuTime/sprites/nstl_pio_smi.png",
+"mods/MenuTime/sprites/nstl_ku_norm.png",
                     im.matrix.tint(0.94, 0.82, 1.0)
                     ),
             "persistent.sprite_time=='night'",
                 im.MatrixColor(
-"mods/MenuTime/sprites/nstl_pio_smi.png",
+"mods/MenuTime/sprites/nstl_ku_norm.png",
                     im.matrix.tint(0.63, 0.78, 0.82)
                 ),
             True,
-"mods/MenuTime/sprites/nstl_pio_smi.png"
+"mods/MenuTime/sprites/nstl_ku_norm.png"
 )
-    image nstl pio sad = ConditionSwitch(
+
+    image nstl ku cry = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
-"mods/MenuTime/sprites/nstl_pio_sad.png",
+"mods/MenuTime/sprites/nstl_ku_pl.png",
                     im.matrix.tint(0.94, 0.82, 1.0)
                     ),
             "persistent.sprite_time=='night'",
                 im.MatrixColor(
-"mods/MenuTime/sprites/nstl_pio_sad.png",
+"mods/MenuTime/sprites/nstl_ku_pl.png",
                     im.matrix.tint(0.63, 0.78, 0.82)
                 ),
             True,
-"mods/MenuTime/sprites/nstl_pio_sad.png"
+"mods/MenuTime/sprites/nstl_ku_pl.png"
 )
-    image nstl pio smile = ConditionSwitch(
+
+    image nstl ku sad = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
-"mods/MenuTime/sprites/nstl_pio_smile.png",
+"mods/MenuTime/sprites/nstl_ku_sad.png",
                     im.matrix.tint(0.94, 0.82, 1.0)
                     ),
             "persistent.sprite_time=='night'",
                 im.MatrixColor(
-"mods/MenuTime/sprites/nstl_pio_smile.png",
+"mods/MenuTime/sprites/nstl_ku_sad.png",
                     im.matrix.tint(0.63, 0.78, 0.82)
                 ),
             True,
-"mods/MenuTime/sprites/nstl_pio_smile.png"
+"mods/MenuTime/sprites/nstl_ku_sad.png"
 )
-    image nstl sport shy = ConditionSwitch(
+
+    image nstl ku shy = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
-"mods/MenuTime/sprites/nstl_sport_smi.png",
+"mods/MenuTime/sprites/nstl_ku_smi.png",
                     im.matrix.tint(0.94, 0.82, 1.0)
                     ),
             "persistent.sprite_time=='night'",
                 im.MatrixColor(
-"mods/MenuTime/sprites/nstl_sport_smi.png",
+"mods/MenuTime/sprites/nstl_ku_smi.png",
                     im.matrix.tint(0.63, 0.78, 0.82)
                 ),
             True,
-"mods/MenuTime/sprites/nstl_sport_smi.png"
+"mods/MenuTime/sprites/nstl_ku_smi.png"
+)
+
+    image nstl ku shocked = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_ku_ud.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_ku_ud.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_ku_ud.png"
+)
+
+    image nstl ku angry = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_ku_z.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_ku_z.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_ku_z.png"
+)
+
+    image nstl ku smile = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_ku_smile.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_ku_smile.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_ku_smile.png"
 )
     image nstl pio happy = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
@@ -97,19 +148,347 @@ init:
             True,
 "mods/MenuTime/sprites/nstl_pio_happy.png"
 )
-    image nstl pio normal = ConditionSwitch(
+
+    image nstl pio norm = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
-"mods/MenuTime/sprites/nstl_pio_norm_norm.png",
+"mods/MenuTime/sprites/nstl_pio_norm.png",
                     im.matrix.tint(0.94, 0.82, 1.0)
                     ),
             "persistent.sprite_time=='night'",
                 im.MatrixColor(
-"mods/MenuTime/sprites/nstl_pio_norm_norm.png",
+"mods/MenuTime/sprites/nstl_pio_norm.png",
                     im.matrix.tint(0.63, 0.78, 0.82)
                 ),
             True,
-"mods/MenuTime/sprites/nstl_pio_norm_norm.png"
+"mods/MenuTime/sprites/nstl_pio_norm.png"
+)
+
+    image nstl pio cry = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_pio_pl.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_pio_pl.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_pio_pl.png"
+)
+
+    image nstl pio sad = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_pio_sad.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_pio_sad.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_pio_sad.png"
+)
+
+    image nstl pio shy = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_pio_smi.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_pio_smi.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_pio_smi.png"
+)
+
+    image nstl pio shocked = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_pio_ud.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_pio_ud.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_pio_ud.png"
+)
+
+    image nstl pio angry = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_pio_z.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_pio_z.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_pio_z.png"
+)
+    image nstl pio smile = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_pio_smile.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_pio_smile.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_pio_smile.png"
+)
+
+    image nstl dress happy = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_plat_happy.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_plat_happy.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_plat_happy.png"
+)
+
+    image nstl dress norm = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_plat_norm.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_plat_norm.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_plat_norm.png"
+)
+
+    image nstl dress cry = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_plat_pl.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_plat_pl.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_plat_pl.png"
+)
+
+    image nstl dress sad = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_plat_sad.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_plat_sad.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_plat_sad.png"
+)
+
+    image nstl dress shy = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_plat_smi.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_plat_smi.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_plat_smi.png"
+)
+
+    image nstl dress shocked = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_plat_ud.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_plat_ud.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_plat_ud.png"
+)
+
+    image nstl dress angry = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_plat_z.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_plat_z.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_plat_z.png"
+)
+    image nstl dress smile = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_plat_smile.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_plat_smile.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_plat_smile.png"
+)
+
+    image nstl sport happy = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_sport_happy.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_sport_happy.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_sport_happy.png"
+)
+
+    image nstl sport norm = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_sport_norm.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_sport_norm.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_sport_norm.png"
+)
+
+    image nstl sport cry = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_sport_pl.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_sport_pl.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_sport_pl.png"
+)
+
+    image nstl sport sad = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_sport_sad.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_sport_sad.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_sport_sad.png"
+)
+
+    image nstl sport shy = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_sport_smi.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_sport_smi.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_sport_smi.png"
+)
+
+    image nstl sport shocked = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_sport_ud.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_sport_ud.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_sport_ud.png"
+)
+
+    image nstl sport angry = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_sport_z.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_sport_z.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_sport_z.png"
+)
+    image nstl sport smile = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_sport_smile.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_sport_smile.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_sport_smile.png"
 )
 
 #Настя close 
