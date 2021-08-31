@@ -1,6 +1,6 @@
 init:
   #from sprites
-  image mama close = ConditionSwitch(
+    image mama close = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
 "mods/MenuTime/sprites/mama_close.png",
