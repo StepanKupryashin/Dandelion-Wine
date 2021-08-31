@@ -140,6 +140,7 @@ init:
     define danilg = Character('Даниил', kind=nvl, color="#00FF7F")
     define misskaty = Character('Катя', kind=nvl, color="#556B2F")
     define loxqr = Character('Миша', kind=nvl, color="#DB7093")
+    define nastyar = Character('Настя', kind=nvl, color="#00FFFF")
     $ povr = Character(u'Повар', color="ffff00")
     
     python:

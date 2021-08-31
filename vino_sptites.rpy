@@ -13,7 +13,7 @@ init:
             True,
 "mods/MenuTime/sprites/nstl_pio_norm.png"
 )
-    image nstl pio z = ConditionSwitch(
+    image nstl pio angry = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
 "mods/MenuTime/sprites/nstl_pio_z.png",
@@ -27,7 +27,7 @@ init:
             True,
 "mods/MenuTime/sprites/nstl_pio_z.png"
 )
-    image nstl pio smi = ConditionSwitch(
+    image nstl pio shy = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
 "mods/MenuTime/sprites/nstl_pio_smi.png",
@@ -69,7 +69,7 @@ init:
             True,
 "mods/MenuTime/sprites/nstl_pio_smile.png"
 )
-    image nstl sport smi = ConditionSwitch(
+    image nstl sport shy = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
 "mods/MenuTime/sprites/nstl_sport_smi.png",
@@ -111,6 +111,7 @@ init:
             True,
 "mods/MenuTime/sprites/nstl_pio_norm_norm.png"
 )
+
 #Настя close 
     image nstl ku happy close = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
