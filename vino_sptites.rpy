@@ -90,6 +90,21 @@ init:
 "mods/MenuTime/sprites/nstl_ku_smi.png"
 )
 
+    image nstl ku smi = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_ku_smi.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_ku_smi.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_ku_smi.png"
+)
+
     image nstl ku shocked = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
@@ -195,6 +210,21 @@ init:
 )
 
     image nstl pio shy = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_pio_smi.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_pio_smi.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_pio_smi.png"
+)
+
+    image nstl pio smi = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
 "mods/MenuTime/sprites/nstl_pio_smi.png",
@@ -328,6 +358,21 @@ init:
 "mods/MenuTime/sprites/nstl_plat_smi.png"
 )
 
+    image nstl dress smi = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_plat_smi.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_plat_smi.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_plat_smi.png"
+)
+
     image nstl dress shocked = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
@@ -433,6 +478,21 @@ init:
 )
 
     image nstl sport shy = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_sport_smi.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/nstl_sport_smi.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/nstl_sport_smi.png"
+)
+
+    image nstl sport smi = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
 "mods/MenuTime/sprites/nstl_sport_smi.png",
@@ -563,6 +623,21 @@ init:
             True,
 "mods/MenuTime/sprites/close/nstl_ku_smi_close.png"
 )
+
+    image nstl ku smi close = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/close/nstl_ku_smi_close.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/close/nstl_ku_smi_close.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/close/nstl_ku_smi_close.png"
+)
     image nstl ku smile close = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
@@ -668,6 +743,21 @@ init:
 )
 
     image nstl pio shy close = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/close/nstl_pio_smi_close.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/close/nstl_pio_smi_close.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/close/nstl_pio_smi_close.png"
+)
+
+    image nstl pio smi close = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
 "mods/MenuTime/sprites/close/nstl_pio_smi_close.png",
@@ -802,6 +892,21 @@ init:
 "mods/MenuTime/sprites/close/nstl_plat_smi_close.png"
 )
 
+    image nstl dress smi close = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/close/nstl_plat_smi_close.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/close/nstl_plat_smi_close.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/close/nstl_plat_smi_close.png"
+)
+
     image nstl dress smile close = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
@@ -907,6 +1012,21 @@ init:
 )
 
     image nstl sport shy close = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/close/nstl_sport_smi_close.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/close/nstl_sport_smi_close.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/close/nstl_sport_smi_close.png"
+)
+
+    image nstl sport smi close = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
 "mods/MenuTime/sprites/close/nstl_sport_smi_close.png",
@@ -1038,6 +1158,21 @@ init:
             True,
 "mods/MenuTime/sprites/far/nstl_ku_smi_far.png"
 )
+
+    image nstl ku smi far = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/far/nstl_ku_smi_far.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/far/nstl_ku_smi_far.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/far/nstl_ku_smi_far.png"
+)
     image nstl ku smile far = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
@@ -1143,6 +1278,21 @@ init:
 )
 
     image nstl pio shy far = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/far/nstl_pio_smi_far.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/far/nstl_pio_smi_far.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/far/nstl_pio_smi_far.png"
+)
+
+    image nstl pio smi far = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
 "mods/MenuTime/sprites/far/nstl_pio_smi_far.png",
@@ -1277,6 +1427,21 @@ init:
 "mods/MenuTime/sprites/far/nstl_plat_smi_far.png"
 )
 
+    image nstl dress smi far = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/far/nstl_plat_smi_far.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/far/nstl_plat_smi_far.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/far/nstl_plat_smi_far.png"
+)
+
     image nstl dress smile far = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
@@ -1382,6 +1547,21 @@ init:
 )
 
     image nstl sport shy far = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/far/nstl_sport_smi_far.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/far/nstl_sport_smi_far.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/far/nstl_sport_smi_far.png"
+)
+
+    image nstl sport smi far = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
 "mods/MenuTime/sprites/far/nstl_sport_smi_far.png",
@@ -1512,6 +1692,21 @@ init:
             True,
 "mods/MenuTime/sprites/normal/nstl_ku_smi_normal.png"
 )
+
+    image nstl ku smi normal = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/normal/nstl_ku_smi_normal.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/normal/nstl_ku_smi_normal.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/normal/nstl_ku_smi_normal.png"
+)
     image nstl ku smile normal = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
@@ -1617,6 +1812,21 @@ init:
 )
 
     image nstl pio shy normal = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/normal/nstl_pio_smi_normal.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/normal/nstl_pio_smi_normal.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/normal/nstl_pio_smi_normal.png"
+)
+
+    image nstl pio smi normal = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
 "mods/MenuTime/sprites/normal/nstl_pio_smi_normal.png",
@@ -1751,6 +1961,21 @@ init:
 "mods/MenuTime/sprites/normal/nstl_plat_smi_normal.png"
 )
 
+    image nstl dress smi normal = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/normal/nstl_plat_smi_normal.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/normal/nstl_plat_smi_normal.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/normal/nstl_plat_smi_normal.png"
+)
+
     image nstl dress smile normal = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
@@ -1856,6 +2081,21 @@ init:
 )
 
     image nstl sport shy normal = ConditionSwitch(
+            "persistent.sprite_time=='sunset'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/normal/nstl_sport_smi_normal.png",
+                    im.matrix.tint(0.94, 0.82, 1.0)
+                    ),
+            "persistent.sprite_time=='night'",
+                im.MatrixColor(
+"mods/MenuTime/sprites/normal/nstl_sport_smi_normal.png",
+                    im.matrix.tint(0.63, 0.78, 0.82)
+                ),
+            True,
+"mods/MenuTime/sprites/normal/nstl_sport_smi_normal.png"
+)
+
+    image nstl sport smi normal = ConditionSwitch(
             "persistent.sprite_time=='sunset'",
                 im.MatrixColor(
 "mods/MenuTime/sprites/normal/nstl_sport_smi_normal.png",
