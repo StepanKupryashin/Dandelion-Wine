@@ -391,7 +391,7 @@ screen vino_preferences:
         textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
             hover_sound vino_hover
             action (Hide('vino_preferences', Dissolve(1.0)), Return())
-        button xalign 0.6 hover_sound vino_hover xsize 10 ysize 5 action SetVariable('vino_Devoloper', not vino_Devoloper)
+        #button xalign 0.6 hover_sound vino_hover xsize 10 ysize 5 action SetVariable('vino_Devoloper', not vino_Devoloper)
         if not main_menu:
             textbutton '>' xalign 0.95 yalign 0.5 style "vino_button_none" text_style "vino_text" text_size 80 at vino_button_anim:
                 hover_sound vino_hover
