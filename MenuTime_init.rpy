@@ -1,4 +1,4 @@
-    init python:
+init python:
 
 
     ####################
