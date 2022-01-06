@@ -130,7 +130,7 @@ init:
     define mimikumi = Character('Я', kind=nvl, color="#c8c8ff")
     $ xzktoqtwqwe = Character (u'Отголоски', color = "191970", what_color="f2f2f2")
     $ silxvahfy = Character (u'Силуэт', color = "FF1493", what_color="f2f2f2")
-    $ mirasll = Character (u'...', kind=nvl, color = "00deff")
+    $ mirasll = Character (u'...', color = "00deff")
     $ mamecki = Character (u'Мама', color = "4682B4")
     $ otecki = Character (u'Папа', color = "4169E1")
     $ evgnll = Character (u'Евгений', color = "9400D3")
