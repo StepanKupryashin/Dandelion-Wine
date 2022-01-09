@@ -752,25 +752,27 @@ screen vino_authors:
         textbutton "Кодер" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text":
             hover_sound vino_hover
             action OpenURL("https://vk.com/awalone_13")
-        textbutton "Сценарист" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text":
-            hover_sound vino_hover
-            action OpenURL("https://vk.com/soviet_guy410")
-        textbutton "Кодер (виз. часть)" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text":
-            hover_sound vino_hover
-            action OpenURL("https://vk.com/onlymayve")
         textbutton "Кодер(интерфейс,функции)" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text":
             hover_sound vino_hover
             action OpenURL("https://vk.com/banderak")
         textbutton "Кодер" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text":
             hover_sound vino_hover
-            action OpenURL("https://vk.com/kkravtsov92")
+            action OpenURL("https://vk.com/olyunin96")
         textbutton "Сценарист" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text":
             hover_sound vino_hover
             action OpenURL("https://vk.com/dvoeglazovt")
         textbutton "Дизайнер" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text":
             hover_sound vino_hover
             action OpenURL("https://vk.com/id424308705")
-
+        textbutton "Кодер" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text":
+            hover_sound vino_hover
+            action OpenURL("https://vk.com/kefir331")
+        textbutton "Сценарист" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text":
+            hover_sound vino_hover
+            action OpenURL("https://vk.com/soviet_guy413")
+        textbutton "Кодер" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text":
+            hover_sound vino_hover
+            action OpenURL("https://vk.com/k.pioneer")
 
 screen vino_dlc_story:
     tag menu
