@@ -6331,10 +6331,10 @@ label vino_day5:
     
     play sound sfx_open_dooor_campus_1
     
-    show nstl pio norm  with dissolve
+    show nstl pio norm with dissolve
     
     show  dv normal pioneer2 far at right with dissolve
-    show us laugh pioneer at left  with dissolve
+    show us laugh pioneer far at left  with dissolve
 
     nstl "В общем так, Дань. Мы с девчатами планируем позавтракать и уйти на пляж до самого обеда. Ты с нами?"
 
