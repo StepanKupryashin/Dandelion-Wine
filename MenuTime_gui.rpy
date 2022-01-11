@@ -14,20 +14,11 @@ init -3 python:
             pass
         
 init -2 python:
-<<<<<<< HEAD
     def vino_devoloper(a):
         if a == True:
             persistent.vino_Devoloper = True
         else:
             persistent.vino_Devoloper = False
-=======
-    def vino_Developer(a):
-        global vino_Developer
-        if a==True:
-            vino_Developer =True 
-        else:
-            vino_Developer =False
->>>>>>> 2efe475303f75ad90427509dc3413a8f7f7b1938
     def vino_on_save_callback(slot):
         if not persistent.vino_on_save_timeofday:
             persistent.vino_on_save_timeofday={}
@@ -381,7 +372,7 @@ screen vino_mainmenu:
         textbutton "Настройки" xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
             hover_sound vino_hover
             action ShowMenu("vino_preferences")
-        if vino_Devoloper:
+        if persistent.vino_Developer:
             textbutton 'Дни' xalign 0.5 style 'vino_button_none' text_style 'vino_text' hover_sound vino_hover action ShowMenu('vino_days_developer') at vino_button_anim 
         textbutton "Выход" xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
             hover_sound vino_hover
@@ -407,7 +398,7 @@ screen vino_preferences:
         textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
             hover_sound vino_hover
             action (Hide('vino_preferences', Dissolve(1.0)), Return())
-        button xalign 0.6 hover_sound vino_hover xsize 10 ysize 5 action SetVariable('vino_Devoloper', not vino_Devoloper)
+        # button xalign 0.6 hover_sound vino_hover xsize 10 ysize 5 action SetVariable('vino_Devoloper', not vino_Devoloper)
         if not main_menu:
             textbutton '>' xalign 0.95 yalign 0.5 style "vino_button_none" text_style "vino_text" text_size 80 at vino_button_anim:
                 hover_sound vino_hover
@@ -1088,5 +1079,5 @@ screen vino_days_developer:
         textbutton 'День 4' style "vino_button_none" text_style "vino_text" hover_sound vino_hover action Start('vino_day4')
         textbutton 'День 5' style "vino_button_none" text_style "vino_text" hover_sound vino_hover action Start('vino_day5')
 
-    hbox align(0.5,0.6) spacing 20:
-        textbutton 'Титры' style "vino_button_none" text_style "vino_text" hover_sound vino_hover action Start('titry')
+    # hbox align(0.5,0.6) spacing 20:
+    #     textbutton 'Титры' style "vino_button_none" text_style "vino_text" hover_sound vino_hover action Start('titry')
