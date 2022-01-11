@@ -1,4 +1,6 @@
 init -3 python:
+    if persistent.vino_Devoloper == None:
+        persistent.vino_Devoloper == False
     config.developer = True
     def vino_on_load_callback(slot):
         try:
@@ -12,6 +14,11 @@ init -3 python:
             pass
         
 init -2 python:
+    def vino_devoloper(a):
+        if a == True:
+            persistent.vino_Devoloper = True
+        else:
+            persistent.vino_Devoloper = False
     def vino_on_save_callback(slot):
         if not persistent.vino_on_save_timeofday:
             persistent.vino_on_save_timeofday={}
