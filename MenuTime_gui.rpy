@@ -12,6 +12,12 @@ init -3 python:
             pass
         
 init -2 python:
+    def vino_Developer(a):
+        global vino_Developer
+        if a==True:
+            vino_Developer =True 
+        else:
+            vino_Developer =False
     def vino_on_save_callback(slot):
         if not persistent.vino_on_save_timeofday:
             persistent.vino_on_save_timeofday={}
@@ -1071,3 +1077,6 @@ screen vino_days_developer:
         textbutton 'День 3' style "vino_button_none" text_style "vino_text" hover_sound vino_hover action Start('vino_day3')
         textbutton 'День 4' style "vino_button_none" text_style "vino_text" hover_sound vino_hover action Start('vino_day4')
         textbutton 'День 5' style "vino_button_none" text_style "vino_text" hover_sound vino_hover action Start('vino_day5')
+
+    hbox align(0.5,0.6) spacing 20:
+        textbutton 'Титры' style "vino_button_none" text_style "vino_text" hover_sound vino_hover action Start('titry')
