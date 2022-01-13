@@ -29,6 +29,9 @@ init python:
             return self.function(self.arguments)
 
     def vino_nvl_paper(paper='off'):
+        """
+        paper:str - аключить или выключить режим
+        """        
         if paper == 'on':
             renpy.display.screen.screens[("nvl", None)] = renpy.display.screen.screens[("vino_paper_nvl", None)]
             set_mode_nvl()
