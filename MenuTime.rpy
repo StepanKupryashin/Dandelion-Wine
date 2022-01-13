@@ -8602,7 +8602,7 @@ label vino_day6:
 
     dnll "Стоять! " with vpunch
 
-    stop ambience with fadeout 2.0
+    stop ambience fadeout 2.0
 
     scene hata_gg_day with fade2
 
