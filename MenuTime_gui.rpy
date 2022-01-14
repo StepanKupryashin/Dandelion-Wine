@@ -198,13 +198,13 @@ init -2 python:
             what_music_play = renpy.music.get_playing(channel="music")  # …узнаём что играет (возвращает нам путь до трека)
             if ( what_music_play not in vino_music_data):  # Проверяем, есть ли такой трек в словаре.
                 return (
-                    Text("Шазам не знает такого трека:(", style=style.vino_play_music_text,xalign=0.5, yalign=0.2),
+                    Text("{size=32}{color=#FF0000FF}Неизвестная композиция{/color}{/size}", style=style.vino_play_music_text),
                     0.1,
                 )  # Если его нет, появится эта строка вместо названия трека
             else:
                 what_music_play = vino_music_data[what_music_play]  # Если есть такой трек в словаре, то нашим выводом на экран станет значение словаря (то бишь, название трека)
                 return (
-                    Text("{size=70}Сейчас играет:{/size}\n{size=30}{color=#FF0000FF}%s{/color}{/size}" % (what_music_play), style=style.vino_play_music_text,xalign=0.55, yalign=0.2),
+                    Text("{size=32}{color=#FF0000FF}%s{/color}{/size}" % (what_music_play), style=style.vino_play_music_text),
                     0.1,
                 )  # Возвращаем (показываем) название (или любой другой текст) песни, что сейчас играет
         else:
@@ -388,7 +388,7 @@ screen vino_mainmenu:
         hover_sound vino_hover
         align(0.8,0.5)
         at vino_plate_anim
-        action ShowMenu("vino_music")  
+        action ShowMenu("vino_music") 
         
 screen vino_preferences:
     tag menu
@@ -961,15 +961,67 @@ screen vino_nvl:
 screen vino_game_menu_selector:
     $ timeofday = persistent.timeofday
     tag menu modal True
-    add 'vino_playing_music'
-    add 'mods/MenuTime/gui/quick_menu/'+timeofday+'/quick_menu_ground.png' xalign 0.5 yalign 0.5
-    vbox spacing 25 align(0.5,0.5):
+    button style "blank_button" xpos 0 ypos 0 xfill True yfill True action Return()
+    add 'mods/MenuTime/gui/quick_menu/game_menu_left_%s.png' % timeofday xpos 142
+    add 'mods/MenuTime/gui/quick_menu/game_menu_right_%s.png' % timeofday xpos 960
+    #левая часть экрана
+    text 'сейчас играет:':
+        font 'mods/MenuTime/helvetica.otf'
+        size 46
+        xpos 243
+        ypos 20
+    vbox xpos 145 xsize 530 ypos 80:
+        add 'vino_playing_music' xalign 0.5
+    vbox spacing 35 xpos 215 ypos 200:
         textbutton 'В главное меню' xalign 0.5 style "vino_button_none" text_style "vino_game_menu_selector_%s" % timeofday hover_sound vino_hover  action MainMenu(confirm=True) at vino_button_anim
         textbutton 'Сохранить' xalign 0.5 style "vino_button_none" text_style "vino_game_menu_selector_%s" % timeofday hover_sound vino_hover action ShowMenu('vino_save') at vino_button_anim
         textbutton 'Загрузить' xalign 0.5 style "vino_button_none" text_style "vino_game_menu_selector_%s" % timeofday hover_sound vino_hover action ShowMenu('vino_load') at vino_button_anim
         textbutton 'Настройки' xalign 0.5 style "vino_button_none" text_style "vino_game_menu_selector_%s" % timeofday hover_sound vino_hover action ShowMenu('vino_preferences') at vino_button_anim
+    vbox xpos 330 ypos 980:    
         textbutton 'Выход' xalign 0.5 style "vino_button_none" text_style "vino_game_menu_selector_%s" % timeofday hover_sound vino_hover action ShowMenu('vino_exit') at vino_button_anim
-  
+    #правая часть экрана
+    vbox xpos 983 ypos 30 xsize 815:
+        text save_name xalign 0.5 style 'vino_game_menu_selector_%s' % timeofday size 28
+    vbox xpos 983 ypos 80 spacing 50 xsize 815:
+        vbox spacing 10 xalign 0.5:
+            text "Музыка" style 'vino_game_menu_selector_%s' % timeofday xalign 0.5
+            bar value Preference("music volume") maximum(374,69):
+                left_bar "mods/MenuTime/gui/quick_menu/bar_full_%s.png" % timeofday
+                right_bar "mods/MenuTime/gui/quick_menu/bar_null.png"
+                thumb "mods/MenuTime/gui/quick_menu/bar_thumb_%s.png" % timeofday 
+                xalign 1.0 
+        vbox spacing 10 xalign 0.5:
+            text "Звуки" style 'vino_game_menu_selector_%s' % timeofday xalign 0.5
+            bar value Preference("sound volume")  maximum(374,69):
+                left_bar "mods/MenuTime/gui/quick_menu/bar_full_%s.png" % timeofday
+                right_bar "mods/MenuTime/gui/quick_menu/bar_null.png"
+                thumb "mods/MenuTime/gui/quick_menu/bar_thumb_%s.png" % timeofday
+        vbox spacing 10 xalign 0.5:
+            text "Эмбиент" style 'vino_game_menu_selector_%s' % timeofday xalign 0.5
+            bar value Preference("voice volume")  maximum(374,69):
+                left_bar "mods/MenuTime/gui/quick_menu/bar_full_%s.png" % timeofday
+                right_bar "mods/MenuTime/gui/quick_menu/bar_null.png"
+                thumb "mods/MenuTime/gui/quick_menu/bar_thumb_%s.png" % timeofday
+        vbox spacing 10 xalign 0.5:
+            text "Скорость текста" style 'vino_game_menu_selector_%s' % timeofday xalign 0.5
+            bar value Preference("text speed") maximum(374,69):
+                left_bar "mods/MenuTime/gui/quick_menu/bar_full_%s.png" % timeofday
+                right_bar "mods/MenuTime/gui/quick_menu/bar_null.png"
+                thumb "mods/MenuTime/gui/quick_menu/bar_thumb_%s.png" % timeofday
+    vbox ypos 795 xpos 1040 xsize 760 spacing 45:
+        text "Размер текста" style 'vino_game_menu_selector_%s' % timeofday xalign 0.5
+        hbox spacing 150:
+            textbutton "Нормальный"  style 'vino_button_none' text_style 'vino_game_menu_selector_%s' % timeofday:
+                action SetField(persistent,"font_size","small"), SelectedIf(persistent.font_size == "small")
+            textbutton "Большой" style 'vino_button_none' text_style 'vino_game_menu_selector_%s' % timeofday:
+                action SetField(persistent,"font_size","large"), SelectedIf(persistent.font_size == "large")
+
+
+
+
+
+
+
 screen vino_yesno_prompt:
     tag menu modal True  
     $ timeofday = persistent.timeofday

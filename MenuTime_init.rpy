@@ -50,31 +50,37 @@ init python:
     style.vino_backdrop_style.outlines = [ (absolute(2), '#282828', absolute(1), absolute(1))]
 
     style.vino_game_menu_selector_day = Style(style.default)
-    style.vino_game_menu_selector_day.font = "mods/MenuTime/vino_font.ttf"
-    style.vino_game_menu_selector_day.size = 35
-    style.vino_game_menu_selector_day.color = '#73c1e3'
-    style.vino_game_menu_selector_day.hover_color = '#355572'
+    style.vino_game_menu_selector_day.font = "mods/MenuTime/helvetica.otf"
+    style.vino_game_menu_selector_day.size = 46
+    style.vino_game_menu_selector_day.color = '#FFFCFC'
+    style.vino_game_menu_selector_day.hover_color = '#34A669'
+    style.vino_game_menu_selector_day.selected_color = '#34A669'
     ########################################
     style.vino_game_menu_selector_night = Style(style.default)
-    style.vino_game_menu_selector_night.font = "mods/MenuTime/vino_font.ttf"
-    style.vino_game_menu_selector_night.size = 35
-    style.vino_game_menu_selector_night.color = '#2226af'
-    style.vino_game_menu_selector_night.hover_color = '#1c1e4e'
+    style.vino_game_menu_selector_night.font = "mods/MenuTime/helvetica.otf"
+    style.vino_game_menu_selector_night.size = 46
+    style.vino_game_menu_selector_night.color = '#FFFCFC'
+    style.vino_game_menu_selector_night.hover_color = '#15307A'
+    style.vino_game_menu_selector_night.selected_color = '#15307A'
+
     #######################################
     style.vino_game_menu_selector_prologue = Style(style.default)
-    style.vino_game_menu_selector_prologue.font = "mods/MenuTime/vino_font.ttf"
-    style.vino_game_menu_selector_prologue.size = 35
-    style.vino_game_menu_selector_prologue.color = '#2226af'
-    style.vino_game_menu_selector_prologue.hover_color = '#1c1e4e'
+    style.vino_game_menu_selector_prologue.font = "mods/MenuTime/helvetica.otf"
+    style.vino_game_menu_selector_prologue.size = 46
+    style.vino_game_menu_selector_prologue.color = '#FFFCFC'
+    style.vino_game_menu_selector_prologue.hover_color = '#15307A'
+    style.vino_game_menu_selector_prologue.selected_color = '#15307A'
+    
     #########################################################
     style.vino_game_menu_selector_sunset = Style(style.default)
-    style.vino_game_menu_selector_sunset.font = "mods/MenuTime/vino_font.ttf"
-    style.vino_game_menu_selector_sunset.size = 35
-    style.vino_game_menu_selector_sunset.color = '#fcbab1'
-    style.vino_game_menu_selector_sunset.hover_color = '#ab5450'
+    style.vino_game_menu_selector_sunset.font = "mods/MenuTime/helvetica.otf"
+    style.vino_game_menu_selector_sunset.size = 46
+    style.vino_game_menu_selector_sunset.color = '#FFFCFC'
+    style.vino_game_menu_selector_sunset.hover_color = '#CE7A52'
+    style.vino_game_menu_selector_sunset.selected_color = '#CE7A52'
     ##########################################
     style.vino_play_music_text = Style(style.default)
-    style.vino_play_music_text.font = "mods/MenuTime/vino_font.ttf"
+    style.vino_play_music_text.font = "mods/MenuTime/helvetica.otf"
     style.vino_play_music_text.size = 60
     style.vino_play_music_text.color = "#FFFFFF"
     style.vino_play_music_text.hover_color = "#EB0707"
