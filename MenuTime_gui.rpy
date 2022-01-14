@@ -1,4 +1,8 @@
 init -3 python:
+    vino_menu_music = {
+        'day' : ['mods/MenuTime/music/Andrew York - Faire.mp3', "mods/MenuTime/music/GuitarGheddu - Darkside.mp3"],
+        'night' : ['mods/MenuTime/music/April Rain - Waiting for Sunrise.mp3', 'mods/MenuTime/music/April Rain - Chiral Allergy.mp3']
+    }
     if persistent.vino_Devoloper == None:
         persistent.vino_Devoloper == False
     config.developer = True
@@ -39,7 +43,8 @@ init -2 python:
         renpy.display.screen.screens[("nvl", None)] = renpy.display.screen.screens[("vino_nvl", None)]
         renpy.display.screen.screens[("game_menu_selector", None)] = renpy.display.screen.screens[("vino_game_menu_selector", None)]
         renpy.display.screen.screens[("yesno_prompt", None)] = renpy.display.screen.screens[("vino_yesno_prompt", None)]
-        config.main_menu_music = 'mods/MenuTime/music/vino_main_menu_music.mp3'
+        timed = vino_get_time()
+        config.main_menu_music = renpy.random.choice(vino_menu_music[timed])
         _main_menu_screen = "vino_mainmenu"
         _game_menu_screen = "vino_game_menu_selector"
         layout.LOADING = "Потерять несохраненые данные?"
@@ -323,175 +328,203 @@ init -2 python:
 screen vino_music:
     tag menu
     modal True 
+    $ time = vino_get_time()
     frame:
-        add 'vino_menu_bg' at vino_menu_anim
-        textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
+        add 'mods/MenuTime/gui/menu/menu_bg_%s.png' % time 
+        textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
             hover_sound vino_hover
-            action (Hide('vino_music', Dissolve(1.0)), Return(), Play('music', 'mods/MenuTime/music/vino_main_menu_music.mp3'))
+            action (Hide('vino_music', Dissolve(1.0)), Return(), Play('music', renpy.random.choice(vino_menu_music[time])))
         key "K_ESCAPE" action (Hide('vino_music', Dissolve(1.0)), Return(), Play('music', 'mods/MenuTime/music/vino_main_menu_music.mp3'))
         window:
             background None 
-            area (220,230,900,750)
+            area (580,127,866,825)
             viewport id 'vino_music_box':
                 draggable True
                 mousewheel True
-                has vbox 
+                has vbox
+                spacing 5 
                 for path, name in sorted(vino_music_box.iteritems()):
                     textbutton name:
+                        xalign 0.5
                         style 'vino_button_none'
-                        text_style 'vino_text'
+                        text_style 'vino_text_%s' % time
                         hover_sound vino_hover
                         action vino_mr.Play(path)
 
-screen vino_mainmenu:
+screen vino_mainmenu():
     tag menu
     modal True
+    $ time = vino_get_time()
     key 'game_menu':
         action NullAction() 
-    add 'vino_menu_bg' at vino_menu_anim
-    textbutton "Crimson Team" text_size 100 align(0.48,0.05) style "vino_button_none" text_style "vino_text":
-        hover_sound vino_hover
-        action OpenURL("https://vk.com/crimsoteam")
-    vbox align(0.5,0.5) spacing 10 at vino_on_show_main_menu:
-        textbutton "Продолжить" xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
-            hover_sound vino_hover
-            text_insensitive_color "#9E9E9E"
-            action Vino_Continue(), Vino_FunctionCallback(vino_on_load_callback, renpy.newest_slot("vino_FilePage_"))
-        textbutton "Начать" xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
-            hover_sound vino_hover
-            action Start("crimson_team")
-        textbutton "Загрузить" xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
-            hover_sound vino_hover
-            action ShowMenu("load")
-        textbutton "Лагерные истории" xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
-            hover_sound vino_hover
-            action ShowMenu("vino_dlc_story")
-        textbutton "Галерея" xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
-            hover_sound vino_hover
-            action ShowMenu('vino_gallery')        
-        textbutton "Настройки" xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
-            hover_sound vino_hover
-            action ShowMenu("vino_preferences")
+    # on "show" action Play("music", renpy.random.choice(vino_menu_music[time]))
+    add 'mods/MenuTime/gui/menu/menu_bg_%s.png' % time 
+    add 'mods/MenuTime/gui/menu/header_%s.png' % time xpos 0:
+        at transform:
+            on show:
+                ypos -500
+                easein 1 ypos 0
+    add 'mods/MenuTime/gui/menu/nav_bg_%s.png' % time xpos 50 ypos 190:
+        at transform:
+            on show:
+                parallel:
+                    alpha 0.0
+                    easein 1 alpha 1.0
+                parallel:
+                    ypos 220
+                    easein 1 ypos 190
+            on hide:
+                xpos 50
+                easeout 0.4 xpos 60
+                easeout 1 xpos -500 
+    textbutton "Crimson Team"  style "vino_button_none" text_style "vino_text_%s" % time xpos 1673 ypos 100 hover_sound vino_hover action ShowMenu("vino_authors"): #OpenURL("https://vk.com/crimsoteam")
+        at transform:
+            on show:
+                ypos -500
+                easein 1 ypos 100
+    vbox xpos 50 xsize 530 ypos 265 spacing 30:
+        textbutton "Продолжить" xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim hover_sound vino_hover text_insensitive_color "#9E9E9E" action Vino_Continue(), Vino_FunctionCallback(vino_on_load_callback, renpy.newest_slot("vino_FilePage_"))
+        textbutton "Начать" xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim hover_sound vino_hover action Start("crimson_team")
+        textbutton "Загрузить" xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim hover_sound vino_hover action ShowMenu("load")
+        textbutton "Лагерные истории" xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim hover_sound vino_hover action ShowMenu("vino_dlc_story")
+        textbutton "Галерея" xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim hover_sound vino_hover action ShowMenu('vino_gallery')        
+        textbutton "Настройки" xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim hover_sound vino_hover action ShowMenu("vino_preferences")
         if persistent.vino_Developer:
-            textbutton 'Дни' xalign 0.5 style 'vino_button_none' text_style 'vino_text' hover_sound vino_hover action ShowMenu('vino_days_developer') at vino_button_anim 
-        textbutton "Выход" xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
+            textbutton 'Дни' xalign 0.5 style 'vino_button_none' text_style "vino_text_%s" % time hover_sound vino_hover action ShowMenu('vino_days_developer') at vino_button_anim 
+        null height 160
+        textbutton "Выход" xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
             hover_sound vino_hover
             action ShowMenu("vino_exit")
-    textbutton "Выбор фона" xalign 0.85 yalign 0.9 style "vino_button_none" text_style "vino_text" at vino_button_anim:
-        hover_sound vino_hover
-        action ShowMenu("vino_set_bg")
-    textbutton "Авторы" xalign 0.15 yalign 0.9 style "vino_button_none" text_style "vino_text" at vino_button_anim:
-        hover_sound vino_hover
-        action ShowMenu("vino_authors")
+        at transform:
+            on show:
+                parallel:
+                    alpha 0.0
+                    easein 1 alpha 1.0
+                parallel:
+                    ypos 280
+                    easein 1 ypos 265
+            on hide:
+                xpos 50
+                easeout 0.4 xpos 60
+                easeout 1 xpos -500
+    # textbutton "Выбор фона" xalign 0.85 yalign 0.9 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
+    #     hover_sound vino_hover
+    #     action ShowMenu("vino_set_bg")
+    # textbutton "Авторы" xalign 0.15 yalign 0.9 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
+    #     hover_sound vino_hover
+    #     action ShowMenu("vino_authors")
     imagebutton:
         idle ImageReference("vino_plate")
         hover_sound vino_hover
-        align(0.8,0.5)
+        align(0.93, 0.88)
         at vino_plate_anim
         action ShowMenu("vino_music") 
         
 screen vino_preferences:
     tag menu
     modal True
+    $ time = vino_get_time()
     window at vino_on_show_authors_menu:
-        add 'vino_menu_bg' at vino_menu_anim
-        textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
+        add 'mods/MenuTime/gui/menu/menu_bg_%s.png' % time 
+        textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
             hover_sound vino_hover
             action (Hide('vino_preferences', Dissolve(1.0)), Return())
         # button xalign 0.6 hover_sound vino_hover xsize 10 ysize 5 action SetVariable('vino_Devoloper', not vino_Devoloper)
         if not main_menu:
-            textbutton '>' xalign 0.95 yalign 0.5 style "vino_button_none" text_style "vino_text" text_size 80 at vino_button_anim:
+            textbutton '>' xalign 0.95 yalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time text_size 80 at vino_button_anim:
                 hover_sound vino_hover
                 action ShowMenu('vino_save', Dissolve(1.0))
-            textbutton '<' xalign 0.05 yalign 0.5 style "vino_button_none" text_style "vino_text" text_size 80 at vino_button_anim:
+            textbutton '<' xalign 0.05 yalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time text_size 80 at vino_button_anim:
                 hover_sound vino_hover
                 action ShowMenu('vino_load', Dissolve(1.0))
         key "K_ESCAPE" action (Hide('vino_preferences', Dissolve(1.0)), Return())
         vbox align(0.2,0.5):
-            text "Режим экрана" style "vino_text" size 45 xalign 0.5
+            text "Режим экрана" style "vino_text_%s" % time size 45 xalign 0.5
             hbox spacing 10 xalign 0.5:
-                textbutton "Оконный" text_size 35 style "vino_button_none" text_style "vino_text":
+                textbutton "Оконный" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
                     action Preference("display","window")
-                textbutton "Полноэкранный" text_size 35 style "vino_button_none" text_style "vino_text":
+                textbutton "Полноэкранный" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
                     action Preference("display","fullscreen")
             null height 40
-            text "Пропускать" style "vino_text" size 45 xalign 0.5
+            text "Пропускать" style "vino_text_%s" % time size 45 xalign 0.5
             hbox spacing 10 xalign 0.5:
-                textbutton "Всё" text_size 35 style "vino_button_none" text_style "vino_text":
+                textbutton "Всё" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
                     action Preference("skip","all")
-                textbutton "Что увидел" text_size 35 style "vino_button_none" text_style "vino_text":
+                textbutton "Что увидел" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
                     action Preference("skip","seen")
             null height 40
-            text "Размер шрифта" style "vino_text" size 45 xalign 0.5
+            text "Размер шрифта" style "vino_text_%s" % time size 45 xalign 0.5
             hbox spacing 10 xalign 0.5:
-                textbutton "Обычный" text_size 35 style "vino_button_none" text_style "vino_text":
+                textbutton "Обычный" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
                     action SetField(persistent,"font_size","small")
-                textbutton "Большой" text_size 35 style "vino_button_none" text_style "vino_text":
+                textbutton "Большой" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
                     action SetField(persistent,"font_size","large")
             null height 80
-            text "Скорость текста" style "vino_text" size 45 xalign 0.5
-            bar value Preference("text speed") xalign 0.5 maximum(442,42):
-                right_bar ImageReference("vino_bar_nofull")
-                left_bar ImageReference("vino_bar_full")
-                thumb ImageReference("vino_thumb")
+            text "Скорость текста" style "vino_text_%s" % time size 45 xalign 0.5
+            bar value Preference("text speed") maximum(374,69) xalign 0.5:
+                left_bar "mods/MenuTime/gui/quick_menu/bar_full_%s.png" % time
+                right_bar "mods/MenuTime/gui/quick_menu/bar_null.png"
+                thumb "mods/MenuTime/gui/quick_menu/bar_thumb_%s.png" % time
         vbox align(0.8,0.5):
-            text "Автопереход" style "vino_text" size 45 xalign 0.5
+            text "Автопереход" style "vino_text_%s" % time size 45 xalign 0.5
             hbox spacing 10 xalign 0.5:
-                textbutton "Включить" text_size 35 style "vino_button_none" text_style "vino_text":
+                textbutton "Включить" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
                     action [If(preferences.afm_time == 0,true=Preference("auto-forward time", 20)),Preference("auto-forward after click","enable"),SelectedIf(preferences.afm_time != 0 or preferences.afm_after_click == "enable")]
-                textbutton "Выключить" text_size 35 style "vino_button_none" text_style "vino_text":
+                textbutton "Выключить" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
                     action [Preference("auto-forward time", 0),Preference("auto-forward after click","disable"),SelectedIf(preferences.afm_time == 0 or preferences.afm_after_click == "disable")]
-            bar value Preference("auto-forward time") xalign 0.5 maximum(442,42):
-                right_bar ImageReference("vino_bar_nofull")
-                left_bar ImageReference("vino_bar_full")
-                thumb ImageReference("vino_thumb")
+            bar value Preference("auto-forward time") xalign 0.5 maximum(374,69):
+                left_bar "mods/MenuTime/gui/quick_menu/bar_full_%s.png" % time
+                right_bar "mods/MenuTime/gui/quick_menu/bar_null.png"
+                thumb "mods/MenuTime/gui/quick_menu/bar_thumb_%s.png" % time
             null height 40
-            text "Музыка" style "vino_text" size 45 xalign 0.5
-            bar value Preference("music volume") xalign 0.5 maximum(442,42):
-                right_bar ImageReference("vino_bar_nofull")
-                left_bar ImageReference("vino_bar_full")
-                thumb ImageReference("vino_thumb")
+            text "Музыка" style "vino_text_%s" % time size 45 xalign 0.5
+            bar value Preference("music volume") maximum(374,69) xalign 0.5:
+                left_bar "mods/MenuTime/gui/quick_menu/bar_full_%s.png" % time
+                right_bar "mods/MenuTime/gui/quick_menu/bar_null.png"
+                thumb "mods/MenuTime/gui/quick_menu/bar_thumb_%s.png" % time
             null height 40
-            text "Звуки" style "vino_text" size 45 xalign 0.5
-            bar value Preference("sound volume") xalign 0.5 maximum(442,42):
-                right_bar ImageReference("vino_bar_nofull")
-                left_bar ImageReference("vino_bar_full")
-                thumb ImageReference("vino_thumb")
+            text "Звуки" style "vino_text_%s" % time size 45 xalign 0.5
+            bar value Preference("sound volume")  maximum(374,69) xalign 0.5:
+                left_bar "mods/MenuTime/gui/quick_menu/bar_full_%s.png" % time
+                right_bar "mods/MenuTime/gui/quick_menu/bar_null.png"
+                thumb "mods/MenuTime/gui/quick_menu/bar_thumb_%s.png" % time
             null height 40
-            text "Эмбиент" style "vino_text" size 45 xalign 0.5
-            bar value Preference("voice volume") xalign 0.5 maximum(442,42):
-                right_bar ImageReference("vino_bar_nofull")
-                left_bar ImageReference("vino_bar_full")
-                thumb ImageReference("vino_thumb")
+            text "Эмбиент" style "vino_text_%s" % time size 45 xalign 0.5
+            bar value Preference("voice volume")  maximum(374,69) xalign 0.5:
+                left_bar "mods/MenuTime/gui/quick_menu/bar_full_%s.png" % time
+                right_bar "mods/MenuTime/gui/quick_menu/bar_null.png"
+                thumb "mods/MenuTime/gui/quick_menu/bar_thumb_%s.png" % time
             null height 40
-            textbutton "Без звука" text_size 35 style "vino_button_none" text_style "vino_text" xalign 0.5:
+            textbutton "Без звука" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time xalign 0.5:
                 action Preference("all mute", "toggle") 
 
 
 screen vino_save:
     key "game_menu":
         action NullAction()
+
+    $ time = vino_get_time()
     key "K_ESCAPE" action (Hide('vino_save', Dissolve(1.0)), Return())
     tag menu
     modal True
     window at vino_on_show_authors_menu:
-        add 'vino_menu_bg' at vino_menu_anim
-        textbutton '>' xalign 0.95 yalign 0.5 style "vino_button_none" text_style "vino_text" text_size 80 at vino_button_anim:
+        add 'mods/MenuTime/gui/menu/menu_bg_%s.png' % time 
+        textbutton '>' xalign 0.95 yalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time text_size 80 at vino_button_anim:
             hover_sound vino_hover
             action ShowMenu('vino_load', Dissolve(1.0))
-        textbutton '<' xalign 0.05 yalign 0.5 style "vino_button_none" text_style "vino_text" text_size 80 at vino_button_anim:
+        textbutton '<' xalign 0.05 yalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time text_size 80 at vino_button_anim:
             hover_sound vino_hover
             action ShowMenu('vino_preferences', Dissolve(1.0))
-        textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
+        textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
             action (Hide('vino_save', Dissolve(1.0)), Return())
         textbutton ["Сохранить игру"]:
-            text_style "vino_text_big_save_load"
+            text_style "vino_text_%s" % time
             style "vino_button_none"
             ypos 850
             xalign 0.2
             action ( Vino_FunctionCallback(vino_on_save_callback, selected_slot), FileSave(selected_slot))
         textbutton ["Удалить"]:
-            text_style "vino_text_big_save_load"
+            text_style "vino_text_%s" % time
             style "vino_button_none"
             xalign 0.8
             ypos 850
@@ -504,7 +537,7 @@ screen vino_save:
                     textbutton str(i):
                         xpos 36
                         style "vino_button_none"
-                        text_style "vino_text_big_save_load"
+                        text_style "vino_text_%s" % time
                         text_size 60 
                         action (FilePage("vino_FilePage_"+ str(i)), SetVariable("selected_slot", False))
         grid 4 3:
@@ -518,47 +551,48 @@ screen vino_save:
             for i in range(1, 13):
                 fixed:
                     add FileScreenshot(i):
-                        xpos 10
-                        ypos 10
+                        xpos 23
+                        ypos 23
                     button:
                         action SetVariable("selected_slot", i)
                         xfill False
                         yfill False
-                        style "vino_save_load_button"
+                        style "vino_save_load_button_%s" % time
                         fixed:
                             text ( "%s." % i
                                    + FileTime(i, format=' %d.%m.%y, %H:%M', empty=" "+translation["Empty_slot"][_preferences.language])
                                    + "\n" +FileSaveName(i)):
-                                style "vino_save_load_button"
+                                style "vino_save_load_button_%s" % time
                                 xpos 15
                                 ypos 15
 screen vino_load:
     key "game_menu":
         action NullAction()
+    $ time = vino_get_time()
     key "K_ESCAPE" action (Hide('vino_load', Dissolve(1.0)), Return())
     tag menu
     modal True
     $ layout.LOADING = "Потерять несохраненые данные?"
     window at vino_on_show_authors_menu:
-        add 'vino_menu_bg' at vino_menu_anim
+        add 'mods/MenuTime/gui/menu/menu_bg_%s.png' % time 
         if not main_menu:
-            textbutton '>' xalign 0.95 yalign 0.5 style "vino_button_none" text_style "vino_text" text_size 80 at vino_button_anim:
+            textbutton '>' xalign 0.95 yalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time text_size 80 at vino_button_anim:
                 hover_sound vino_hover
                 action ShowMenu('vino_preferences', Dissolve(1.0))
-            textbutton '<' xalign 0.05 yalign 0.5 style "vino_button_none" text_style "vino_text" text_size 80 at vino_button_anim:
+            textbutton '<' xalign 0.05 yalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time text_size 80 at vino_button_anim:
                 hover_sound vino_hover
                 action ShowMenu('vino_save', Dissolve(1.0))
-        textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
+        textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
             action (Hide('vino_load', Dissolve(1.0)), Return())
         textbutton ["Загрузить игру"]:
-            text_style "vino_text_big_save_load"
+            text_style "vino_text_%s" % time
             style "vino_button_none"
             ypos 850
             xalign 0.2
             action (Vino_FunctionCallback(vino_on_load_callback, selected_slot), FileLoad(selected_slot))
 
         textbutton ["Удалить"]:
-            text_style "vino_text_big_save_load"
+            text_style "vino_text_%s" % time
             style "vino_button_none"
             xalign 0.8
             ypos 850
@@ -571,7 +605,7 @@ screen vino_load:
                     textbutton str(i):
                         xpos 36
                         style "vino_button_none"
-                        text_style "vino_text_big_save_load"
+                        text_style "vino_text_%s" % time
                         text_size 60
                         action (FilePage("vino_FilePage_"+ str(i)), SetVariable("selected_slot", False))
         grid 4 3:
@@ -585,18 +619,18 @@ screen vino_load:
             for i in range(1, 13):
                 fixed:
                     add FileScreenshot(i):
-                        xpos 10
-                        ypos 10
+                        xpos 23
+                        ypos 23
                     button:
                         action SetVariable("selected_slot", i)
                         xfill False
                         yfill False
-                        style "vino_save_load_button"
+                        style "vino_save_load_button_%s" % time
                         fixed:
                             text ( "%s." % i
                                    + FileTime(i, format=' %d.%m.%y, %H:%M', empty=" "+translation["Empty_slot"][_preferences.language])
                                    + "\n" +FileSaveName(i)):
-                                style "vino_save_load_button"
+                                style "vino_save_load_button_%s" % time
                                 xpos 15
                                 ypos 15
 
@@ -607,8 +641,9 @@ screen vino_pre_menu:
 screen vino_exit:
     tag menu
     modal True 
-    add 'vino_menu_bg' at vino_menu_anim
-    text "{font=mods/MenuTime/vino_font.ttf}Ты хочешь уйти?{/font}":
+    $ time = vino_get_time()
+    add 'mods/MenuTime/gui/menu/menu_bg_%s.png' % time 
+    text "{font=mods/MenuTime/helvetica.otf}Ты хочешь уйти?{/font}":
         size 100
         text_align 0.5
         xalign 0.7
@@ -617,34 +652,36 @@ screen vino_exit:
         kerning 2
     textbutton 'Да':
         style 'vino_button_none'
-        text_style 'vino_text'
+        text_style "vino_text_%s" % time
         xalign 0.55
         yalign 0.55
+        text_size 60
         hover_sound vino_hover
         action [(Function(vino_screens_diact)), ShowMenu("main_menu")]
     textbutton 'Нет':
         style 'vino_button_none'
-        text_style 'vino_text'
+        text_style "vino_text_%s" % time
         xalign 0.73
         yalign 0.55
+        text_size 60
         hover_sound vino_hover
         action [ Hide("vino_exit", Dissolve(1.0)), Return()]
 screen vino_set_bg:
     tag menu
     modal True
     window at vino_on_show_authors_menu:
-        add 'vino_menu_bg' at vino_menu_anim
-        textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
+        add 'mods/MenuTime/gui/menu/menu_bg_%s.png' % time 
+        textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
             hover_sound vino_hover
             action (Hide('vino_set_bg', Dissolve(1.0)), Return())
         key "K_ESCAPE" action (Hide('vino_set_bg', Dissolve(1.0)), Return())
         if vino_g_page_menu < 3:
-            textbutton '>' xalign 0.9 yalign 0.35 style "vino_button_none" text_style "vino_text" at vino_button_anim:
+            textbutton '>' xalign 0.9 yalign 0.35 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
                hover_sound vino_hover
 
                action SetVariable('vino_g_page_menu', vino_g_page_menu+1)
         if vino_g_page_menu != 1:
-            textbutton '<' xalign 0.1 yalign 0.35 style "vino_button_none" text_style "vino_text" at vino_button_anim:
+            textbutton '<' xalign 0.1 yalign 0.35 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
                hover_sound vino_hover
                action SetVariable('vino_g_page_menu', vino_g_page_menu-1)
         else:
@@ -750,34 +787,35 @@ screen vino_set_bg:
 screen vino_authors:
     tag menu 
     modal True
-    add 'vino_menu_bg' at vino_menu_anim
-    textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
+    $ time = vino_get_time()
+    add 'mods/MenuTime/gui/menu/menu_bg_%s.png' % time 
+    textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
         hover_sound vino_hover
         action (Hide('vino_authors', Dissolve(1.0)), Return())
     key "K_ESCAPE" action (Hide('vino_authors', Dissolve(1.0)), Return())
     vbox xalign 0.5 yalign 0.5 spacing 25 at vino_on_show_authors_menu: 
-        textbutton "Кодер" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text":
+        textbutton "Кодер" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text_%s" % time:
             hover_sound vino_hover
             action OpenURL("https://vk.com/awalone_13")
-        textbutton "Кодер(интерфейс,функции)" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text":
+        textbutton "Кодер(интерфейс,функции)" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text_%s" % time:
             hover_sound vino_hover
             action OpenURL("https://vk.com/banderak")
-        textbutton "Кодер" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text":
+        textbutton "Кодер" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text_%s" % time:
             hover_sound vino_hover
             action OpenURL("https://vk.com/olyunin96")
-        textbutton "Сценарист" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text":
+        textbutton "Сценарист" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text_%s" % time:
             hover_sound vino_hover
             action OpenURL("https://vk.com/dvoeglazovt")
-        textbutton "Дизайнер" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text":
+        textbutton "Дизайнер" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text_%s" % time:
             hover_sound vino_hover
             action OpenURL("https://vk.com/id424308705")
-        textbutton "Кодер" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text":
+        textbutton "Кодер" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text_%s" % time:
             hover_sound vino_hover
             action OpenURL("https://vk.com/kefir331")
-        textbutton "Сценарист" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text":
+        textbutton "Сценарист" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text_%s" % time:
             hover_sound vino_hover
             action OpenURL("https://vk.com/soviet_guy413")
-        textbutton "Кодер" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text":
+        textbutton "Кодер" text_size 40 align(0.5,0.05) style "vino_button_none" text_style "vino_text_%s" % time:
             hover_sound vino_hover
             action OpenURL("https://vk.com/k.pioneer")
 
@@ -786,13 +824,14 @@ screen vino_dlc_story:
     modal True
     key 'game_menu':
         action NullAction()
+    $ time = vino_get_time()
     key "K_ESCAPE" action (Hide('vino_dlc_story', Dissolve(1.0)), Return())
-    add 'vino_menu_bg' at vino_menu_anim
-    textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
+    add 'mods/MenuTime/gui/menu/menu_bg_%s.png' % time 
+    textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
         hover_sound vino_hover
         action (Hide('vino_dlc_story', Dissolve(1.0)), Return())
     hbox align(0.1,0.5) spacing 25 at vino_on_show_authors_menu:
-        textbutton 'Один день до дискотеки' xalign 0.5 style "vino_button_none" text_style "vino_text"  text_size 30 at vino_button_anim:
+        textbutton 'Один день до дискотеки' xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time  text_size 30 at vino_button_anim:
             hover_sound vino_hover
             hovered [ShowTransient('vino_dlc_story_descript', Dissolve(1.0), page=1)]
             unhovered Hide('vino_dlc_story_descript', Dissolve(1.0)) 
@@ -802,13 +841,14 @@ screen vino_dlc_story:
 screen vino_dlc_story_descript(page):
     modal False 
     tag vino_dlc_story_descript
+    $ time = vino_get_time()
     frame:
         background None 
         if page == 1:
             hbox align(0.5,0.5):
                 area(700,300,500,500)
                 text 'История, произошедшая за год до появления Даниила Элонова в "Совёнке": во времена той самой легендарной смены, в которую ненароком попал Семён.События разворачиваются за день до грядущих танцев. Что же там произошло?...':
-                    style "vino_text"
+                    style "vino_text_%s" % time
                     size 30 
                     xalign 0.5
                     yalign 0.5
@@ -1024,11 +1064,12 @@ screen vino_game_menu_selector:
 
 screen vino_yesno_prompt:
     tag menu modal True  
+    $ time = vino_get_time()
     $ timeofday = persistent.timeofday
     add 'mods/MenuTime/gui/yes_no/yesno_promt_%s.png' % timeofday
     text _(message) text_align 0.5 yalign 0.46 xalign 0.5 color "#FFFFFF" font 'mods/MenuTime/vino_font.ttf' size 25
-    textbutton translation_new["Yes"] text_size 60 style "vino_button_none" text_style "vino_text" hover_sound vino_hover yalign 0.65 xalign 0.3 action yes_action at vino_button_anim
-    textbutton translation_new["No"] text_size 60 style "vino_button_none" text_style "vino_text" hover_sound vino_hover yalign 0.65 xalign 0.7 action Return() at vino_button_anim
+    textbutton translation_new["Yes"] text_size 60 style "vino_button_none" text_style "vino_text_%s" % time hover_sound vino_hover yalign 0.65 xalign 0.3 action yes_action at vino_button_anim
+    textbutton translation_new["No"] text_size 60 style "vino_button_none" text_style "vino_text_%s" % time hover_sound vino_hover yalign 0.65 xalign 0.7 action Return() at vino_button_anim
 screen vino_paper_nvl:
     window:
         background None 
@@ -1079,21 +1120,22 @@ screen vino_paper_nvl:
 screen vino_gallery:
     tag menu
     modal True 
+    $ time = vino_get_time()
     key "game_menu":
         action NullAction()
     key "K_ESCAPE" action (Hide('vino_gallery', Dissolve(1.0)), Return())
-    add 'vino_menu_bg' at vino_menu_anim
-    textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text" at vino_button_anim:
+    add 'mods/MenuTime/gui/menu/menu_bg_%s.png' % time 
+    textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
         hover_sound vino_hover
         action (Hide('vino_dlc_story', Dissolve(1.0)), Return(), SetVariable('vino_gallery_bg_page', 1))
     if vino_gallery_bg_page < 2:
-        textbutton '>' xalign 0.95 yalign 0.5 style "vino_button_none" text_style "vino_text" text_size 80 at vino_button_anim:
+        textbutton '>' xalign 0.95 yalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time text_size 80 at vino_button_anim:
             hover_sound vino_hover
             action SetVariable('vino_gallery_bg_page', vino_gallery_bg_page+1)
     else:
         pass
     if vino_gallery_bg_page !=1:
-        textbutton '<' xalign 0.1 yalign 0.5 style "vino_button_none" text_style "vino_text" text_size 80 at vino_button_anim:
+        textbutton '<' xalign 0.1 yalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time text_size 80 at vino_button_anim:
             hover_sound vino_hover
             action SetVariable('vino_gallery_bg_page', vino_gallery_bg_page-1)
     else:
@@ -1119,17 +1161,18 @@ screen vino_gallery:
 screen vino_days_developer:
     tag menu 
     modal True 
+    $ time = vino_get_time()
     key "K_ESCAPE" action (Hide('vino_days_developer', Dissolve(1.0)), Return())
-    add 'vino_menu_bg' at vino_menu_anim
-    textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text" hover_sound vino_hover action (Hide('vino_days_developer', Dissolve(1.0)), Return()) at vino_button_anim
+    add 'mods/MenuTime/gui/menu/menu_bg_%s.png' % time 
+    textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time hover_sound vino_hover action (Hide('vino_days_developer', Dissolve(1.0)), Return()) at vino_button_anim
 
     hbox align(0.5, 0.5) spacing 20:
-        textbutton 'Пролог' style "vino_button_none" text_style "vino_text" hover_sound vino_hover action Start('crimson_team')
-        textbutton 'День 1' style "vino_button_none" text_style "vino_text" hover_sound vino_hover action Start('vino_day1')
-        textbutton 'День 2' style "vino_button_none" text_style "vino_text" hover_sound vino_hover action Start('vino_day2')
-        textbutton 'День 3' style "vino_button_none" text_style "vino_text" hover_sound vino_hover action Start('vino_day3')
-        textbutton 'День 4' style "vino_button_none" text_style "vino_text" hover_sound vino_hover action Start('vino_day4')
-        textbutton 'День 5' style "vino_button_none" text_style "vino_text" hover_sound vino_hover action Start('vino_day5')
+        textbutton 'Пролог' style "vino_button_none" text_style "vino_text_%s" % time hover_sound vino_hover action Start('crimson_team')
+        textbutton 'День 1' style "vino_button_none" text_style "vino_text_%s" % time hover_sound vino_hover action Start('vino_day1')
+        textbutton 'День 2' style "vino_button_none" text_style "vino_text_%s" % time hover_sound vino_hover action Start('vino_day2')
+        textbutton 'День 3' style "vino_button_none" text_style "vino_text_%s" % time hover_sound vino_hover action Start('vino_day3')
+        textbutton 'День 4' style "vino_button_none" text_style "vino_text_%s" % time hover_sound vino_hover action Start('vino_day4')
+        textbutton 'День 5' style "vino_button_none" text_style "vino_text_%s" % time hover_sound vino_hover action Start('vino_day5')
 
     # hbox align(0.5,0.6) spacing 20:
-    #     textbutton 'Титры' style "vino_button_none" text_style "vino_text" hover_sound vino_hover action Start('titry')
+    #     textbutton 'Титры' style "vino_button_none" text_style "vino_text_%s" % time hover_sound vino_hover action Start('titry')

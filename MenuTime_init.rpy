@@ -18,6 +18,25 @@ init python:
 
 
 
+    style.vino_text_day = Style(style.default)
+    style.vino_text_day.font = "mods/MenuTime/helvetica.otf"
+    style.vino_text_day.size = 33
+    style.vino_text_day.color = "#FFFFFF"
+    style.vino_text_day.hover_color = "#2B21A0"
+    style.vino_text_day.selected_color = "#2B21A0"
+
+
+    style.vino_text_night = Style(style.default)
+    style.vino_text_night.font = "mods/MenuTime/helvetica.otf"
+    style.vino_text_night.size = 33
+    style.vino_text_night.color = "#FFFFFF"
+    style.vino_text_night.hover_color = "#4C7BD6"
+    style.vino_text_night.selected_color = "#4C7BD6"
+
+    
+
+
+
     style.vino_text_set_bg = Style(style.default)
     style.vino_text_set_bg.font = "mods/MenuTime/vino_font.ttf"
     style.vino_text_set_bg.size = 40
@@ -42,6 +61,22 @@ init python:
     style.vino_save_load_button.selected_hover_background  = 'mods/MenuTime/gui/save_load/Save_Load_Button_selected.png'
     style.vino_save_load_button.selected_idle_background   = 'mods/MenuTime/gui/save_load/Save_Load_Button_selected.png'
 
+
+    style.vino_save_load_button_day                            = Style(style.button)
+    style.vino_save_load_button_day.background                 = 'mods/MenuTime/gui/save_load/Save_Load_Button_day_idle.png'
+    style.vino_save_load_button_day.hover_background           = 'mods/MenuTime/gui/save_load/Save_Load_Button_day_hover.png'
+    style.vino_save_load_button_day.selected_background        = 'mods/MenuTime/gui/save_load/Save_Load_Button_day_selected.png'
+    style.vino_save_load_button_day.selected_hover_background  = 'mods/MenuTime/gui/save_load/Save_Load_Button_day_selected.png'
+    style.vino_save_load_button_day.selected_idle_background   = 'mods/MenuTime/gui/save_load/Save_Load_Button_day_selected.png'
+
+
+    style.vino_save_load_button_night                            = Style(style.button)
+    style.vino_save_load_button_night.background                 = 'mods/MenuTime/gui/save_load/Save_Load_Button_night_idle.png'
+    style.vino_save_load_button_night.hover_background           = 'mods/MenuTime/gui/save_load/Save_Load_Button_night_hover.png'
+    style.vino_save_load_button_night.selected_background        = 'mods/MenuTime/gui/save_load/Save_Load_Button_night_selected.png'
+    style.vino_save_load_button_night.selected_hover_background  = 'mods/MenuTime/gui/save_load/Save_Load_Button_night_selected.png'
+    style.vino_save_load_button_night.selected_idle_background   = 'mods/MenuTime/gui/save_load/Save_Load_Button_night_selected.png'
+
     style.vino_backdrop_style = Style(style.default)
     style.vino_backdrop_style.font = 'mods/MenuTime/vino_backdrop_font.ttf'
     style.vino_backdrop_style.color = '#FFFF'
@@ -53,8 +88,8 @@ init python:
     style.vino_game_menu_selector_day.font = "mods/MenuTime/helvetica.otf"
     style.vino_game_menu_selector_day.size = 46
     style.vino_game_menu_selector_day.color = '#FFFCFC'
-    style.vino_game_menu_selector_day.hover_color = '#34A669'
-    style.vino_game_menu_selector_day.selected_color = '#34A669'
+    style.vino_game_menu_selector_day.hover_color = '#1FE979'
+    style.vino_game_menu_selector_day.selected_color = '#1FE979'
     ########################################
     style.vino_game_menu_selector_night = Style(style.default)
     style.vino_game_menu_selector_night.font = "mods/MenuTime/helvetica.otf"
@@ -76,8 +111,8 @@ init python:
     style.vino_game_menu_selector_sunset.font = "mods/MenuTime/helvetica.otf"
     style.vino_game_menu_selector_sunset.size = 46
     style.vino_game_menu_selector_sunset.color = '#FFFCFC'
-    style.vino_game_menu_selector_sunset.hover_color = '#CE7A52'
-    style.vino_game_menu_selector_sunset.selected_color = '#CE7A52'
+    style.vino_game_menu_selector_sunset.hover_color = '#BD452F'
+    style.vino_game_menu_selector_sunset.selected_color = '#BD452F'
     ##########################################
     style.vino_play_music_text = Style(style.default)
     style.vino_play_music_text.font = "mods/MenuTime/helvetica.otf"
