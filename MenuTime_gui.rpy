@@ -400,9 +400,9 @@ screen vino_mainmenu():
         # textbutton "Авторы" xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim hover_sound vino_hover action ShowMenu("vino_authors")
         if persistent.vino_Developer:
             textbutton 'Дни' xalign 0.5 style 'vino_button_none' text_style "vino_text_%s" % time hover_sound vino_hover action ShowMenu('vino_days_developer') at vino_button_anim 
-            null height 120
+            null height 100
         else:
-            null height 160
+            null height 140
         textbutton "Выход" xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
             hover_sound vino_hover
             action ShowMenu("vino_exit")
