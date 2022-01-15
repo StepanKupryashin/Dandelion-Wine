@@ -348,6 +348,8 @@ screen vino_music:
                         xalign 0.5
                         style 'vino_button_none'
                         text_style 'vino_text_%s' % time
+                        text_size 33
+                        text_font 'mods/MenuTime/helvetica_old.otf'
                         hover_sound vino_hover
                         action vino_mr.Play(path)
 
