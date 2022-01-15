@@ -1,7 +1,7 @@
 init -3 python:
     vino_menu_music = {
         'day' : ['mods/MenuTime/music/Andrew_York_Faire.mp3', "mods/MenuTime/music/GuitarGheddu_Darkside.mp3"],
-        'night' : ['mods/MenuTime/music/April Rain_Waiting_for_Sunrise.mp3', 'mods/MenuTime/music/April_Rain_Chiral_Allergy.mp3']
+        'night' : ['mods/MenuTime/music/April_Rain_Waiting_for_Sunrise.mp3', 'mods/MenuTime/music/April_Rain_Chiral_Allergy.mp3']
     }
     if persistent.vino_Devoloper == None:
         persistent.vino_Devoloper == False
