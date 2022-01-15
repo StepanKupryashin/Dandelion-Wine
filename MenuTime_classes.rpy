@@ -124,9 +124,19 @@ init python:
 
     renpy.image('vino_menu_bg', DynamicDisplayable(vino_main_menu_bg))
 
-    def vino_get_time():
+    def vino_time(st, at):
+        t = strftime('%H:%M')
+        h = int(strftime('%H'))
+        if h in range(0,7) or (h in range(20, 24)):
+            return Text(str(t), style=style.vino_text_night), 0.1
+        else:
+            return Text(str(t), style=style.vino_text_day), 0.1
+
+    renpy.image('vino_time', DynamicDisplayable(vino_time))
+
+    def vino_get_time(full=False):
         t = int(strftime('%H'))
-        if t in range(1,7) or (t in range(20,24)): #Если время пользователя от 1 до 7 или в промежутке от 20 до 23....
+        if t in range(0,7) or (t in range(20,24)): #Если время пользователя от 1 до 7 или в промежутке от 20 до 23....
             return 'night'
         else:
             return "day"

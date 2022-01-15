@@ -359,11 +359,19 @@ screen vino_mainmenu():
         action NullAction() 
     # on "show" action Play("music", renpy.random.choice(vino_menu_music[time]))
     add 'mods/MenuTime/gui/menu/menu_bg_%s.png' % time 
+
     add 'mods/MenuTime/gui/menu/header_%s.png' % time xpos 0:
         at transform:
             on show:
                 ypos -500
                 easein 1 ypos 0
+    add 'vino_time':
+        xpos 13
+        ypos 80
+        at transform:
+            on show:
+                ypos -500
+                easein 1 ypos 80
     add 'mods/MenuTime/gui/menu/nav_bg_%s.png' % time xpos 50 ypos 190:
         at transform:
             on show:
@@ -377,11 +385,11 @@ screen vino_mainmenu():
                 xpos 50
                 easeout 0.4 xpos 60
                 easeout 1 xpos -500 
-    textbutton "Crimson Team"  style "vino_button_none" text_style "vino_text_%s" % time xpos 1673 ypos 100 hover_sound vino_hover action ShowMenu("vino_authors"): #OpenURL("https://vk.com/crimsoteam")
+    imagebutton auto 'mods/MenuTime/gui/menu/vino_title_%s.png' xpos 735 ypos 28 hover_sound vino_hover action OpenURL("https://vk.com/crimsoteam"):
         at transform:
             on show:
                 ypos -500
-                easein 1 ypos 100
+                easein 1 ypos 28
     vbox xpos 50 xsize 530 ypos 265 spacing 30:
         textbutton "Продолжить" xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim hover_sound vino_hover text_insensitive_color "#9E9E9E" action Vino_Continue(), Vino_FunctionCallback(vino_on_load_callback, renpy.newest_slot("vino_FilePage_"))
         textbutton "Начать" xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim hover_sound vino_hover action Start("crimson_team")
@@ -389,6 +397,7 @@ screen vino_mainmenu():
         textbutton "Лагерные истории" xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim hover_sound vino_hover action ShowMenu("vino_dlc_story")
         # textbutton "Галерея" xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim hover_sound vino_hover action ShowMenu('vino_gallery')        
         textbutton "Настройки" xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim hover_sound vino_hover action ShowMenu("vino_preferences")
+        # textbutton "Авторы" xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim hover_sound vino_hover action ShowMenu("vino_authors")
         if persistent.vino_Developer:
             textbutton 'Дни' xalign 0.5 style 'vino_button_none' text_style "vino_text_%s" % time hover_sound vino_hover action ShowMenu('vino_days_developer') at vino_button_anim 
             null height 120
