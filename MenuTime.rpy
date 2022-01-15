@@ -1045,7 +1045,7 @@ label vino_day1:
     nstl "Да!"
     hide nstl with dissolve
     "И снова улыбнулась Настя, перед тем как уйти."
-    play music ki fadein 2
+    # play music ki fadein 2
     "Делать нечего. "
     play sound sfx_open_dooor_campus_1
     scene hata_gg_evening
@@ -1232,6 +1232,7 @@ label vino_day1:
 label vino_day2:
     $ vino_backdrop('2', 'mods/MenuTime/bg/hata_g_night.jpg')
     $ day_time()
+    $ save_name = ("Вино из Одуванчиков: День второй")
     $ persistent.sprite_time = 'day'
     stop music fadeout 2 
     play ambience ambience_int_cabin_day fadein 2
@@ -3192,6 +3193,7 @@ label vino_day2:
     
 label vino_day3:
     $ vino_backdrop('3', 'mods/MenuTime/cg/svecha.jpg')
+    $ save_name = ("Вино из Одуванчиков: День третий")
     $ renpy.pause (2)
     scene white with fade3
     stop music fadeout 2 
@@ -4299,6 +4301,7 @@ label vino_day3:
     label vino_day4:
     $ vino_backdrop('4', "bg ext_playground_day", False)
     $ renpy.pause (2)
+    $ save_name = ("Вино из Одуванчиков: День четвёртый")
     $ day_time ()
     stop music
     stop ambience
@@ -5903,6 +5906,7 @@ label vino_day3:
     
         # Вношу 5 день.
 label vino_day5:
+    $ save_name = ("Вино из Одуванчиков: День пятый")
     stop music
     window hide
     pause(2)
@@ -8492,7 +8496,7 @@ label vino_day5:
 
 label vino_day6:
     #визуал и музыка. Работаем. p.s Миша
-
+    $ save_name = ("Вино из Одуванчиков: День шестой")
     show hata_g_day with fade2
 
     play ambience ambience_int_cabin_day fadein 2.0
