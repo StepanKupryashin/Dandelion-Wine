@@ -20,7 +20,7 @@ init python:
 
     style.vino_text_day = Style(style.default)
     style.vino_text_day.font = "mods/MenuTime/helvetica.otf"
-    style.vino_text_day.size = 33
+    style.vino_text_day.size = 55
     style.vino_text_day.color = "#FFFFFF"
     style.vino_text_day.hover_color = "#2B21A0"
     style.vino_text_day.selected_color = "#2B21A0"
@@ -28,7 +28,7 @@ init python:
 
     style.vino_text_night = Style(style.default)
     style.vino_text_night.font = "mods/MenuTime/helvetica.otf"
-    style.vino_text_night.size = 33
+    style.vino_text_night.size = 55
     style.vino_text_night.color = "#FFFFFF"
     style.vino_text_night.hover_color = "#4C7BD6"
     style.vino_text_night.selected_color = "#4C7BD6"

@@ -7,7 +7,15 @@ init python:
         def get_sensitive(self):
             return renpy.newest_slot("vino_FilePage_")
 
-            
+
+    class ZeroArgs(Exception):
+        def __init__(self, data):
+            self.data = data
+
+        def __str__(self):
+            return repr(self.data) 
+
+
     class Vino_ShowMenu(Action,DictEquality):
         def __init__(self,name):
             self.name = name
@@ -27,6 +35,35 @@ init python:
             self.arguments = arguments
         def __call__(self):
             return self.function(self.arguments)
+
+    class Vino(object):
+        def __init__(self):
+            pass
+
+        def change_time(self, target='day'):
+            if target == 'day':
+                day_time()
+                persistent.sprite_time = 'day'
+            elif target == 'sunset':
+                sunset_time()
+                persisstent.sprite_time = 'sunnset'
+            elif target == 'night':
+                night_time()
+                persistent.sprite_time = 'night'
+
+        def set_location(self, location=None, ambience=None, music=None, transition=None, fadein=2, fadeout=2):
+            if not location:
+                raise ZeroArgs('Введите аргумент location для метода')
+            else:
+                renpy.scene()
+                renpy.show(location)
+                if transition:
+                    renpy.transition(transition)
+            if ambience:
+                renpy.music.play(ambience, 'ambience', fadein=fadein, fadeout=fadeout)
+            if music:
+                    renpy.music.play(music, 'music', fadein=fadein, fadeout=fadeout)
+
 
     def vino_nvl_paper(paper='off'):
         """
@@ -93,3 +130,6 @@ init python:
             return 'night'
         else:
             return "day"
+    vino = Vino()
+
+

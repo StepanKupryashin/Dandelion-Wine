@@ -1,7 +1,7 @@
 init -3 python:
     vino_menu_music = {
-        'day' : ['mods/MenuTime/music/Andrew York - Faire.mp3', "mods/MenuTime/music/GuitarGheddu - Darkside.mp3"],
-        'night' : ['mods/MenuTime/music/April Rain - Waiting for Sunrise.mp3', 'mods/MenuTime/music/April Rain - Chiral Allergy.mp3']
+        'day' : ['mods/MenuTime/music/Andrew_York_Faire.mp3', "mods/MenuTime/music/GuitarGheddu_Darkside.mp3"],
+        'night' : ['mods/MenuTime/music/April Rain_Waiting_for_Sunrise.mp3', 'mods/MenuTime/music/April_Rain_Chiral_Allergy.mp3']
     }
     if persistent.vino_Devoloper == None:
         persistent.vino_Devoloper == False
@@ -262,67 +262,67 @@ init -2 python:
         vino_mr.add(name, always_unlocked=True)
     vino_hover = 'mods/MenuTime/sounds/vino_hover.mp3'
 #####################################################
-    vino_g = Gallery()
-    vino_g_page_menu = 1
-    vino_g.transition = fade
-    vino_g.locked_button  = 'mods/MenuTime/gui/gallery/locked_gallery_img.png'
-    #изображения для выбора фона меню:
-    vino_g.button('bgmenu')
-    vino_g.image('bg_menu_girl')
+    # vino_g = Gallery()
+    # vino_g_page_menu = 1
+    # vino_g.transition = fade
+    # vino_g.locked_button  = 'mods/MenuTime/gui/gallery/locked_gallery_img.png'
+    # #изображения для выбора фона меню:
+    # vino_g.button('bgmenu')
+    # vino_g.image('bg_menu_girl')
 
-    vino_g.button('bgmenu1')
-    vino_g.image('bg_menu_lena')
+    # vino_g.button('bgmenu1')
+    # vino_g.image('bg_menu_lena')
 
-    vino_g.button('bgmenu2')
-    vino_g.image('bg_menu_ulyana')
+    # vino_g.button('bgmenu2')
+    # vino_g.image('bg_menu_ulyana')
 
-    vino_g.button('bgmenu3')
-    vino_g.image('backroad_night')
+    # vino_g.button('bgmenu3')
+    # vino_g.image('backroad_night')
 
-    vino_g.button('bgmenu4')
-    vino_g.image('miku_bg')
+    # vino_g.button('bgmenu4')
+    # vino_g.image('miku_bg')
 
-    vino_g.button('bgmenu5')
-    vino_g.image('paint_bg')
+    # vino_g.button('bgmenu5')
+    # vino_g.image('paint_bg')
 
-    vino_g.button('bgmenu6')
-    vino_g.image('vino_bg')
+    # vino_g.button('bgmenu6')
+    # vino_g.image('vino_bg')
 
-    vino_g.button('bgmenu7')
-    vino_g.image('girls_ofsummer_bg')
-    vino_gallery_bg = Gallery()
-    vino_gallery_bg.transition = fade
-    vino_gallery_bg_page = 1
-    vino_gallery_bg.locked_button = 'mods/MenuTime/gui/gallery/locked_gallery_img.png'
-    vino_gallery_bg.unlocked_advance = True
-    vino_gallery_bg.navigation = True
-    vino_gallery_bg.span_buttons = True
-    ########bg####################################
-    vino_gallery_bg.button('vino_gallery_bg_1')
-    vino_gallery_bg.unlock_image('airplane_1080')
+    # vino_g.button('bgmenu7')
+    # vino_g.image('girls_ofsummer_bg')
+    # vino_gallery_bg = Gallery()
+    # vino_gallery_bg.transition = fade
+    # vino_gallery_bg_page = 1
+    # vino_gallery_bg.locked_button = 'mods/MenuTime/gui/gallery/locked_gallery_img.png'
+    # vino_gallery_bg.unlocked_advance = True
+    # vino_gallery_bg.navigation = True
+    # vino_gallery_bg.span_buttons = True
+    # ########bg####################################
+    # vino_gallery_bg.button('vino_gallery_bg_1')
+    # vino_gallery_bg.unlock_image('airplane_1080')
 
-    vino_gallery_bg.button('vino_gallery_bg_2')
-    vino_gallery_bg.unlock_image('dnll_1')
+    # vino_gallery_bg.button('vino_gallery_bg_2')
+    # vino_gallery_bg.unlock_image('dnll_1')
 
-    vino_gallery_bg.button('vino_gallery_bg_3')
-    vino_gallery_bg.unlock_image('ext_forest_rising')
+    # vino_gallery_bg.button('vino_gallery_bg_3')
+    # vino_gallery_bg.unlock_image('ext_forest_rising')
 
-    vino_gallery_bg.button('vino_gallery_bg_4')
-    vino_gallery_bg.unlock_image('hospital')
+    # vino_gallery_bg.button('vino_gallery_bg_4')
+    # vino_gallery_bg.unlock_image('hospital')
 
-    vino_gallery_bg.button('vino_gallery_bg_5')
-    vino_gallery_bg.unlock_image('klass_1')
+    # vino_gallery_bg.button('vino_gallery_bg_5')
+    # vino_gallery_bg.unlock_image('klass_1')
 
-    vino_gallery_bg.button('vino_gallery_bg_6')
-    vino_gallery_bg.unlock_image('pole')
-
-
-    vino_gallery_bg.button('vino_gallery_bg_7')
-    vino_gallery_bg.unlock_image('xyd_1')
+    # vino_gallery_bg.button('vino_gallery_bg_6')
+    # vino_gallery_bg.unlock_image('pole')
 
 
-    vino_gallery_bg.button('vino_gallery_bg_8')
-    vino_gallery_bg.unlock_image('obs_ext_dining_bench_sunset')
+    # vino_gallery_bg.button('vino_gallery_bg_7')
+    # vino_gallery_bg.unlock_image('xyd_1')
+
+
+    # vino_gallery_bg.button('vino_gallery_bg_8')
+    # vino_gallery_bg.unlock_image('obs_ext_dining_bench_sunset')
 ################################################################
 
 screen vino_music:
@@ -387,11 +387,13 @@ screen vino_mainmenu():
         textbutton "Начать" xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim hover_sound vino_hover action Start("crimson_team")
         textbutton "Загрузить" xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim hover_sound vino_hover action ShowMenu("load")
         textbutton "Лагерные истории" xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim hover_sound vino_hover action ShowMenu("vino_dlc_story")
-        textbutton "Галерея" xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim hover_sound vino_hover action ShowMenu('vino_gallery')        
+        # textbutton "Галерея" xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim hover_sound vino_hover action ShowMenu('vino_gallery')        
         textbutton "Настройки" xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim hover_sound vino_hover action ShowMenu("vino_preferences")
         if persistent.vino_Developer:
             textbutton 'Дни' xalign 0.5 style 'vino_button_none' text_style "vino_text_%s" % time hover_sound vino_hover action ShowMenu('vino_days_developer') at vino_button_anim 
-        null height 160
+            null height 120
+        else:
+            null height 160
         textbutton "Выход" xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
             hover_sound vino_hover
             action ShowMenu("vino_exit")
@@ -666,122 +668,7 @@ screen vino_exit:
         text_size 60
         hover_sound vino_hover
         action [ Hide("vino_exit", Dissolve(1.0)), Return()]
-screen vino_set_bg:
-    tag menu
-    modal True
-    window at vino_on_show_authors_menu:
-        add 'mods/MenuTime/gui/menu/menu_bg_%s.png' % time 
-        textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
-            hover_sound vino_hover
-            action (Hide('vino_set_bg', Dissolve(1.0)), Return())
-        key "K_ESCAPE" action (Hide('vino_set_bg', Dissolve(1.0)), Return())
-        if vino_g_page_menu < 3:
-            textbutton '>' xalign 0.9 yalign 0.35 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
-               hover_sound vino_hover
 
-               action SetVariable('vino_g_page_menu', vino_g_page_menu+1)
-        if vino_g_page_menu != 1:
-            textbutton '<' xalign 0.1 yalign 0.35 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
-               hover_sound vino_hover
-               action SetVariable('vino_g_page_menu', vino_g_page_menu-1)
-        else:
-            pass
-        if vino_g_page_menu == 1:
-            grid 2 4:
-                xfill True 
-                yfill True
-                add vino_g.make_button('bgmenu', im.Scale("mods/MenuTime/gui/menu/bg_menu_girl.jpg", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')
-                add vino_g.make_button('bgmenu1', im.Scale("mods/MenuTime/gui/menu/bg_menu_lena.jpg", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')
-                if persistent.vino_bg == 'mods/MenuTime/gui/menu/bg_menu_girl.jpg':
-                    text '{font=mods/MenuTime/vino_font.ttf}Выбрано{/font}':
-                        color '#EB0707'
-                        size 40
-                        xalign 0.5
-                else:
-                    textbutton 'Выбрать' xalign 0.5 style "vino_button_none" text_style "vino_text_set_bg" at vino_button_anim:
-                       hover_sound vino_hover
-                       
-                       action SetVariable('persistent.vino_bg', 'mods/MenuTime/gui/menu/bg_menu_girl.jpg')
-                if persistent.vino_bg == 'mods/MenuTime/gui/menu/bg_menu_lena.jpg':
-                    text '{font=mods/MenuTime/vino_font.ttf}Выбрано{/font}':
-                        color '#EB0707'
-                        size 40
-                        xalign 0.5
-                else:
-                    textbutton 'Выбрать' xalign 0.5 style "vino_button_none" text_style "vino_text_set_bg" at vino_button_anim:
-                       hover_sound vino_hover
-                       
-                       action SetVariable('persistent.vino_bg', 'mods/MenuTime/gui/menu/bg_menu_lena.jpg')
-                add vino_g.make_button('bgmenu2', im.Scale("mods/MenuTime/gui/menu/bg_menu_ulyana.jpg", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')
-                add vino_g.make_button('bgmenu3', im.Scale("mods/MenuTime/gui/menu/backroad_night.jpg", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')  
-                if persistent.vino_bg == 'mods/MenuTime/gui/menu/bg_menu_ulyana.jpg':
-                    text '{font=mods/MenuTime/vino_font.ttf}Выбрано{/font}':
-                        color '#EB0707'
-                        size 40
-                        xalign 0.5
-                else:
-                    textbutton 'Выбрать' xalign 0.5 style "vino_button_none" text_style "vino_text_set_bg" at vino_button_anim:
-                       hover_sound vino_hover
-                       
-                       action SetVariable('persistent.vino_bg', 'mods/MenuTime/gui/menu/bg_menu_ulyana.jpg')
-                if persistent.vino_bg == 'mods/MenuTime/gui/menu/backroad_night.jpg':
-                    text '{font=mods/MenuTime/vino_font.ttf}Выбрано{/font}':
-                        color '#EB0707'
-                        size 40
-                        xalign 0.5
-                else:
-                    textbutton 'Выбрать' xalign 0.5 style "vino_button_none" text_style "vino_text_set_bg" at vino_button_anim:
-                       hover_sound vino_hover
-                       
-                       action SetVariable('persistent.vino_bg', 'mods/MenuTime/gui/menu/backroad_night.jpg')
-        elif vino_g_page_menu == 2:
-            grid 2 4:
-                xfill True 
-                yfill True
-                add vino_g.make_button('bgmenu4', im.Scale("mods/MenuTime/gui/menu/miku_bg.jpg", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')
-                add vino_g.make_button('bgmenu5', im.Scale("mods/MenuTime/gui/menu/paint_bg.jpg", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')
-                if persistent.vino_bg == 'mods/MenuTime/gui/menu/miku_bg.jpg':
-                    text '{font=mods/MenuTime/vino_font.ttf}Выбрано{/font}':
-                        color '#EB0707'
-                        size 40
-                        xalign 0.5
-                else:
-                    textbutton 'Выбрать' xalign 0.5 style "vino_button_none" text_style "vino_text_set_bg" at vino_button_anim:
-                       hover_sound vino_hover
-                       
-                       action SetVariable('persistent.vino_bg', 'mods/MenuTime/gui/menu/miku_bg.jpg')
-                if persistent.vino_bg == 'mods/MenuTime/gui/menu/paint_bg.jpg':
-                    text '{font=mods/MenuTime/vino_font.ttf}Выбрано{/font}':
-                        color '#EB0707'
-                        size 40
-                        xalign 0.5
-                else:
-                    textbutton 'Выбрать' xalign 0.5 style "vino_button_none" text_style "vino_text_set_bg" at vino_button_anim:
-                       hover_sound vino_hover
-                       
-                       action SetVariable('persistent.vino_bg', 'mods/MenuTime/gui/menu/paint_bg.jpg')
-                add vino_g.make_button('bgmenu6', im.Scale("mods/MenuTime/gui/menu/vino_bg.jpg", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')
-                add vino_g.make_button('bgmenu7', im.Scale("mods/MenuTime/gui/menu/girls_ofsummer_bg.jpg", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')  
-                if persistent.vino_bg == 'mods/MenuTime/gui/menu/vino_bg.jpg':
-                    text '{font=mods/MenuTime/vino_font.ttf}Выбрано{/font}':
-                        color '#EB0707'
-                        size 40
-                        xalign 0.5
-                else:
-                    textbutton 'Выбрать' xalign 0.5 style "vino_button_none" text_style "vino_text_set_bg" at vino_button_anim:
-                       hover_sound vino_hover
-                       
-                       action SetVariable('persistent.vino_bg', 'mods/MenuTime/gui/menu/vino_bg.jpg')
-                if persistent.vino_bg == 'mods/MenuTime/gui/menu/girls_ofsummer_bg.jpg':
-                    text '{font=mods/MenuTime/vino_font.ttf}Выбрано{/font}':
-                        color '#EB0707'
-                        size 40
-                        xalign 0.5
-                else:
-                    textbutton 'Выбрать' xalign 0.5 style "vino_button_none" text_style "vino_text_set_bg" at vino_button_anim:
-                       hover_sound vino_hover
-
-                       action SetVariable('persistent.vino_bg', 'mods/MenuTime/gui/menu/girls_ofsummer_bg.jpg')
 
 
 screen vino_authors:
@@ -1008,16 +895,16 @@ screen vino_game_menu_selector:
     text 'сейчас играет:':
         font 'mods/MenuTime/helvetica.otf'
         size 46
-        xpos 243
+        xpos 280
         ypos 20
     vbox xpos 145 xsize 530 ypos 80:
         add 'vino_playing_music' xalign 0.5
-    vbox spacing 35 xpos 215 ypos 200:
+    vbox spacing 35 xpos 280 ypos 200:
         textbutton 'В главное меню' xalign 0.5 style "vino_button_none" text_style "vino_game_menu_selector_%s" % timeofday hover_sound vino_hover  action MainMenu(confirm=True) at vino_button_anim
         textbutton 'Сохранить' xalign 0.5 style "vino_button_none" text_style "vino_game_menu_selector_%s" % timeofday hover_sound vino_hover action ShowMenu('vino_save') at vino_button_anim
         textbutton 'Загрузить' xalign 0.5 style "vino_button_none" text_style "vino_game_menu_selector_%s" % timeofday hover_sound vino_hover action ShowMenu('vino_load') at vino_button_anim
         textbutton 'Настройки' xalign 0.5 style "vino_button_none" text_style "vino_game_menu_selector_%s" % timeofday hover_sound vino_hover action ShowMenu('vino_preferences') at vino_button_anim
-    vbox xpos 330 ypos 980:    
+    vbox xpos 370 ypos 980:    
         textbutton 'Выход' xalign 0.5 style "vino_button_none" text_style "vino_game_menu_selector_%s" % timeofday hover_sound vino_hover action ShowMenu('vino_exit') at vino_button_anim
     #правая часть экрана
     vbox xpos 983 ypos 30 xsize 815:
@@ -1050,7 +937,7 @@ screen vino_game_menu_selector:
                 thumb "mods/MenuTime/gui/quick_menu/bar_thumb_%s.png" % timeofday
     vbox ypos 795 xpos 1040 xsize 760 spacing 45:
         text "Размер текста" style 'vino_game_menu_selector_%s' % timeofday xalign 0.5
-        hbox spacing 150:
+        hbox spacing 320:
             textbutton "Нормальный"  style 'vino_button_none' text_style 'vino_game_menu_selector_%s' % timeofday:
                 action SetField(persistent,"font_size","small"), SelectedIf(persistent.font_size == "small")
             textbutton "Большой" style 'vino_button_none' text_style 'vino_game_menu_selector_%s' % timeofday:
@@ -1117,45 +1004,45 @@ screen vino_paper_nvl:
                                 color "#18204D"
                                 font 'mods/MenuTime/paper_text.otf'
 
-screen vino_gallery:
-    tag menu
-    modal True 
-    $ time = vino_get_time()
-    key "game_menu":
-        action NullAction()
-    key "K_ESCAPE" action (Hide('vino_gallery', Dissolve(1.0)), Return())
-    add 'mods/MenuTime/gui/menu/menu_bg_%s.png' % time 
-    textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
-        hover_sound vino_hover
-        action (Hide('vino_dlc_story', Dissolve(1.0)), Return(), SetVariable('vino_gallery_bg_page', 1))
-    if vino_gallery_bg_page < 2:
-        textbutton '>' xalign 0.95 yalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time text_size 80 at vino_button_anim:
-            hover_sound vino_hover
-            action SetVariable('vino_gallery_bg_page', vino_gallery_bg_page+1)
-    else:
-        pass
-    if vino_gallery_bg_page !=1:
-        textbutton '<' xalign 0.1 yalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time text_size 80 at vino_button_anim:
-            hover_sound vino_hover
-            action SetVariable('vino_gallery_bg_page', vino_gallery_bg_page-1)
-    else:
-        pass
-    if vino_gallery_bg_page == 1:
-        grid 2 2:
-            xfill True
-            yfill True
-            add vino_gallery_bg.make_button('vino_gallery_bg_1', im.Scale("mods/MenuTime/bg/airplane_1080.jpg", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')
-            add vino_gallery_bg.make_button('vino_gallery_bg_2', im.Scale("mods/MenuTime/bg/dnll_1.jpg", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')
-            add vino_gallery_bg.make_button('vino_gallery_bg_3', im.Scale("mods/MenuTime/bg/ext_forest_rising.jpg", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')
-            add vino_gallery_bg.make_button('vino_gallery_bg_4', im.Scale("mods/MenuTime/bg/hospital.jpg", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')
-    elif vino_gallery_bg_page == 2:
-        grid 2 2:
-            xfill True
-            yfill True
-            add vino_gallery_bg.make_button('vino_gallery_bg_5', im.Scale("mods/MenuTime/bg/klass_1.jpg", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')
-            add vino_gallery_bg.make_button('vino_gallery_bg_6', im.Scale("mods/MenuTime/bg/pole.jpg", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')
-            add vino_gallery_bg.make_button('vino_gallery_bg_7', im.Scale("mods/MenuTime/bg/xyd_1.jpg", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')
-            add vino_gallery_bg.make_button('vino_gallery_bg_8', im.Scale("mods/MenuTime/bg/obs_ext_dining_bench_sunset.png", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')
+# screen vino_gallery:
+#     tag menu
+#     modal True 
+#     $ time = vino_get_time()
+#     key "game_menu":
+#         action NullAction()
+#     key "K_ESCAPE" action (Hide('vino_gallery', Dissolve(1.0)), Return())
+#     add 'mods/MenuTime/gui/menu/menu_bg_%s.png' % time 
+#     textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
+#         hover_sound vino_hover
+#         action (Hide('vino_dlc_story', Dissolve(1.0)), Return(), SetVariable('vino_gallery_bg_page', 1))
+#     if vino_gallery_bg_page < 2:
+#         textbutton '>' xalign 0.95 yalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time text_size 80 at vino_button_anim:
+#             hover_sound vino_hover
+#             action SetVariable('vino_gallery_bg_page', vino_gallery_bg_page+1)
+#     else:
+#         pass
+#     if vino_gallery_bg_page !=1:
+#         textbutton '<' xalign 0.1 yalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time text_size 80 at vino_button_anim:
+#             hover_sound vino_hover
+#             action SetVariable('vino_gallery_bg_page', vino_gallery_bg_page-1)
+#     else:
+#         pass
+#     if vino_gallery_bg_page == 1:
+#         grid 2 2:
+#             xfill True
+#             yfill True
+#             add vino_gallery_bg.make_button('vino_gallery_bg_1', im.Scale("mods/MenuTime/bg/airplane_1080.jpg", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')
+#             add vino_gallery_bg.make_button('vino_gallery_bg_2', im.Scale("mods/MenuTime/bg/dnll_1.jpg", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')
+#             add vino_gallery_bg.make_button('vino_gallery_bg_3', im.Scale("mods/MenuTime/bg/ext_forest_rising.jpg", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')
+#             add vino_gallery_bg.make_button('vino_gallery_bg_4', im.Scale("mods/MenuTime/bg/hospital.jpg", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')
+#     elif vino_gallery_bg_page == 2:
+#         grid 2 2:
+#             xfill True
+#             yfill True
+#             add vino_gallery_bg.make_button('vino_gallery_bg_5', im.Scale("mods/MenuTime/bg/klass_1.jpg", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')
+#             add vino_gallery_bg.make_button('vino_gallery_bg_6', im.Scale("mods/MenuTime/bg/pole.jpg", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')
+#             add vino_gallery_bg.make_button('vino_gallery_bg_7', im.Scale("mods/MenuTime/bg/xyd_1.jpg", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')
+#             add vino_gallery_bg.make_button('vino_gallery_bg_8', im.Scale("mods/MenuTime/bg/obs_ext_dining_bench_sunset.png", 587,375), xalign=0.5, yalign=0.5, hover_border='mods/MenuTime/gui/gallery/hover_gallery_img.png')
 
 
 screen vino_days_developer:
@@ -1173,6 +1060,7 @@ screen vino_days_developer:
         textbutton 'День 3' style "vino_button_none" text_style "vino_text_%s" % time hover_sound vino_hover action Start('vino_day3')
         textbutton 'День 4' style "vino_button_none" text_style "vino_text_%s" % time hover_sound vino_hover action Start('vino_day4')
         textbutton 'День 5' style "vino_button_none" text_style "vino_text_%s" % time hover_sound vino_hover action Start('vino_day5')
+        textbutton 'День 6' style "vino_button_none" text_style "vino_text_%s" % time hover_sound vino_hover action Start('vino_day6')
 
     # hbox align(0.5,0.6) spacing 20:
     #     textbutton 'Титры' style "vino_button_none" text_style "vino_text_%s" % time hover_sound vino_hover action Start('titry')
