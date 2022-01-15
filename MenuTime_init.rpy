@@ -183,7 +183,7 @@ init:
     define loxqr = Character('Миша', kind=nvl, color="#DB7093")
     define nastyar = Character('Настя', kind=nvl, color="#00FFFF")
     $ povr = Character(u'Повар', color="ffff00")
-    define joan  = Character('Джон', kind=nvl, color="#8B4513")
+    define joan  = Character('Джоан', kind=nvl, color="#8B4513")
     define genry  = Character('Генри', kind=nvl, color="#A52A2A")
     $ mt_voice = Character('Голос', color="00FF7F")
     
