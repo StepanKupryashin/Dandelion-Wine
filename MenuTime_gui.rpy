@@ -437,79 +437,80 @@ screen vino_preferences:
     tag menu
     modal True
     $ time = vino_get_time()
-    window at vino_on_show_authors_menu:
-        add 'mods/MenuTime/gui/menu/menu_bg_%s.png' % time 
-        textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
-            hover_sound vino_hover
-            action (Hide('vino_preferences', Dissolve(1.0)), Return())
+    add 'mods/MenuTime/gui/menu/menu_bg_%s.png' % time
+    add 'mods/MenuTime/gui/settings/nav_bg_settings.png' xpos 244 ypos 132
+    add 'mods/MenuTime/gui/settings/nav_bg_settings.png' xpos 1161 ypos 132 
+    textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
+        hover_sound vino_hover
+        action (Hide('vino_preferences', Dissolve(1.0)), Return())
         # button xalign 0.6 hover_sound vino_hover xsize 10 ysize 5 action SetVariable('vino_Devoloper', not vino_Devoloper)
-        if not main_menu:
-            textbutton '>' xalign 0.95 yalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time text_size 80 at vino_button_anim:
-                hover_sound vino_hover
-                action ShowMenu('vino_save', Dissolve(1.0))
-            textbutton '<' xalign 0.05 yalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time text_size 80 at vino_button_anim:
-                hover_sound vino_hover
-                action ShowMenu('vino_load', Dissolve(1.0))
-        key "K_ESCAPE" action (Hide('vino_preferences', Dissolve(1.0)), Return())
-        vbox align(0.2,0.5):
-            text "Режим экрана" style "vino_text_%s" % time size 45 xalign 0.5 outlines [ (absolute(2), '#0e246e', absolute(1), absolute(1))]
-            hbox spacing 10 xalign 0.5:
-                textbutton "Оконный" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
-                    action Preference("display","window")
-                textbutton "Полноэкранный" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
-                    action Preference("display","fullscreen")
-            null height 40
-            text "Пропускать" style "vino_text_%s" % time size 45 xalign 0.5 outlines [ (absolute(2), '#0e246e', absolute(1), absolute(1))]
-            hbox spacing 10 xalign 0.5:
-                textbutton "Всё" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
-                    action Preference("skip","all")
-                textbutton "Что увидел" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
-                    action Preference("skip","seen")
-            null height 40
-            text "Размер шрифта" style "vino_text_%s" % time size 45 xalign 0.5 outlines [ (absolute(2), '#0e246e', absolute(1), absolute(1))]
-            hbox spacing 10 xalign 0.5:
-                textbutton "Обычный" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
-                    action SetField(persistent,"font_size","small")
-                textbutton "Большой" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
-                    action SetField(persistent,"font_size","large")
-            null height 80
-            text "Скорость текста" style "vino_text_%s" % time size 45 xalign 0.5 outlines [ (absolute(2), '#0e246e', absolute(1), absolute(1))]
-            bar value Preference("text speed") maximum(374,69) xalign 0.5:
-                left_bar "mods/MenuTime/gui/quick_menu/bar_full_%s.png" % time
-                right_bar "mods/MenuTime/gui/quick_menu/bar_null.png"
-                thumb "mods/MenuTime/gui/quick_menu/bar_thumb_%s.png" % time
-        vbox align(0.8,0.5):
-            text "Автопереход" style "vino_text_%s" % time size 45 xalign 0.5 outlines [ (absolute(2), '#0e246e', absolute(1), absolute(1))]
-            hbox spacing 10 xalign 0.5:
-                textbutton "Включить" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
-                    action [If(preferences.afm_time == 0,true=Preference("auto-forward time", 20)),Preference("auto-forward after click","enable"),SelectedIf(preferences.afm_time != 0 or preferences.afm_after_click == "enable")]
-                textbutton "Выключить" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
-                    action [Preference("auto-forward time", 0),Preference("auto-forward after click","disable"),SelectedIf(preferences.afm_time == 0 or preferences.afm_after_click == "disable")]
-            bar value Preference("auto-forward time") xalign 0.5 maximum(374,69):
-                left_bar "mods/MenuTime/gui/quick_menu/bar_full_%s.png" % time
-                right_bar "mods/MenuTime/gui/quick_menu/bar_null.png"
-                thumb "mods/MenuTime/gui/quick_menu/bar_thumb_%s.png" % time
-            null height 40
-            text "Музыка" style "vino_text_%s" % time size 45 xalign 0.5 outlines [ (absolute(2), '#0e246e', absolute(1), absolute(1))]
-            bar value Preference("music volume") maximum(374,69) xalign 0.5:
-                left_bar "mods/MenuTime/gui/quick_menu/bar_full_%s.png" % time
-                right_bar "mods/MenuTime/gui/quick_menu/bar_null.png"
-                thumb "mods/MenuTime/gui/quick_menu/bar_thumb_%s.png" % time
-            null height 40
-            text "Звуки" style "vino_text_%s" % time size 45 xalign 0.5 outlines [ (absolute(2), '#0e246e', absolute(1), absolute(1))]
-            bar value Preference("sound volume")  maximum(374,69) xalign 0.5:
-                left_bar "mods/MenuTime/gui/quick_menu/bar_full_%s.png" % time
-                right_bar "mods/MenuTime/gui/quick_menu/bar_null.png"
-                thumb "mods/MenuTime/gui/quick_menu/bar_thumb_%s.png" % time
-            null height 40
-            text "Эмбиент" style "vino_text_%s" % time size 45 xalign 0.5 outlines [ (absolute(2), '#0e246e', absolute(1), absolute(1))]
-            bar value Preference("voice volume")  maximum(374,69) xalign 0.5:
-                left_bar "mods/MenuTime/gui/quick_menu/bar_full_%s.png" % time
-                right_bar "mods/MenuTime/gui/quick_menu/bar_null.png"
-                thumb "mods/MenuTime/gui/quick_menu/bar_thumb_%s.png" % time
-            null height 40
-            textbutton "Без звука" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time xalign 0.5:
-                action Preference("all mute", "toggle") 
+    if not main_menu:
+        textbutton '>' xalign 0.95 yalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time text_size 80 at vino_button_anim:
+            hover_sound vino_hover
+            action ShowMenu('vino_save', Dissolve(1.0))
+        textbutton '<' xalign 0.05 yalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time text_size 80 at vino_button_anim:
+            hover_sound vino_hover
+            action ShowMenu('vino_load', Dissolve(1.0))
+    key "K_ESCAPE" action (Hide('vino_preferences', Dissolve(1.0)), Return())
+    vbox align(0.2,0.5):
+        text "Режим экрана" style "vino_text_%s" % time size 45 xalign 0.5 outlines [ (absolute(2), '#0e246e', absolute(1), absolute(1))]
+        hbox spacing 10 xalign 0.5:
+            textbutton "Оконный" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
+                action Preference("display","window")
+            textbutton "Полноэкранный" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
+                action Preference("display","fullscreen")
+        null height 40
+        text "Пропускать" style "vino_text_%s" % time size 45 xalign 0.5 outlines [ (absolute(2), '#0e246e', absolute(1), absolute(1))]
+        hbox spacing 10 xalign 0.5:
+            textbutton "Всё" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
+                action Preference("skip","all")
+            textbutton "Что увидел" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
+                action Preference("skip","seen")
+        null height 40
+        text "Размер шрифта" style "vino_text_%s" % time size 45 xalign 0.5 outlines [ (absolute(2), '#0e246e', absolute(1), absolute(1))]
+        hbox spacing 10 xalign 0.5:
+            textbutton "Обычный" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
+                action SetField(persistent,"font_size","small")
+            textbutton "Большой" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
+                action SetField(persistent,"font_size","large")
+        null height 80
+        text "Скорость текста" style "vino_text_%s" % time size 45 xalign 0.5 outlines [ (absolute(2), '#0e246e', absolute(1), absolute(1))]
+        bar value Preference("text speed") maximum(374,69) xalign 0.5:
+            left_bar "mods/MenuTime/gui/quick_menu/bar_full_%s.png" % time
+            right_bar "mods/MenuTime/gui/quick_menu/bar_null.png"
+            thumb "mods/MenuTime/gui/quick_menu/bar_thumb_%s.png" % time
+    vbox align(0.8,0.5):
+        text "Автопереход" style "vino_text_%s" % time size 45 xalign 0.5 outlines [ (absolute(2), '#0e246e', absolute(1), absolute(1))]
+        hbox spacing 10 xalign 0.5:
+            textbutton "Включить" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
+                action [If(preferences.afm_time == 0,true=Preference("auto-forward time", 20)),Preference("auto-forward after click","enable"),SelectedIf(preferences.afm_time != 0 or preferences.afm_after_click == "enable")]
+            textbutton "Выключить" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time:
+                action [Preference("auto-forward time", 0),Preference("auto-forward after click","disable"),SelectedIf(preferences.afm_time == 0 or preferences.afm_after_click == "disable")]
+        bar value Preference("auto-forward time") xalign 0.5 maximum(374,69):
+            left_bar "mods/MenuTime/gui/quick_menu/bar_full_%s.png" % time
+            right_bar "mods/MenuTime/gui/quick_menu/bar_null.png"
+            thumb "mods/MenuTime/gui/quick_menu/bar_thumb_%s.png" % time
+        null height 40
+        text "Музыка" style "vino_text_%s" % time size 45 xalign 0.5 outlines [ (absolute(2), '#0e246e', absolute(1), absolute(1))]
+        bar value Preference("music volume") maximum(374,69) xalign 0.5:
+            left_bar "mods/MenuTime/gui/quick_menu/bar_full_%s.png" % time
+            right_bar "mods/MenuTime/gui/quick_menu/bar_null.png"
+            thumb "mods/MenuTime/gui/quick_menu/bar_thumb_%s.png" % time
+        null height 40
+        text "Звуки" style "vino_text_%s" % time size 45 xalign 0.5 outlines [ (absolute(2), '#0e246e', absolute(1), absolute(1))]
+        bar value Preference("sound volume")  maximum(374,69) xalign 0.5:
+            left_bar "mods/MenuTime/gui/quick_menu/bar_full_%s.png" % time
+            right_bar "mods/MenuTime/gui/quick_menu/bar_null.png"
+            thumb "mods/MenuTime/gui/quick_menu/bar_thumb_%s.png" % time
+        null height 40
+        text "Эмбиент" style "vino_text_%s" % time size 45 xalign 0.5 outlines [ (absolute(2), '#0e246e', absolute(1), absolute(1))]
+        bar value Preference("voice volume")  maximum(374,69) xalign 0.5:
+            left_bar "mods/MenuTime/gui/quick_menu/bar_full_%s.png" % time
+            right_bar "mods/MenuTime/gui/quick_menu/bar_null.png"
+            thumb "mods/MenuTime/gui/quick_menu/bar_thumb_%s.png" % time
+        null height 40
+        textbutton "Без звука" text_size 35 style "vino_button_none" text_style "vino_text_%s" % time xalign 0.5:
+            action Preference("all mute", "toggle") 
 
 
 screen vino_save:
@@ -728,12 +729,13 @@ screen vino_dlc_story:
     textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
         hover_sound vino_hover
         action (Hide('vino_dlc_story', Dissolve(1.0)), Return())
-    hbox align(0.1,0.5) spacing 25 at vino_on_show_authors_menu:
-        textbutton 'Один день до дискотеки' xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time  text_size 30 at vino_button_anim:
-            hover_sound vino_hover
-            hovered [ShowTransient('vino_dlc_story_descript', Dissolve(1.0), page=1)]
-            unhovered Hide('vino_dlc_story_descript', Dissolve(1.0)) 
-            action Start('labelgo'), Stop('music'), Hide('menu', Dissolve(1.0))
+    frame background 'mods/MenuTime/gui/settings/nav_bg_settings.png' xpos 50 ypos 80:
+        hbox xpos 100 ypos 50 spacing 25 at vino_on_show_authors_menu:
+            textbutton 'Один день до дискотеки' xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time  text_size 30 at vino_button_anim:
+                hover_sound vino_hover
+                hovered [ShowTransient('vino_dlc_story_descript', Dissolve(1.0), page=1)]
+                unhovered Hide('vino_dlc_story_descript', Dissolve(1.0)) 
+                action Start('labelgo'), Stop('music'), Hide('menu', Dissolve(1.0))
 
 
 screen vino_dlc_story_descript(page):
@@ -741,15 +743,15 @@ screen vino_dlc_story_descript(page):
     tag vino_dlc_story_descript
     $ time = vino_get_time()
     frame:
-        background None 
+        background im.Scale('mods/MenuTime/gui/settings/nav_bg_settings.png', 520, 500)
+        xpos 700 
+        ypos 300 
         if page == 1:
-            hbox align(0.5,0.5):
-                area(700,300,500,500)
+            hbox xpos 30 ypos 80:
+                area(0,0,430,550)
                 text 'История, произошедшая за год до появления Даниила Элонова в "Совёнке": во времена той самой легендарной смены, в которую ненароком попал Семён.События разворачиваются за день до грядущих танцев. Что же там произошло?...':
                     style "vino_text_%s" % time
                     size 30 
-                    xalign 0.5
-                    yalign 0.5
 
         else:
             pass 
