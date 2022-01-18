@@ -8502,11 +8502,18 @@ label vino_day5:
 
 label vino_day6:
     #визуал и музыка. Работаем. p.s Миша
+
+    stop music fadeout 2.0
+
+
     $ vino_backdrop('6', 'dva_houses2', False)
     $ save_name = ("Вино из Одуванчиков: День шестой")
     show hata_g_day with fade2
     $ vino.change_time('day')
     
+
+    play music morning_day6 fadein 2.0
+
     play ambience ambience_int_cabin_day fadein 2.0
     
     th "Очередной день в лагере.{w} Я лениво потягиваюсь в кровати и после окидываю взглядом весь домик. "
@@ -8549,9 +8556,14 @@ label vino_day6:
 
     play sound sfx_open_door_1
 
+
     show nstl pio smile normal with dissolve
 
     "Я уже было потянулся к конверту, как тут, позади меня, распахивается дверь, и в комнату влетает Настя."
+
+    stop music fadeout 2.0
+    
+    play music music_list['heather'] fadein 2
 
     dnll "Ты умеешь эффектно появится. "
 
@@ -8636,8 +8648,16 @@ label vino_day6:
     extend " Как только я поднял взгляд – я увидел самодовольное личико Насти"
 
     "Если рассудить с ее стороны, то сейчас на моем лице присутствует гримаса вселенского зла.{w} Она это быстро распознала, а потому с еще большей скоростью скрылась в этом небольшом пролеске.{w} Дура!"
+    
+    stop music fadeout 2.0
+
     hide nstl with dissolve
     scene dva_houses3 with fade2
+
+    play ambience ambience_camp_center_day fadein 2.0
+
+    play music music_list["two_glasses_of_melancholy"] fadein 2.0
+
     "Я опираюсь о стену двадцать первого – гнаться за ней бессмысленно.{w} Мне она оставила из всего возможного только мысли о пропаже."
     
     window hide dissolve
@@ -8661,6 +8681,10 @@ label vino_day6:
     scene ext_path_day with fade2
 
     "Пробравшись сквозь заросли, я вышел обратно на дорогу. {w} На улице было как-то пусто. {w} Ни единой души на улице.  "
+
+    stop music fadeout 2.0
+
+    play music music_list["doomed_to_be_defeated"] fadein 2.0
 
     dnll "Неужели… "
 
@@ -8695,6 +8719,8 @@ label vino_day6:
     hide sl with dissolve
 
     "Я процедил сквозь зубы какую-то благодарность, и, ускорившись, дальше продолжил свой путь."
+
+    stop music fadeout 2.0
 
     window hide dissolve
 
