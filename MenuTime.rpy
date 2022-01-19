@@ -3121,6 +3121,7 @@ label vino_day2:
     
     
     
+   
     window hide
     $ renpy.pause(2)
     #Ля ебать третий день пошёл в ход. Макс у руля.
