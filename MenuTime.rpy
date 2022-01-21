@@ -1790,6 +1790,10 @@ label vino_day2:
     "Нахмурилась Рыжая, грозно взглянув на нас."
     th "Ну-ну."
     "Я скрестил руки на груди."
+
+    hide dv 
+    hide un 
+    with dissolve
     show un normal swim at left with dissolve
     show dv normal swim at right with dissolve
     un "Я с собой бутерброды взяла, могу поделиться."
@@ -1802,6 +1806,7 @@ label vino_day2:
     th "Вкусные, блин!"
     "Алиса пыталась, было, рассказать какую-то историю, но у нее это плохо выходило, ибо рот был набит этим лакомством.{w} Лена недобро смотрела в такие моменты, как бы высмеивала невоспитанность Рыжеволосой.{w} Я же ел молча, стараясь не перебивать шум вон тех ребят, что вовсю бегают и прыгают."
     "Тут Алиса приметила мой альбом.{w} Её он явно заинтересовал.{w} И вот она, кошка, медленно подносит свои лапы к бесценному сокровищу…."
+    hide un with dissolve
     show un angry swim with dissolve
     stop music fadeout 4
     un "Брысь!"
@@ -1812,9 +1817,11 @@ label vino_day2:
     un "Алис, прости, но ты как ребёнок ведёшь себя."
     dv "То же мне, выискалась тут взрослая."
     "Бестия отводит взгляд в сторону."
+    hide dv with dissolve
     show dv normal swim at right with dissolve
     dv "Давай тогда, сама смотри.{w} И мне не забудь показать!"
     "Лена ещё недолго презрительно смотрит на Алису, но вскоре глядит на меня."
+    hide un with dissolve
     show un shy swim with dissolve
     un "Можно посмотреть?"
     dnll "Да, конечно, смотри…"
@@ -1822,12 +1829,15 @@ label vino_day2:
     "Однако, мои размышления не остановили Лену, что уже вовсю листала мой альбом, периодически демонстрируя мои рисунки рыжику.{w} Все же, никаких комментариях о рисунках мною услышано не было."
     dnll "И как вам?"
     "Первая на меня взгляд подняла Алиса, что держала в руках почти доеденный бутерброд."
+    hide dv with dissolve 
     show dv smile swim at right with dissolve
     dv "Красиво, сам рисовал?"
     "В её взгляде, что удивительно, не читалось ничего ехидного.{w} Ей и вправду интересно."
     dnll "Д-да, всё сам."
+    hide un with dissolve
     show un normal swim with dissolve
     un "Оно и видно."
+    hide un with dissolve
     show un smile swim with dissolve
     "Лена улыбнулась мне."
     un "С душой рисовал."
@@ -1835,12 +1845,18 @@ label vino_day2:
     "Спросила Алиса, рукой показывая своей подруге перелистать.{w} Когда мне был показан этот рисунок – я резко перестал что либо чувствовать."
     play music afterlife
     th "Это она…"
+    hide un
+    hide dv 
+    with dissolve
     show un scared swim
     show dv scared swim at right
     with dissolve
     "Слёзы невольно подкрадывались, но я стёр их неловким движением рук.{w} Девочки, было, это заметили, но ничего не сказали."
     th "Так, надо сохранять самообладание."
     "Девочки, после этой заминки с моей стороны, вопросов боле не задавали.{w} Видно, всё поняли."
+    hide dv
+    hide un 
+    with dissolve
     show dv normal swim at right
     show un smile swim
     with dissolve
@@ -3147,7 +3163,7 @@ label vino_day2:
     "Воск с неё даже и не хочет падать, наоборот, достаточно растаяв, он отделяется от свечи, приобретая форму капельки и зависает возле неё. "
     "Затем ещё,{w} и ещё,{w} и ещё.."
     "Пока я смотрел на огонь, я не давал себе отчёта о том, сколько на самом деле прошло времени, хотя... "
-    "Имеет ли это какое - либо значение? Ибо здесь всё странно, понятие слова "время" искажается, приобретая самые извращённые мотивы... "
+    "Имеет ли это какое - либо значение? Ибо здесь всё странно, понятие слова \"время\" искажается, приобретая самые извращённые мотивы... "
     window hide
     scene anim prolog_1 with fade3
     window show
@@ -8727,7 +8743,7 @@ label vino_day6:
 
     scene black with fade2
     
-    wait(3)
+    pause 2.0
 
     th "Нет, а если подумать – что мне мешает быть с Шатенкой?{w} Мой собственный страх, который возник после неудачного опыта с Катей?{w} Быть может, я просто не готов к новому человеку. "
 
@@ -8988,7 +9004,7 @@ label vino_day6:
     show hata_gg_day with fade2
     "Добравшись до своего домика, где, предположительно, я должен был увидеть своего товарища, я услышал чей-то разговор.{w} Судя по голову, сейчас в домике была Настя, ибо изнутри издавался ее тонкий голосок."
     
-    play music_list["orchid"] fadein 1
+    play music music_list["orchid"] fadein 1.0
 
     nstl "И НА КОЙ ЧЕРТ? " with vpunch
 
@@ -9038,13 +9054,15 @@ label vino_day6:
     "Простояв столбом, ничего не понимая, еще пару мгновений, я решился войти в дом к своей пассии."
     play sound sfx_knock_door2
     "Пару раз постучавшись в дверь, я вошел."
+    stop ambience fadeout 2.0
     scene hata_g_day
-    play ambiance ambience_int_cabin_day
+    
+    play ambience ambience_int_cabin_day
     nstl "Я тебе что сказала? Уходи с глаз моих долой!" with vpunch
 
     "Переходя на крик, сказала она, глядя в окно."
     
-    play music April_Rain_Waiting_For_Sunrise fadein 3
+    play music April_Rain_Waiting_for_Sunrise fadein 2.0
 
     dnll "Н-Насть… "
 
@@ -9094,7 +9112,7 @@ label vino_day6:
     show nstl pio shy normal with dissolve
     extend " Ее губки несколько сжались, но она все равно прильнула ко мне обратно. "
 
-    stop music with fadeout 2
+    stop music fadeout 2
 
     window hide dissolve 
 
@@ -10139,7 +10157,7 @@ label vino_day6:
 
     hide un with dissolve 
 
-    show un normal pioneer close with dissovle
+    show un normal pioneer close with dissolve
 
     un "Я уже пробовала себя в письме и раньше, но не одно произведение не было закончено.{w} Мне не хватает энтузиазма и мыслей, которые я бы вливала в свой рассказ. "
 
@@ -10398,7 +10416,7 @@ label vino_day6:
 
     hide nstl with dissolve 
 
-    show nstl pio happy normal with dissovle
+    show nstl pio happy normal with dissolve
 
     nstl "П-хах, ну да, в тебе это несложно подметить."
 
@@ -10426,9 +10444,9 @@ label vino_day6:
 
     dnll "Дура."
 
-    hide nstl with dissovle 
+    hide nstl with dissolve 
 
-    show nstl pio smile normal with dissovle 
+    show nstl pio smile normal with dissolve
 
     "Настя еле заметно улыбнулась. "
 
@@ -10480,7 +10498,7 @@ label vino_day6:
 
     th " Черт, я не хочу это вспоминать, зачем.{w} Все же так хорошо складывалось, к чему все эти сопли.{w} Зачем все эти нюни, воспоминания, больницы.{w} Не хочу!"
     
-    hide nstl with dissovle 
+    hide nstl with dissolve
 
     show nstl pio norm normal with dissolve
 
@@ -10571,7 +10589,7 @@ label vino_day6:
 
     dnll "Ты сама по себе странная… "
     
-    hide nstl with dissovle
+    hide nstl with dissolve
     
     show nstl pio smile normal with dissolve
     
@@ -10587,9 +10605,9 @@ label vino_day6:
 
     nstl "Ничего. "
 
-    hide nstl with dissovle
+    hide nstl with dissolve
 
-    show nstl pio smile far with dissovle
+    show nstl pio smile far with dissolve
 
     "Ухмыльнулась она, вытерев слезы.{w} Она отпрянула от меня и встала."
 
@@ -10610,7 +10628,7 @@ label vino_day6:
     nstl "Ну да. "
 
     hide nstl with dissolve
-    scene ext_square_nigth with fade2
+    scene ext_square_night with fade2
     "Рассмеялась моя соседка, идя к нашему с ней домику.{w} Я лишь лениво плелся за ней.  "
 
     th "Так и подошел к концу мой шестой день в лагере, оставив за собой множество вопросов и загадок, на решение которых у меня совершенно не оставалось сил.{w} Былая бодрость, подаренная воздухом, куда-то ушла, и потому сонливость уже одолевала.  "
