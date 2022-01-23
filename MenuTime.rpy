@@ -9333,6 +9333,8 @@ label vino_day6:
 
     mz "Что непонятного?{w} Свободен!"
 
+    stop music fadeout 2.0
+
     play sound sfx_close_door_1
 
     scene ext_library_day with fade2
@@ -9353,6 +9355,8 @@ label vino_day6:
 
     scene hata_g_day with fade2
 
+    play ambience ambience_int_cabin_day
+
     "Дома никого не было, Настя, как она и говорила, ушла на уборку художественного.{w} Делать мне было откровенно нечего, а голод давал о себе знать. "
 
     th "Еще хоть раз я пропущу завтрак!{w} Черт…{w} Умру, наверное. "
@@ -9370,6 +9374,8 @@ label vino_day6:
     play sound sfx_open_door_1
 
     show sl normal pioneer with dissolve
+
+    play music feelgood fadein 2.0
 
     sl "Можно?"
 
@@ -9562,6 +9568,8 @@ label vino_day6:
 
     hide sl with dissolve 
 
+    stop music fadeout 2.0
+
     play sound sfx_open_door_1
 
     "Сказала она, да хлопнула дверью."
@@ -9569,7 +9577,7 @@ label vino_day6:
     th " Странная женщина."
 
     th "Делать мне было, откровенно говоря, нечего.{w} Небольшой подарок от Слави несколько восполнил мои запасы энергии, но сказать, что я сыт нельзя.{w} Мой рядом лежащий альбом служил мне напоминанием о моем лихом творчестве, коим я и решил заняться."
-    
+    stop ambience fadeout 2.0
     scene black with fade2
 
     th "Затянуло это занятие меня на час-два.{w} Счет времени я потерял, ибо не находил в листе бумаги и намека на какие-то часы.{w} Рисовал, что душе угодно, зарисовки гор, красивых девушек и не очень красивых парней. "
@@ -9583,9 +9591,12 @@ label vino_day6:
     "Как только я закончил с отрисовкой этой фигуры, где-то издалека слышится горн, который зовет меня долгожданный обед."
 
     window hide dissolve 
+
     pause 1.5
 
     scene int_dining_hall_people_day with fade2
+
+    play ambience ambience_dining_hall_full fadein 2.0
 
     "И снова я в столовой.{w} Люди снова толпились в очереди, снова кричали, ворчали, а я протискивался сквозь них."
 
@@ -9607,7 +9618,11 @@ label vino_day6:
 
     "Желудок мой был полон, а я доволен.{w} Надеюсь, мне хватит этого до ужина.{w} Сдав тарелку и прочее, я направился спать. "
 
+    stop ambience fadeout 1.0
+
     scene ext_houses_day with fade2
+
+    play ambience ambience_day_countryside_ambience
 
     " Я шёл домой.{w} Дорога, выложенная ста пятьюдесятью одним кирпичиком, направляла меня к моему дому. "
 
@@ -9628,6 +9643,8 @@ label vino_day6:
     scene dva_houses3 with fade2
 
     "Идя к дому, я почувствовал, что мне кто-то усиленно тычет в плечо. "
+
+    play music music_list["memories"] fadein 1.5
 
     show dv guilty pioneer with dissolve
 
@@ -9667,6 +9684,8 @@ label vino_day6:
 
     "Подмигнув и улыбнувшись, заявила она и быстренько смоталась."
 
+    stop music fadeout 2.0
+
     hide dv with dissolve
 
     dnll "А… "
@@ -9693,10 +9712,14 @@ label vino_day6:
 
     th "Как там говорится…. Наши мысли – материальны. Стоит только поверить в них и они воплотятся в жизнь. "
 
+    play music music_list["my_daily_life"] fadein 2.0
+
     show mt normal pioneer with dissolve
 
     "Это была Ольга."
+
     th "Вспомнишь солнце – вот и лучик"
+
     "Дав время Вожатой подобраться ко мне поближе.{w} Из-за ее спины вынырнули каштановые кудряшки. "
 
     show nstl pio normal normal at left with dissolve
@@ -9752,7 +9775,6 @@ label vino_day6:
 
     "Как бы в шутку спросила меня вожатая."
 
-
     nstl "З-знает…."
 
     "Смущенно пролепетала Настя."
@@ -9763,6 +9785,7 @@ label vino_day6:
 
     window hide dissolve 
 
+    stop music fadeout 2.0
 
     hide mt with dissolve
 
@@ -9777,7 +9800,7 @@ label vino_day6:
     th "Что же….{w} Дело мне найдено, надо топать к художественному.{w} А то без меня лагерь загнется.{w} Вернее, художественный кружок.{w} Буду, словно Атлант, держать на себе ношу этого бремени."
 
     th "Хотя…{w} Вряд ли меня что сближает с этим мифологическим героем, потому обойдемся без всяких неуместных сравнений."
-
+    stop ambience fadeout 2.0
     window hide dissolve 
 
     $ renpy.pause(2)
@@ -9798,7 +9821,7 @@ label vino_day6:
 
 
 
-    $ vino.set_location('xyd_1_sunset', ambience_int_cabin_day, GuitarGheddu_Darkside, fade3)
+    $ vino.set_location('xyd_1_sunset', ambience_int_cabin_evening, GuitarGheddu_Darkside, fade3)
 
     "В художке было тихо, лишь часы тикали, отмеряя каждую минуту моего пребывания здесь.{w} На мольбертах было установлено парочка холстов с начатыми незамысловатыми пейзажами гор.{w} Стулья были запрокинуты на столы, видимо, для дальнейшей мойки полов. "
 
@@ -9892,6 +9915,10 @@ label vino_day6:
 
     th "Больно и надо! Подумаешь… "
 
+    stop music fadeout 2.0
+
+    stop ambience fadeout 2.0
+
     $ renpy.pause(2, hard=True)
 
     $ night_time()
@@ -9900,6 +9927,10 @@ label vino_day6:
     window hide dissolve
 
     scene xyd_1_night with fade2
+
+    play ambience ambience_int_cabin_night fadein 1.5
+
+    play music music_list["reflection_on_water"] fadein 2.0
 
     pause 1.5
 
@@ -9984,6 +10015,8 @@ label vino_day6:
     "{b}МАРК!{b}" with hpunch
     #кто убил марка?
     nvl hide dissolve 
+
+    stop music fadeout 2.0
     
     pause(1) 
     
@@ -9992,6 +10025,8 @@ label vino_day6:
     window show
 
     show un normal pioneer close with dissolve
+
+    play music music_list["trapped_in_dreams"] fadein 1.0
 
     un "Ну…{w} И как тебе? " with vpunch
 
@@ -10277,9 +10312,13 @@ label vino_day6:
 
     "Девочка мило улыбнулась мне на прощание."
 
+    hide un with dissolve
+
     window hide dissolve
 
     scene black with fade2
+
+    play ambience ambience_forest_night fadein 2.0
 
     "На улице уже совсем темно.{w} Никого не видать – все разбрелись по домам.{w} Время людских гулянок кончилось.{w} Пришло время и самой природе походить по этим узким улочкам нашего скромного лагеря. "
 
@@ -10290,6 +10329,8 @@ label vino_day6:
     "Даже природе нужен отдых от людей.{w} Как иронично.{w} Только Генда, видимо, желанный гость на этой вечеринке.{w} Только он указывал путь маленьким огонькам на ночном небе – звездам.{w} Только он был здесь не лишним…"
     window hide dissolve
     pause 2.0
+
+    stop ambience fadeout 1.5
 
     scene hata_g_night with fade2
 
@@ -10307,14 +10348,21 @@ label vino_day6:
 
     scene hata_gg_night with fade2
 
+    play ambience ambience_int_cabin_night fadein 2.0
+
     th "Я не представляю, куда можно пойти в такое время суток, но мне отчего то ужасно хочется где-то отдохнуть от этой суматохи, работы и людей.{w} Но куда же мне податься?"
 
     "Так уж вышло, что во все времена самым романтичным местом являлось море."
+
+    stop ambience fadeout 2.0
 
     scene ext_beach_night with fade2
     
     extend " Потому мои ноги и донесли меня до туда с неведомою мне скоростью. "
 
+    play ambience ambience_lake_shore_night fadein 2.0
+
+    play music imagine fadein 1.5
 
     "Пляж был, очевидно, пуст.{w} Я уселся на случайный клочок земли, да принялся думать о чем-то своем, глядя на звезды. "
 
@@ -10450,6 +10498,8 @@ label vino_day6:
 
     "Настя еле заметно улыбнулась. "
 
+    stop music fadeout 2.0
+
     show nstl pio norm normal with dissolve
 
     nstl "Ты ведь так и не рассказывал о себе нормально."
@@ -10505,6 +10555,8 @@ label vino_day6:
     nstl "Да-вай. "
 
     "Последний тычок пальцем о мое плечо был весьма сильным, потому я сдался."
+
+    play music April_Rain_Chiral_Allergy fadein 2.0
 
     dnll "Меня избили, ясно?!"
 
@@ -10595,6 +10647,8 @@ label vino_day6:
     
     "Настя хмыкнула. "
 
+    stop music fadeout 2.0
+
     nstl "….Значит это правда… "
 
     dnll "Что?"
@@ -10628,7 +10682,11 @@ label vino_day6:
     nstl "Ну да. "
 
     hide nstl with dissolve
+
     scene ext_square_night with fade2
+
+    play ambience ambience_camp_entrance_night fadein 2.0
+
     "Рассмеялась моя соседка, идя к нашему с ней домику.{w} Я лишь лениво плелся за ней.  "
 
     th "Так и подошел к концу мой шестой день в лагере, оставив за собой множество вопросов и загадок, на решение которых у меня совершенно не оставалось сил.{w} Былая бодрость, подаренная воздухом, куда-то ушла, и потому сонливость уже одолевала.  "
@@ -10638,8 +10696,12 @@ label vino_day6:
     scene hata_gg_night with fade2
     
     "Шли мы недолго, но для меня эти мгновения стали вечностью, которой я ни с кем не мог поделится. "
+
+    stop ambience fadeout 2.0
     
     scene hata_g_night with fade2
+
+    play ambience ambience_int_cabin_night fadein 2.0
 
     play sound sfx_open_door_1
 
@@ -10665,6 +10727,8 @@ label vino_day6:
 
     dnll "Сладких… "
 
+    stop ambience fadeout 2.0
+
     scene black with fade2
 
     th "Не знаю, что этот лагерь готовит мне, но здесь как нельзя, кстати, можно отдохнуть от городских проблем.{w} Здесь не так уж и плохо, вернее, совсем неплохо.{w} Неподалеку от меня сейчас спит первый человек, которому я впервые за долгое время смог выговориться. "
@@ -10680,6 +10744,8 @@ label vino_day6:
     $ set_mode_nvl() 
     
     nvl show dissolve
+
+    play music music_list["torture"] fadein 2.0
 
     "“Я очнулся в пустой белой комнате.{w} Поднявшись с пола, я попытался осмотреть ее, но она была настолько белой, что не было видно даже очертания стен.{w}Казалось, что я нахожусь в белой бездне.  "
 
@@ -10704,9 +10770,11 @@ label vino_day6:
     "Экран снова стал показывать “метель”, а на моё левое плечо что-то положило длинные фиолетовые пальцы с кривыми ногтями.{w} В затылок устремился мерзкий запах гниющей плоти.”"
     
     nvl hide dissolve 
+
+    stop music fadeout 2.0
     
     pause(1) 
-
+    
     label vino_day7:
     
     # не добавлена музыка
