@@ -156,9 +156,9 @@ init -2 python:
         'mods/MenuTime/music/fon_1.mp3' : 'Фоновая - Музыка ангелов',
         'mods/MenuTime/music/fon_4.mp3' : 'Skrizhali - Без слов(минус)',
         'mods/MenuTime/music/forg_1.mp3' : "CoaastGxd - Don't forget",
-        'mods/MenuTime/music/freak_1.mp3' : 'Sub Urban Rei AMI - Freak',
+        'mods/MenuTime/music/freak_1.mp3' : 'sub urban - Freak (feat. REI AMI)',
         'mods/MenuTime/music/git_1.mp3' : 'Неизвестен - гитара(минус)',
-        'mods/MenuTime/music/grandson_blood_water.mp3' : 'Grandson - Blood//Water',
+        'mods/MenuTime/music/grandson_blood_water.mp3' : 'Grandson - Blood // Water',
         'mods/MenuTime/music/have_love.mp3' : 'The Sonics - Have Love Will Travel',
         'mods/MenuTime/music/numb.mp3' : 'vowl, prxz - Numb the pain',
         'mods/MenuTime/music/plamenev.mp3' : 'Павел Пламенев - Ночь перед боем(minus)',
@@ -190,6 +190,11 @@ init -2 python:
         vino_music_path + 'sugar.mp3' : 'Slowdive - Sugar for the Pill',
         vino_music_path + 'the_future.mp3' : 'The Offspring - The Future Is Now',
         vino_music_path + 'winter.mp3' : 'Emil Bulls - Winterblood',
+        "mods/MenuTime/music/Andrew_York_Faire.mp3" : "Andrew York - Faire",
+        "mods/MenuTime/music/April_Rain_Chiral_Allergy.mp3" : "April Rain - Chiral Allergy",
+        "mods/MenuTime/music/April_Rain_Waiting_for_Sunrise.mp3" : "April Rain - Waiting for Sunrise",
+        vino_music_path + 'bad_apple.mp3' : 'Aviana - Bad Apple',
+        'mods/MenuTime/music/GuitarGheddu_Darkside.mp3' : 'GuitarGheddu - Darkside',
         'Error' : 'Шазам не знает такого трека:('
         #'mods/MenuTime/music/fon_2.mp3' : 'Фоновая'
     }
@@ -219,41 +224,54 @@ init -2 python:
     renpy.image("vino_playing_music", DynamicDisplayable(vino_show_music))
 
     vino_music_box ={
-    'mods/MenuTime/music/believer.mp3' : 'Imagine Dragons - Believer',
-    'mods/MenuTime/music/brok_w.mp3' : 'D-A-L - Broken Wings',
-    'mods/MenuTime/music/count_s.mp3': 'OneRepublic - Counting Stars',
-    'mods/MenuTime/music/death_kill.mp3' : 'deathklr84 - Forever Mine',
-    'mods/MenuTime/music/drop_dead.mp3' : 'Mari Ferrari, M.Z.I, S-Elm - Drop Dead',
-    'mods/MenuTime/music/fallen_leav.mp3' : 'Billi Talent - Fallen Leaves',
-    'mods/MenuTime/music/fon_1.mp3' : 'Фоновая - Музыка ангелов',
-    'mods/MenuTime/music/fon_4.mp3' : 'Skrizhali - Без слов(минус)',
-    'mods/MenuTime/music/forg_1.mp3' : "CoaastGxd - Don't forget",
-    'mods/MenuTime/music/freak_1.mp3' : 'Sub Urban Rei AMI - Freak',
-    'mods/MenuTime/music/git_1.mp3' : 'Неизвестен - гитара(минус)',
-    'mods/MenuTime/music/grandson_blood_water.mp3' : 'Grandson - Blood//Water',
-    'mods/MenuTime/music/have_love.mp3' : 'The Sonics - Have Love Will Travel',
-    'mods/MenuTime/music/numb.mp3' : 'vowl, prxz - Numb the pain',
-    'mods/MenuTime/music/plamenev.mp3' : 'Павел Пламенев - Ночь перед боем(minus)',
-    'mods/MenuTime/music/wake_we.mp3' :  'Avicii - Wake me Up',
-    'mods/MenuTime/music/berega_minus.mp3' : 'monte -  Нас замыкали берега(minus)',
-    'mods/MenuTime/music/future.mp3' : 'The Offspring - The Future Is Now',
-    vino_music_path + 'afterlife.mp3' : 'Cilver - Afterlife',
-    vino_music_path + 'akira.mp3' : 'Exyz, Namadzu - Akira',
-    vino_music_path + 'alone_1.mp3' : 'Dummy Feelings - Alone',
-    vino_music_path + 'anarchist.mp3' : 'YUNGBLUD - Anarchist',
-    vino_music_path + 'band.mp3' : 'Gold Brothers Band - Summer Sun',
-    vino_music_path + 'den_2.mp3' : 'Дидюля - День(remix)',
-    vino_music_path + 'dont_care.mp3' : "Apocalyptica feat. Adam Gontier - I Don't Care",
-    vino_music_path + 'fake.mp3' : 'The Tech Thieves - Fake',
-    vino_music_path + 'here_comes.mp3' : 'Hypnogaja - Here Comes The Rain Again',
-    vino_music_path + 'lithium.mp3' : 'Evanescence - Lithium',
-    vino_music_path + 'minus_5.mp3' : 'Танцы Минус - Половинка(minus)',
-    vino_music_path + 'minus_6.mp3' : 'Ю-Питер - Дети минут(minus)',
-    vino_music_path + 'my_immortal.mp3' : 'Evanescence - My Immortal',
-    vino_music_path + 'paradise.mp3' : 'The Rasmus - Dark Matters',
-    vino_music_path + 'sugar.mp3' : 'Slowdive - Sugar for the Pill',
-    vino_music_path + 'the_future.mp3' : 'The Offspring - The Future Is Now',
-    vino_music_path + 'winter.mp3' : 'Emil Bulls - Winterblood'
+        'mods/MenuTime/music/believer.mp3' : 'Imagine Dragons - Believer',
+        'mods/MenuTime/music/brok_w.mp3' : 'D-A-L - Broken Wings',
+        'mods/MenuTime/music/count_s.mp3': 'OneRepublic - Counting Stars',
+        'mods/MenuTime/music/death_kill.mp3' : 'deathklr84 - Forever Mine',
+        'mods/MenuTime/music/drop_dead.mp3' : 'Mari Ferrari, M.Z.I, S-Elm - Drop Dead',
+        'mods/MenuTime/music/fallen_leav.mp3' : 'Billi Talent - Fallen Leaves',
+        'mods/MenuTime/music/fon_1.mp3' : 'Фоновая - Музыка ангелов',
+        'mods/MenuTime/music/fon_4.mp3' : 'Skrizhali - Без слов(минус)',
+        'mods/MenuTime/music/forg_1.mp3' : "CoaastGxd - Don't forget",
+        'mods/MenuTime/music/freak_1.mp3' : 'sub urban - Freak (feat. REI AMI)',
+        'mods/MenuTime/music/git_1.mp3' : 'Неизвестен - гитара(минус)',
+        'mods/MenuTime/music/grandson_blood_water.mp3' : 'Grandson - Blood // Water',
+        'mods/MenuTime/music/have_love.mp3' : 'The Sonics - Have Love Will Travel',
+        'mods/MenuTime/music/numb.mp3' : 'vowl, prxz - Numb the pain',
+        'mods/MenuTime/music/plamenev.mp3' : 'Павел Пламенев - Ночь перед боем(minus)',
+        'mods/MenuTime/music/wake_we.mp3' :  'Avicii - Wake me Up',
+        'mods/MenuTime/music/berega_minus.mp3' : 'monte -  Нас замыкали берега(minus)',
+        'mods/MenuTime/music/future.mp3' : 'The Offspring - The Future Is Now',
+        'mods/MenuTime/music/vino_main_menu_music.mp3' : 'Музыка из главного меню',
+        'mods/MenuTime/music/ki.mp3' : 'White Zombie - Thunder Kiss 65',
+        'mods/MenuTime/music/imagine.mp3' : 'John Lennon - Imagine',
+        'mods/MenuTime/music/anarchist_m.mp3' : 'UNGBLUD - Anarchist (Minus)',
+        'mods/MenuTime/music/tutu.mp3' : 'Whitley Houtson - Saving All My Love For You',
+        'mods/MenuTime/music/asia.mp3' : 'Domitori Taranofu - Breath of Asia',
+        'mods/MenuTime/music/payback.mp3' : 'Shiiva Raw - Payback',
+        'mods/MenuTime/music/moonlight.mp3' : 'Domitori Taranofu - Moonlight',
+        vino_music_path + 'afterlife.mp3' : 'Cilver - Afterlife',
+        vino_music_path + 'akira.mp3' : 'Exyz, Namadzu - Akira',
+        vino_music_path + 'alone_1.mp3' : 'Dummy Feelings - Alone',
+        vino_music_path + 'anarchist.mp3' : 'YUNGBLUD - Anarchist',
+        vino_music_path + 'band.mp3' : 'Gold Brothers Band - Summer Sun',
+        vino_music_path + 'den_2.mp3' : 'Дидюля - День(remix)',
+        vino_music_path + 'dont_care.mp3' : "Apocalyptica feat. Adam Gontier - I Don't Care",
+        vino_music_path + 'fake.mp3' : 'The Tech Thieves - Fake',
+        vino_music_path + 'here_comes.mp3' : 'Hypnogaja - Here Comes The Rain Again',
+        vino_music_path + 'lithium.mp3' : 'Evanescence - Lithium',
+        vino_music_path + 'minus_5.mp3' : 'Танцы Минус - Половинка(minus)',
+        vino_music_path + 'minus_6.mp3' : 'Ю-Питер - Дети минут(minus)',
+        vino_music_path + 'my_immortal.mp3' : 'Evanescence - My Immortal',
+        vino_music_path + 'paradise.mp3' : 'The Rasmus - Dark Matters',
+        vino_music_path + 'sugar.mp3' : 'Slowdive - Sugar for the Pill',
+        vino_music_path + 'the_future.mp3' : 'The Offspring - The Future Is Now',
+        vino_music_path + 'winter.mp3' : 'Emil Bulls - Winterblood',
+        "mods/MenuTime/music/Andrew_York_Faire.mp3" : "Andrew York - Faire",
+        "mods/MenuTime/music/April_Rain_Chiral_Allergy.mp3" : "April Rain - Chiral Allergy",
+        "mods/MenuTime/music/April_Rain_Waiting_for_Sunrise.mp3" : "April Rain - Waiting for Sunrise",
+        vino_music_path + 'bad_apple.mp3' : 'Aviana - Bad Apple',
+        'mods/MenuTime/music/GuitarGheddu_Darkside.mp3' : 'GuitarGheddu - Darkside',
     #'mods/MenuTime/music/fon_2.mp3' : 'Фоновая'
     }
 
@@ -334,8 +352,8 @@ screen vino_music:
         add 'mods/MenuTime/gui/menu/menu_bg_%s.png' % time 
         textbutton 'Закрыть' xalign 0.5 style "vino_button_none" text_style "vino_text_%s" % time at vino_button_anim:
             hover_sound vino_hover
-            action (Hide('vino_music', Dissolve(1.0)), Return(), Play('music', renpy.random.choice(vino_menu_music[time])))
-        key "K_ESCAPE" action (Hide('vino_music', Dissolve(1.0)), Return(), Play('music', 'mods/MenuTime/music/vino_main_menu_music.mp3'))
+            action Hide('vino_music', Dissolve(1.0)), Show('vino_mainmenu', Dissolve(1.0), player=True) #Play('music', renpy.random.choice(vino_menu_music[time])))
+        key "K_ESCAPE" action Hide('vino_music', Dissolve(1.0)), Show('vino_mainmenu', Dissolve(1.0), player=True) #Play('music', renpy.random.choice(vino_menu_music[time])))
         window:
             background None 
             area (580,127,866,825)
@@ -354,10 +372,13 @@ screen vino_music:
                         hover_sound vino_hover
                         action vino_mr.Play(path)
 
-screen vino_mainmenu():
+screen vino_mainmenu(player=False):
     tag menu
     modal True
     $ time = vino_get_time()
+    if player:
+        $ music = vino_music_data[renpy.music.get_playing()]
+        $ playing = True
     key 'game_menu':
         action NullAction() 
     # on "show" action Play("music", renpy.random.choice(vino_menu_music[time]))
@@ -375,6 +396,51 @@ screen vino_mainmenu():
             on show:
                 ypos -500
                 easein 1 ypos 80
+    if player:
+        hbox xpos 1600 ypos 47 xsize 300 ysize 8 spacing 5:
+            text "%s " % music style "vino_text_%s" % time font "mods/MenuTime/helvetica_old.otf" size 15:
+                at transform:
+                    xpan 0
+                    linear 10 xpan -500
+                    linear 10 xpan 0
+                    repeat
+                xalign 0.2
+            at transform:
+                on show:
+                    parallel:
+                        alpha 0.0
+                        easein 1 alpha 1.0
+                    parallel:
+                        ypos -50
+                        easein 1 ypos 47
+        imagebutton auto "mods/MenuTime/gui/menu/Skip-next_%s.png" action vino_mr.Next(), SetScreenVariable('music', vino_music_data[renpy.music.get_playing()]) xpos 1807 ypos 85:
+            at transform:
+                on show:
+                    parallel:
+                        alpha 0.0
+                        easein 1 alpha 1.0
+                    parallel:
+                        ypos -50
+                        easein 1 ypos 85
+        imagebutton auto "mods/MenuTime/gui/menu/Skip-prev_%s.png" action vino_mr.Previous(), SetScreenVariable('music', vino_music_data[renpy.music.get_playing()]) xpos 1617 ypos 85:
+            at transform:
+                on show:
+                    parallel:
+                        alpha 0.0
+                        easein 1 alpha 1.0
+                    parallel:
+                        ypos -50
+                        easein 1 ypos 85
+        if playing:
+            imagebutton auto "mods/MenuTime/gui/menu/Play_%s.png" action vino_mr.TogglePause(), SetScreenVariable('playing', not playing), SensitiveIf(playing == True) xpos 1700 ypos 85:
+                at transform:
+                    on show:
+                        parallel:
+                            alpha 0.0
+                            easein 1 alpha 1.0
+                        parallel:
+                            ypos -50
+                            easein 1 ypos 85
     add 'mods/MenuTime/gui/menu/nav_bg_%s.png' % time xpos 50 ypos 190:
         at transform:
             on show:
