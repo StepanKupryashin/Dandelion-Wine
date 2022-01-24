@@ -9286,7 +9286,7 @@ label vino_day6:
 
     hide mz with dissolve 
 
-    show mz bukal pioneer with dissolve
+    show mz bukal glasses pioneer with dissolve
 
     mz "Её книги – пусть сама и возвращает, дай поспать. "
 
@@ -9300,7 +9300,7 @@ label vino_day6:
 
     "Я хотел отчеканить последние слова с большим пафосом, но мне того не удалось.{w} Окончание моей и без того короткой речи вышло крайне глупым."
 
-    show mz laugh pioneer with dissolve
+    show mz laugh glasses pioneer with dissolve
 
     mz "Ну-ну… "
 
@@ -9308,17 +9308,17 @@ label vino_day6:
 
     hide mz with dissolve 
 
-    show mz smile pioneer with dissolve
+    show mz smile glasses pioneer with dissolve
 
     "На некоторое время ее злоба сошла на нет.{w} Она настолько расщедрилась, что не стала на меня особо ругаться. "
 
-    show mz shy pioneer with dissolve
+    show mz shy glasses pioneer with dissolve
 
     mz "Давай сюда, Ромео. "
 
     "Похоже, последнее сказанное ею слово ее саму смутило.{w} Она несколько покраснела, и, быстро выхватив у меня из рук злосчастные “Унесенные ветром”. "
     hide mz with dissolve
-    show mz bukal pioneer with dissolve
+    show mz bukal glasses pioneer with dissolve
     mz "Все, свободен. "
 
     "Снова начала закипать Евгения."
@@ -9329,7 +9329,7 @@ label vino_day6:
 
     hide mz with dissolve
 
-    show mz bukal pioneer close with dissolve
+    show mz bukal glasses pioneer close with dissolve
 
     mz "Что непонятного?{w} Свободен!"
 
