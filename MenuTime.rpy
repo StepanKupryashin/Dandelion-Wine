@@ -10661,9 +10661,11 @@ label vino_day6:
 
     hide nstl with dissolve
 
-    show nstl pio smile far with dissolve
+    "Ухмыльнулась она, вытерев слезы."  
 
-    "Ухмыльнулась она, вытерев слезы.{w} Она отпрянула от меня и встала."
+    show nstl pio smile with dissolve
+
+    extend " Она отпрянула от меня и встала."
 
     nstl "Пошли спать, а то поздно уже, а ты еще и за меня работу выполнил. "
 
@@ -10677,7 +10679,7 @@ label vino_day6:
 
     hide nstl with dissolve 
 
-    show nstl pio happy far with dissolve
+    show nstl pio happy with dissolve
 
     nstl "Ну да. "
 
@@ -10709,7 +10711,7 @@ label vino_day6:
 
     "Если песок и есть, то он останется на форме.{w} Мне ж еще раздеваться надо, так что…{w} Все равно.{w} Девушка недолго простояла перед входом, и, немного погодя, уже была дома. "
     
-    show nstl pio happy far with dissolve
+    show nstl pio happy with dissolve
     
     nstl "Все что я могу тебе сказать, так это то, что ты – дурак. "
 
