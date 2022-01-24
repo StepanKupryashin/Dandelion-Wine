@@ -10659,10 +10659,10 @@ label vino_day6:
 
     nstl "Ничего. "
 
+    "Ухмыльнулась она, вытерев слезы."
+
     hide nstl with dissolve
-
-    "Ухмыльнулась она, вытерев слезы."  
-
+    
     show nstl pio smile with dissolve
 
     extend " Она отпрянула от меня и встала."
