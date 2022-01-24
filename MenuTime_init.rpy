@@ -115,7 +115,7 @@ init python:
     style.vino_game_menu_selector_sunset.selected_color = '#BD452F'
     ##########################################
     style.vino_play_music_text = Style(style.default)
-    style.vino_play_music_text.font = "mods/MenuTime/helvetica.otf"
+    style.vino_play_music_text.font = "mods/MenuTime/helvetica_old.otf"
     style.vino_play_music_text.size = 60
     style.vino_play_music_text.color = "#FFFFFF"
     style.vino_play_music_text.hover_color = "#EB0707"
