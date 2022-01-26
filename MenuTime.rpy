@@ -8039,7 +8039,7 @@ label vino_day5:
 
     stop music fadeout 2.0
 
-    scene obs_ext_dining_bench_sunset with fade
+    scene int_dining_hall_sunset with fade
 
     play ambience ambience_dining_hall_full fadein 1.5
 
@@ -10784,6 +10784,7 @@ label vino_day6:
     $ vino_backdrop('7', 'dva_houses2', False)
     $ save_name = ("Вино из Одуванчиков: День седьмой")
     show hata_g_day with fade2
+    with dissolve
     $ vino.change_time('day')
 
     play ambience ambience_int_cabin_day fadein 2.0
@@ -10800,13 +10801,13 @@ label vino_day6:
 
     nstl "Даня!" with vpunch
     
-    extend "Даня!" with vpunch
+    extend " Даня!" with vpunch
     
-    extend "Что случилось?!" with vpunch
+    extend " Что случилось?!" with vpunch
     
-    extend "Ты чего кричишь?!" with vpunch
+    extend " Ты чего кричишь?!" with vpunch
 
-    dnll "не..." with vpunch
+    dnll "Не..." with vpunch
     
     extend " тря..." with vpunch
     
@@ -10819,11 +10820,11 @@ label vino_day6:
 
     "Попытался я остановить Настю, иначе такой заряд бодрости грозил помутнением в моей башне, а вдобавок вчерашние печеньки с чаем норовили выйти вон."
 
-    "Настя отпустила мои плечи и села на кровать рядом со мной.{w} Я же попытался собраться с мыслями."
-
     hide nstl_pio_ud_far with dissolve
 
     show nstl_pio_norm_far with dissolve
+
+    "Настя отпустила мои плечи и села на кровать рядом со мной.{w} Я же попытался собраться с мыслями."
 
     nstl "Дурак!{w} Ты меня так напугал!{w} Ночью бормотал что-то, звуки издавал, а под утро орёшь, как гусь резаный."    
 
@@ -10851,7 +10852,7 @@ label vino_day6:
 
     "Удивленно уставившись на меня, переспросила Настя."
 
-    "Не помню.{w} Но было ужасно страшно"
+    dnll "Не помню.{w} Но было ужасно страшно"
 
     "Мне стало немного стыдно. "
 
@@ -10895,7 +10896,7 @@ label vino_day6:
 
     play sound sfx_open_door_1
 
-    show nstl_pio_smile_far with easeinbottom
+    show nstl_pio_smile_far with easeinright
 
     nstl "А вот и я! "
 
@@ -10943,11 +10944,11 @@ label vino_day6:
 
     scene hata_gg_day with dissolve
 
-    "Брр.{w} Сегодня прохладно.{w} Солнце, скрытое облаками, почти не выглядывало, а некоторые его лучики еле касались земли."
+    th "Брр.{w} Сегодня прохладно.{w} Солнце, скрытое облаками, почти не выглядывало, а некоторые его лучики еле касались земли."
 
     window hide dissolve
 
-    scene les
+    scene les with fade2
 
     "Я свернул на тропинку, ведущую к умывальникам.{w} Внезапно я услышал, как кто-то поет.{w} Слов не разобрать, но это где-то у умывальников.{w} Я ускорил шаг.{w} Звук стал громче, а слова песни чётче."
 
@@ -10955,7 +10956,7 @@ label vino_day6:
 
     window hide dissolve
 
-    scene ext_washstand_day 
+    scene ext_washstand_day with fade
     
     "Срезав через кусты, я очутился у умывальников.{w} Но… тут никого!{w} Абсолютно пусто."
 
@@ -10981,7 +10982,7 @@ label vino_day6:
 
     window hide
 
-    scene hata_g_day
+    scene hata_g_day with fade2
 
     play sound sfx_open_door_1
 
@@ -10999,7 +11000,7 @@ label vino_day6:
 
     dnll "Ты уж извини, что спать помешал, – я виновато посмотрел на неё и почесал затылок."
 
-    hide nstl_pio_norm_far
+    hide nstl_pio_norm_far with dissolve
 
     show nstl_pio_smile_far with dissolve
     
@@ -11049,7 +11050,7 @@ label vino_day6:
 
     dnll "За звездами можно наблюдать бесконечно.{w} За их переливами, падениями.{w} Кто знает, вдруг оттуда на нас так же смотрят два пионера-инопланетянина."
 
-    "усмехнувшись, я посмотрел на Настю."
+    "Усмехнувшись, я посмотрел на Настю."
 
     hide nstl_pio_sad_far with dissolve
 
@@ -11073,7 +11074,7 @@ label vino_day6:
 
     dnll "Блин, если снова убираться, то не очень хочу."
 
-    "проскулил я в ответ."
+    "Проскулил я в ответ."
 
     dnll "И так вчера полы мыли."
     
@@ -11089,7 +11090,7 @@ label vino_day6:
 
     window hide
 
-    scene black
+    scene black with fade
 
     "Убив время за чаепитием и болтовней по делу и не очень, мы всё-таки дождались подъёма."
 
@@ -11135,6 +11136,8 @@ label vino_day6:
 
     show us grin pioneer at center
 
+    with dissolve
+
     "Явились даже рыжеволосые бандитки – Алиска с Улей. "
 
     hide dv
@@ -11167,9 +11170,9 @@ label vino_day6:
 
     "Мысленно я изобразил голос вожатой."    
 
-    "- Славя, сходи подмети площадь, убери шишки на лесной тропинке, разбери документы на моем столе и в шкафу, сотри пыль с Генды, построй мне ядерный энергоблок и слетай на Луну!"
+    th "Славя, сходи подмети площадь, убери шишки на лесной тропинке, разбери документы на моем столе и в шкафу, сотри пыль с Генды, построй мне ядерный энергоблок и слетай на Луну!"
 
-    "Я утрирую, конечно. Но доля правды в том есть.{w} Славю непомерно нагружают и, судя по всему, не один год."
+    th "Я утрирую, конечно. Но доля правды в том есть.{w} Славю непомерно нагружают и, судя по всему, не один год."
 
     show mt smile pioneer with dissolve
 
@@ -11177,7 +11180,7 @@ label vino_day6:
 
     "Оторвав свои глаза от блокнотика, сказала Ольга Дмитриевна, строго глядя на меня."
 
-    dnll "А?{w}Что? "
+    dnll "А?{w} Что? "
 
     hide mt with dissolve
 
@@ -11203,7 +11206,7 @@ label vino_day6:
 
     window hide dissolve
 
-    scene ext_dining_hall_away_day
+    scene ext_dining_hall_away_day with fade
 
     " Я нагнал Настю."
 
@@ -11241,7 +11244,7 @@ label vino_day6:
 
     dnll "Щекотка, дурни.{w} Чего так смотрите на меня?"
 
-    show nstl_pio_sad with dissolve
+    show nstl pio shy with dissolve
 
     "Настя, раскрасневшаяся, как помидор, шла рядом, опустив голову."
 
@@ -11253,7 +11256,7 @@ label vino_day6:
 
     scene ext_dining_hall_near_day with dissolve
 
-    show nstl_pio_sad
+    show nstl_pio_sad with dissolve 
 
     with vpunch
 
@@ -11341,7 +11344,7 @@ label vino_day6:
 
     show nstl_pio_norm with dissolve
 
-    nstl "Мы хотели в художественный кружок пойти"
+    nstl "Мы хотели в художественный кружок пойти."
 
     "Зевнув, ответила она."
 
@@ -11353,7 +11356,7 @@ label vino_day6:
 
     window hide dissolve
 
-    scene black
+    scene black with fade2
 
     "Пионеры постепенно разбредались в разные стороны: кто-то на площади играл в догонялки, кто-то, взяв мяч или ракетки из дома, пошёл на стадион.{w} Жизнь текла своим чередом.{w} Не знаю, почему, но мне по душе такая умиротворённая и дружеская атмосфера. "
 
