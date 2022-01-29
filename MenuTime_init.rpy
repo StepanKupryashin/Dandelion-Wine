@@ -177,6 +177,7 @@ init:
     $ evgnll = Character (u'Евгений', color = "9400D3")
     $ elmisl = Character (u'...', color = "ffff00")
     $ macksya = Character (u'Макс', color = "d41114")
+    $ matvey = Character (u'Матвей', color = "#B03F35")
     define nei = Character('...', kind=nvl, color="#00deff")
     define danilg = Character('Даниил', kind=nvl, color="#00FF7F")
     define misskaty = Character('Катя', kind=nvl, color="#556B2F")
