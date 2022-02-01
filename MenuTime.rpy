@@ -11830,7 +11830,7 @@ label vino_day6:
 
     dnll "Хм…{w} Хорошо.{w} Тогда я…"
 
-    hide us with dissovle
+    hide us with dissolve
 
     show us shy pioneer close with dissolve 
 
