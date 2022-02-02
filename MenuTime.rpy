@@ -1934,7 +1934,7 @@ label vino_day2:
     show un sad swim with dissolve
     un "Алис, признай, из меня плохой руководитель.{w} В том году почти никто не записался в кружок, а в этом…"
     hide dv with dissolve 
-    show dv sad swim at right with dissolve
+    show dv normal swim at right with dissolve
     dv "Один Даня, да?{w} И то, потому что он сам любит рисовать."
     "Тяжело выдохнула Алиса."
     hide un with dissolve 
