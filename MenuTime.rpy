@@ -10870,7 +10870,7 @@ label vino_day6:
 
     show nstl_pio_norm_far with dissolve
 
-    play band fadein 2
+    play music band fadein 2
 
 
     "Настя отпустила мои плечи и села на кровать рядом со мной.{w} Я же попытался собраться с мыслями."
@@ -11409,7 +11409,7 @@ label vino_day6:
 
     window hide dissolve
 
-    stop play ambience 
+    stop ambience fadeout 2
     play music alone_1 fadein 2
 
     scene ext_dining_hall_near_day with dissolve
@@ -11627,8 +11627,8 @@ label vino_day6:
     sl "Ты должен взять и… "
 
     "Славя очень близко наклонилась к моему уху, так что от её дыхания мне стало щекотно, а по голове забегали мурашки, и зашептала."
-
-    ambience ambience_forest_day
+    stop music fadeout 2
+    play ambience ambience_forest_day
 
     hide sl with dissolve
 
@@ -11838,7 +11838,9 @@ label vino_day6:
 
     stop ambience fadeout 2
 
-    play music blwifi
+    $ renpy.pause(2, hard=True)
+
+    play music alone_1
 
     window hide dissolve
 
@@ -11852,7 +11854,10 @@ label vino_day6:
 
     "Я приподнял железную крышку главного бака и окунул пальцы.{w} Прохладная.{w} Э-э-эх, ладно.{w} Так, а полотенца есть?{w} Я осмотрел предбанник – пара чистых и недавно постиранных полотенец висела на крюках.{w} Теперь можно начать мыться."
 
-    pause(1.0)
+    window hide dissolve
+    scene black with dissolve
+    $ renpy.pause(2, hard=True)
+    window show dissolve
 
     "Заняло это у меня примерно двадцать минут.{w} Теперь я свеж, бодр, но голоден.{w} Оставив грязную одежду на специально отведённой скамье, я вышел на улицу."
 
@@ -11861,16 +11866,18 @@ label vino_day6:
     scene banya_sunset with dissolve
 
     th "Э-э-эх, скорее бы обед!{w} Умираю с голода!{w} Но столовая закрыта, наверно…"
-
+    scene black with dissolve
+    stop music fadeout 2
+    $ renpy.pause(2, hard=True)
     window hide dissolve
 
     scene ext_stage_normal_day with dissolve
 
+    play music plamenev 
+
     "Вышел я к странной постройке, судя по всему, сцене.{w} Округлая крыша, огромные ряды скамеек, на одной из которых сидела Уля и, о чем-то задумавшись, крутила в руках камешек."
 
     show us normal pioneer with dissolve
-
-    play music plamenev fadein 2
 
     dnll "Привет, гроза пионеров и вожатых!{w} Как поживаешь? "
 
