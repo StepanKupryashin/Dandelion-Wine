@@ -12908,7 +12908,31 @@ label vino_day6:
 
     scene ext_playground_day with dissolve
 
-    "Мы разбились по трое.{w} Исходя из сегодняшней встречи Слави и Насти у столовой, я решил их разделить.{w} Славя, Мику и Шурик на одной части поля, а я, Настя и Алиса – на другой.{w} В качестве судьи мы поставили Ульянку."
+    "Мы разбились по трое.{w} Исходя из сегодняшней встречи Слави и Насти у столовой, я решил их разделить."
+    
+    extend "Славя," 
+    
+    show sl normal pioneer far at fleft with dissolve
+
+    extend "Мику "
+    
+    show mi smile pioneer far at left with dissolve
+
+    extend "и Шурик" 
+    
+    show sh normal far at cleft with dissolve
+
+    extend "на одной части поля, а я," 
+    
+    extend "Настя" 
+    
+    # разобраться со спрайтом Насти
+
+    extend " и Алиса" 
+    
+    show dv smile pioneer far at fright with dissolve
+
+    extend "– на другой. В качестве судьи мы поставили Ульянку."
 
     us "Товарищи!{w} Играем до пяти очков!{w} И помните: не надо стараться уничтожить своего соперника физически! "
 
