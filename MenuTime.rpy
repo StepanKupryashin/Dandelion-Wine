@@ -11018,6 +11018,10 @@ label vino_day6:
 
     "Помотав головой и ужаснувшись вполне реальному концу своей жизни – быть погребенным заживо в психушке, я подошел к умывальнику и принялся за водные процедуры."
 
+    window hide dissolve
+
+    scene ext_washstand2_day with dissolve
+
     play sound sfx_water_sink_stream
 
     "Поднялся лёгкий прохладный ветерок.{w} Правда, ледяная вода в дуэте даже с таким ветром не сулила мне ничего, кроме боли в горле и простуды."
@@ -11333,7 +11337,7 @@ label vino_day6:
 
     show sl happy pioneer close at right with dissolve
 
-    sl "Даня, раз уж у вас с {i}Настей{/i} сегодня дела, то я освобожу тебя пораньше"
+    sl "Даня, раз уж у вас с {i}Настей{/i} сегодня дела, то я освобожу тебя пораньше."
 
     "С намекающей улыбкой сказала она, при этом холодно глянув в сторону Насти."
 
@@ -13282,7 +13286,7 @@ label vino_day6:
     window hide dissolve
     scene black with dissolve
     $ renpy.pause (2, hard = True)
-    scene ext_playground_day with dissolve
+    scene ext_playground_volley_sunset with dissolve
     $ set_mode_nvl() 
     nvl clear
 
