@@ -13577,7 +13577,7 @@ label vino_day6:
 
     stop ambience fadeout 2.0
 
-    play ambience ambience_soccer_play_background with fadein 3.0
+    play ambience ambience_soccer_play_background fadein 3.0
 
     window hide 
     
@@ -13778,7 +13778,7 @@ label vino_day6:
 
     show us dontlike pioneer at right with dissolve
 
-    lay sound sfx_open_door_kick
+    play sound sfx_open_door_kick
 
     us "Да ну его! "
 
