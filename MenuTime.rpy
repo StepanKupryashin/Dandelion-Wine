@@ -12943,6 +12943,8 @@ label vino_day6:
 
     stop music fadeout 2.0
 
+    play music music_list["orchid"] fadein 3.0
+
     th "Точно!{w} Это тот голос, что я слышал у умывальников!"
 
     "Я убрал руку с лица и повернулся к собеседнику…{w} Но другая часть скамьи была пуста.{w} Лишь небольшой блокнот лежал на краю.{w} Тут у меня всерьез забегали мурашки по всему телу."
@@ -12957,11 +12959,13 @@ label vino_day6:
 
     "Я сунул в карман шорт таинственный блокнот и, пятясь спиной, медленно отошёл от скамьи."
 
+    stop music fadeout 1.5
+
     th "Что за день сегодня такой? "
 
     play sound sfx_dinner_horn_processed
 
-    "Внезапно откуда-то сверху раздался рёв.{w} Я аж подпрыгнул от неожиданности.{w} Но это всего лишь горн, призывающий к столу. "
+    "Внезапно откуда-то сверху раздался рёв.{w} Я аж подпрыгнул от неожиданности.{w} Но это всего лишь горн, призывающий к столу. " with vpunch
 
     th "Наконец-то поем!"
 
@@ -13041,6 +13045,7 @@ label vino_day6:
 
     window hide dissolve
 
+
     scene ext_dining_hall_near_day with dissolve
 
     "Выйдя на крыльцо, я спросил." 
@@ -13063,7 +13068,7 @@ label vino_day6:
 
     window hide dissolve
 
-    scene ext_playground_sunday with fade
+    scene ext_playground_volley_day with fade
 
     play ambience ambience_medium_crowd_outdoors fadein 2.0
 
@@ -13173,10 +13178,10 @@ label vino_day6:
 
     "На подаче наша взрывная во всех смыслах Алиса.{w} Глаза её были наполнены огнём, а желание смести противника с поля било через край.{w} Свисток."
     play sound sfx_soccer_ball_kick
-    extend "Своим коронным ударом Алиса отправляет мяч Славе." with vpunch
+    extend " Своим коронным ударом Алиса отправляет мяч Славе." with vpunch
     extend " Та принимает пас, передает мяч Мику, она – Шурику."
     play sound sfx_soccer_ball_gate
-    extend "Удар!{w} Мяч в сетке.{w} Надо ли говорить, как смотрели девчонки на бедного кибернетика?{w} Его буквально хотели отпинать, как следует, а может, чего и хуже."
+    extend " Удар!{w} Мяч в сетке.{w} Надо ли говорить, как смотрели девчонки на бедного кибернетика?{w} Его буквально хотели отпинать, как следует, а может, чего и хуже."
 
     "Счет 4:2"
 
@@ -13222,8 +13227,7 @@ label vino_day6:
     window show
 
     show dv39 at right
-    show nstl sport happy:
-        anchor (0.5, 0.5)
+    show nstl sport happy normal
     with dissolve
 
     play music music_list["i_want_to_play"] fadein 1.0
@@ -13349,8 +13353,9 @@ label vino_day6:
     hide mt with dissolve
 
     " С трибун сразу посыпались радостные вопли и визг.{w} Вожатые попытались унять волнение, но малышню смогли угомонить только угрозами о манной каше на завтрак, обед и ужин.{w} Все стали тише воды ниже травы.{w} Мне б кто так угрожал.{w} Я только за был бы!"
-
+    play music music_list["you_won_t_let_me_down"] fadein 3.0
     "Наконец объявились и наши соперники – шестой отряд.{w} Макс шёл впереди, а его команда позади него и с ними же их вожатая."
+
     show mt normal pioneer with dissolve
 
     "Ольга Дмитриевна внушительно посмотрела на вожатую шестого отряда, но продолжила."
@@ -13362,7 +13367,7 @@ label vino_day6:
     "Я посмотрел на ребят.{w} Они потупили взгляды."
     th " Мда, придется всё брать в свои руки!"
 
-    show maks_xz at left
+    show maks_xz at left with dissolve
 
     macksya "Ураган! "
 
@@ -13406,6 +13411,8 @@ label vino_day6:
 
     "Каждый из нас вернулсяна свою часть поля и занял позиции."
 
+    stop music fadeout 2.0
+
     "И тут я заметил, что Ольга Дмитриевна направилась к Ульянке, сидящей на скамейке запасных.{w} Я решил подойти поближе."
 
     show us dontlike sport at left with dissolve
@@ -13413,8 +13420,10 @@ label vino_day6:
     us "… ну Ольга Дмитриевна!{w} Это нечестно! "
 
     "Скуксилась рыжая."
+
+    play music music_list["that_s_our_madhouse"] fadein 2.0
     
-    show mt scared pioneer with dissolve
+    show mt angry pioneer with dissolve
 
     mt "Я тебе что говорила про походы в лес?{w} Я тебе что говорила?! "
 
@@ -13462,9 +13471,15 @@ label vino_day6:
 
     hide el with dissolve
 
+    show el sad pioneer at right with dissolve
+    
+    el "А?{w} Что?"
+
+    hide el with dissolve
+
     show el serious pioneer at right with dissolve
 
-    el "А?{w} Что?{w} Да я даже играть особо не умею!"
+    extend " Да я даже играть особо не умею!"
 
     "Запротестовал Электроник."
 
@@ -13478,7 +13493,7 @@ label vino_day6:
 
     hide mt with dissolve
 
-    show mt scared pioneer with dissolve
+    show mt angry pioneer with dissolve
 
     mt "Не умеешь, так научим!"
 
@@ -13518,7 +13533,7 @@ label vino_day6:
 
     hide mt with dissolve 
 
-    show mt scared pioneer with dissolve
+    show mt angry pioneer with dissolve
 
     mt "Даня, не лезь и иди к своей команде!"
 
@@ -13539,7 +13554,7 @@ label vino_day6:
 
     hide mt with dissolve 
 
-    show mt scared pioneer with dissolve
+    show mt angry pioneer with dissolve
 
     mt "Но на поле я тебя не выпущу, ты дисквалифицирована!"
 
@@ -13553,6 +13568,8 @@ label vino_day6:
 
     mt "Никаких «но»!{w} Все!{w} Разойтись!"
 
+    stop music fadeout 2.0
+
     hide us 
     hide mt 
     with dissolve
@@ -13561,15 +13578,17 @@ label vino_day6:
 
     "Я отбросил все мысли и решил сосредоточиться на игре."
 
+    play sound megafon
+
     mt "Команды готовы? "
 
     "Снова донеслось из мегафона."
 
-    uragan "ДА!"
+    uragan "ДА!" with vpunch
 
-    "Крикнул«Ураган»."
+    "Крикнул «Ураган»."
 
-    oduv "ДА!"
+    oduv "ДА!" with vpunch
 
     "Крикнули «Одуванчики»."
 
@@ -13586,6 +13605,8 @@ label vino_day6:
     $ set_mode_nvl() 
     
     nvl show dissolve
+
+    play music ki fadein 1.0
 
     "Мяч подает Алиса, а Мику, Настя и Славя стоят у сетки.{w} Я по середине, слева от меня Шурик. "
 
@@ -13652,7 +13673,6 @@ label vino_day6:
     "Свисток."
     play sound sfx_soccer_ball_kick 
     extend " Подбросив мяч, она запустила его в Макса.{w} Тот не ожидал столь мощного удара – мяч прилетел ему в живот, от чего Макс согнулся в три погибели.{w} Гол засчитан."
-
     pause(3.0)
     $ set_mode_adv() 
     window hide dissolve
@@ -13669,6 +13689,8 @@ label vino_day6:
 
     "Счёт 15:14"
 
+    stop music fadeout 2.0
+
 
     "Решающий мяч.{w} На подаче Макс.{w} Повисла гробовая тишина, да такая, что, казалось, можно услышать сердцебиение каждого из участников матча.{w} Ольга Дмитриевна внимательно следила за поединком.{w} Свисток."
     play sound sfx_soccer_ball_kick 
@@ -13682,7 +13704,7 @@ label vino_day6:
 
     play sound sfx_soccer_ball_kick
     "Повторив прыжок Алисы, я забиваю победный гол!"
-    play sound svistok_end
+    play sound svisok_end
     extend" И желанные два свистка, знаменующие конец игры, наконец-то прозвучали."
     "Счёт 16:14!"
 
@@ -13694,6 +13716,8 @@ label vino_day6:
     
     window show  
 
+    play music morning_day6 fadein 1.5
+
     stop ambience fadeout 2.0
 
     show mt laugh pioneer with dissolve
@@ -13702,18 +13726,27 @@ label vino_day6:
 
     "Радостно прокричала Ольга Дмитриевна."
 
+    hide mt with dissolve
+
     play sound gul
 
     "На трибунах разорвалась самая настоящая бомба.{w} Ликование, гул и улюлюканье доносились со всех сторон.{w} А мы, уставшие и вымотанные, просто легли на землю в тщетных попытках размять ноющие мышцы."
+    stop music fadeout 1.0
     play sound megafon
     extend " Тут раздаётся оглушительный писк – это Макс взял у Ольги Дмитриевны мегафон, а после начал говорить."  
+
+    show maks_xz with dissolve
 
     macksya "Настя!{w} У меня для тебя экспромт!{w} Ты, скотина, горделива и упряма, самолюбива!{w} Сердце и руку тебе подарил, но лишь оплеуху взамен получил!{w} Пусть будет так, что этот тюфяк твое сердце получил, но тебя я не простил!"
 
     "И Макс с мерзкой и злобной ухмылкой показал на меня.{w} Потом отшвырнул мегафон и, словно без сил, сел на землю.{w} Глаза его были полны злых слёз."
 
-    mt "Максим!{w} Это как понимать?! "
+    show mt angry pioneer at left with dissolve
 
+    mt "Максим!{w} Это как понимать?! " with vpunch
+    hide maks_xz
+    hide mt
+    with dissolve
     "Негодовала Ольга Дмитриевна в унисон с вожатой шестого отряда."
 
     "Взяв его под ручки, две вожатые увели Макса с поля."
@@ -13727,6 +13760,8 @@ label vino_day6:
     scene int_dining_hall_people_sunset with dissolve
 
     play ambience ambience_dining_hall_full fadein 1.5
+
+    play music music_list["smooth_machine"] fadein 2.0
 
     " Открыв дверь, все присутствующие ахнули: огромное количество разнообразных сладостей встретили нас.{w} Там было всё: от конфет до пряников и печенья.{w} Украшали столы литровые бутылки «Дюшеса», «Буратино», «Байкала» и морса.{w} Но –  торта не было. "
 
@@ -13752,7 +13787,7 @@ label vino_day6:
 
     "Поддакнула перемазанная в черничном варенье Ульяна."
 
-    show nstl pio sad at left with dissolve
+    show nstl pio sad normal at left with dissolve
 
     nstl "Знаете, ребят, а мне даже немного жалко его."
 
@@ -13788,9 +13823,10 @@ label vino_day6:
     hide dv
     with dissolve
 
-    show sl surprise pioneer with dissolve
+    show sl surprise pioneer 
     show mi surprise pioneer at cright
     show sh surprise pioneer at fright
+    with dissolve
 
     oduv "А что он такого натворил? "
 
@@ -13815,8 +13851,8 @@ label vino_day6:
     hide sl with dissolve
 
     hide nstl with dissolve 
-
-    show nstl pio angry at left with dissolve
+ 
+    show nstl pio angry normal at left with dissolve
 
     nstl "Не-а.{w} Надоело мне всё это.{w} Все его выходки не более чем попытка вывести меня из себя, а нервы у меня не казённые, да и тратить их на всяких дураков нет смысла.{w} Так что просто буду считать, что я ничего не слышала."
 
@@ -13830,9 +13866,13 @@ label vino_day6:
     hide dv 
     with dissolve 
 
+    stop music fadeout 2.0
+
     window hide dissolve 
 
     scene black with fade2
+
+    stop ambience fadeout 2.0
 
     "Разделавшись со сладостями и поблагодарив поваров и вожатых, пионеры, и мы в том числе, пошли к умывальникам, а после благополучно разошлись по домикам."
 
@@ -13843,11 +13883,13 @@ label vino_day6:
     $ night_time()
     $ persistent.sprite_time = 'night'
 
+    play ambience ambience_int_cabin_night fadein 0.5
+
     scene hata_g_night with dissolve
 
     "Мы с Настей настолько вымотались за день, что завалились сразу спать и, пожелав друг другу хороших снов, отключились. "
 
-    stop ambience fadeout 2.0
+    stop ambience fadeout 1.0
     
     pause(1) 
     
