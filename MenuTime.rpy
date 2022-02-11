@@ -3639,31 +3639,61 @@ label vino_day3:
     
     show dv grin pioneer with dissolve
     
-    dv "Пощадить?{w} И оставить тебя в свидетелях?{w} О не-е-ет, ты видел слишком много!"
+    dv "Пощадить?{w} И оставить тебя в свидетелях?"
     
+    hide dv with dissolve
+    
+    show dv laugh pioneer with dissolve
+
+    dv "О не-е-ет, ты видел слишком много!"
+    
+    hide dv with dissolve
+
+    show dv smile pioneer with dissolve
+
     "Мику присоединилась к подруге и радостным, игривым голоском пропела."
 
     hide dv with dissolve 
 
-    show dv grin pioneer at cleft with dissolve
+    show dv smile pioneer at cleft with dissolve
     
-    show mi happy pioneer at right
+    show mi cry_smile pioneer at right
     mi "Казнить, нельзя помиловать!.."
     $ renpy.pause(1,hard=True)
+    
+    hide mi with dissolve
+
+    show mi upset pioneer at right with dissolve
+
     mi "Я же правильно произнесла?"
     hide mi
     hide dv
     with dissolve
-    show dv normal pioneer close with dissolve
+    show dv grin pioneer with dissolve
     "Алиса одобрительно кивнула в её сторону, после перевела на меня свой взгляд."
+    
+    hide dv with dissolve
+    
+    show dv smile pioneer with dissolve
+    
     dv "Что ж, шпион, говори, кто послал тебя сюда и лучше бы тебе говорить правду."
-    "Девушка чуть нагнулась вперёд, исказив лицо, которое теперь стало похоже на хитрую морду Ульяны!"
+    
+    hide dv with dissolve
+    
+    show dv smile pioneer close with dissolve
+
+    "Она перешла границу апогея, становясь всё ближе.."
+    
+    hide dv with dissolve
+
+    show dv grin pioneer with dissolve
+
     dv "Потому что я знаю много способов.."
     show dv normal pioneer close with dissolve
     "Ещё ближе…"
     $ renpy.pause(1,hard=True)
     show dv laugh pioneer close with dissolve
-    dv "..пыток"
+    dv "..Пыток"
     "Её лицо было невозмутимо близко."
     show blink 
     dnll "{cps=15}Я.. я.. я н.. не шпион!{/cps}" 
