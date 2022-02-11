@@ -3342,7 +3342,7 @@ label vino_day3:
     
     window hide
     scene bg ext_dining_hall_away_day with dissolve
-    show nstl pio norm with dissolve
+    show nstl pio norm normal with dissolve
     window show
     
     "Когда на горизонте засветилась столовая, то Настя одёрнула меня за рукав."
@@ -3352,7 +3352,7 @@ label vino_day3:
     dnll "Не слушай этих глупых россказней, я видел тебя живую и ты не такая, как написано в той бумажке. Лично я отношусь к тебе очень положительно, потому что ты.."
     th "Стой! Не могу же я рассказать ей о моём гонении в школе?"
     hide nstl
-    show nstl pio smi  
+    show nstl pio smi normal 
     dnll "..потому что ты нарисовала мой портрет, а это дорого стоит! Мне ещё никто и никогда не делал такой подарок от чистого сердца."
     "Настины румянцы заметно засияли, её настроение значительно улучшилось."
     
@@ -3362,12 +3362,12 @@ label vino_day3:
     play music music_list["my_daily_life"] fadein 3 
     "Плиточный дворец встретил нас приятным, сладким запахом столовой стряпни.{w} Горячий бульон, душистая гречка, залитая текучей подливой и сочная котлета, кажется приготовленная из.. из.."
     "Тихий Настин смех вернул меня на землю."
-    show nstl pio smile with dissolve
+    show nstl pio smile normal with dissolve
     nstl "Данил, у тебя сейчас слюна изо рта вся вытечет."
     "Я вернул себя с небес на землю и одним движением руки вытер слюну, которая намеревалась стечь на форму."
     dnll " А.. д..да, извини, просто уж очень вкусно пахнет."
     hide nstl pio smile_normal with dissolve
-    show nstl pio happy with dissolve
+    show nstl pio happy normal with dissolve
     nstl "Ага"
     "Произнесла Настя, легко выдохнув."
     hide nstl with dissolve
@@ -3379,7 +3379,7 @@ label vino_day3:
     "Я даже как - то и позабыл в тот момент обо всём.{w} Шум и гам столовой затемнялся солнечным бликом, отражённом на лице Насти."
     "Ах же она красиво выглядит, её лицо светится, словно у ангела, на миг, её волосы распускаются, а глаза загораются ярко - зелёным цветом."
     hide nstl with dissolve
-    show nstl pio sad with dissolve
+    show nstl pio sad normal with dissolve
     nstl "Ухх.."
     "Недовольно протянула она"
     nstl "Вот.. блин.. Кто окно в столовой на распашку открыл?"
@@ -3395,7 +3395,7 @@ label vino_day3:
     "Пару столиков также косо глядели на нас, а со стороны одного из них раздался знакомый голос.."
     play music music_list["eat_some_trouble"] fadein 3 
     us "ТИЛИ - ТИЛИ ТЕСТО, ЖЕНИХ ДА НЕВЕСТА!"
-    show nstl pio smi  with dissolve 
+    show nstl pio smi normal at cright with dissolve 
     "Красная затычка вогнала в краски Настю, пытавшуюся спрятаться от взглядов уже всей столовой.{w} Мы бы с Настей так и сидели здесь до конца смены, но.."
     show mt normal pioneer far at left with dissolve
     "В столовой появилась вожатая,"
@@ -3403,7 +3403,7 @@ label vino_day3:
     show mt angry pioneer far at left with dissolve
     extend " всем своим видом вмиг пригрозившая всей пионерии - \"Когда я ем, я глух и нем!\" "
     hide nstl
-    show nstl pio shy at cright
+    show nstl pio shy normal at cright
     with dissolve 
     hide mt
     show mt normal pioneer far at cleft
@@ -3509,7 +3509,7 @@ label vino_day3:
     
     "Две тени посмотрели в мою сторону, а та, что сидела за инструментом резко вскочила и направилась к окну.." 
     
-    "штора одёрнулась и я увидел.."
+    "Штора одёрнулась и я увидел.."
 
     dv "Ты!"
     
@@ -3531,11 +3531,13 @@ label vino_day3:
     
     scene bg ext_musclub_day with dissolve
     
-    "Я уже начал драпать оттуда.."
+    th "“Падаться в бегство” - меня преследовали умные мысли.."
+
+    play sound sfx_punch_medium
     
     "Но.." with hpunch
     
-    "Меня схватили за воротник и я не сумел шелохнуться с места."
+    th "Она оказалась быстрее…"
     
     "Я со страхом обернулся и увидел.."
     
@@ -3564,7 +3566,7 @@ label vino_day3:
     
     "Попытка побега была безуспешна, авторитет моего злобного, рыжего ловца был намного сильнее, я не мог противиться ему, а лишь со страхом наблюдал, как та защелкивает щеколду на двери."
     
-    play sound sfx_lock_click fadein 0.5
+    play sound sfx_lock_click
     
     "Бам."
     
@@ -3579,6 +3581,10 @@ label vino_day3:
     show dv normal pioneer far with dissolve
 
     "Дыхание резко спёрло, я нервно начал делать шаги назад."
+    
+    hide dv with dissolve 
+
+    show dv smile pioneer far with dissolve
 
     "Алиса последовала примеру, только она направлялась не назад, а прямиком ко мне!"
     
@@ -3586,13 +3592,13 @@ label vino_day3:
 
     hide dv with dissolve 
 
-    show dv normal pioneer with dissolve 
+    show dv smile pioneer with dissolve 
 
     "Ещё шаг.." 
     
     hide dv with dissolve 
 
-    show dv normal pioneer close with dissolve 
+    show dv smile pioneer close with dissolve 
 
     "Медленно.."
     
@@ -3601,7 +3607,7 @@ label vino_day3:
     
     hide dv with dissolve 
 
-    show dv normal pioneer close at cleft with dissolve 
+    show dv smile pioneer close at cleft with dissolve 
     
     show mi smile pioneer close at cright with dissolve
     
@@ -3619,7 +3625,7 @@ label vino_day3:
 
     hide dv with dissolve
 
-    show dv normal pioneer close with dissolve 
+    show dv smile pioneer close with dissolve 
 
     "Глаза метались в разные стороны, рыжая кончина приближалась со стремительной скоростью, а меня в это время повалили на стул."
     
@@ -3631,18 +3637,24 @@ label vino_day3:
     
     "Мой рыжий надзиратель подошёл вплотную и начала говорить серьёзным, страшным голосом!"
     
-    show dv normal pioneer with dissolve
+    show dv grin pioneer with dissolve
     
-    dv "Пощадить?{w} И оставить тебя в свидетелях?{w} О нееет, ты видел слишком много!"
+    dv "Пощадить?{w} И оставить тебя в свидетелях?{w} О не-е-ет, ты видел слишком много!"
     
-    "Мику присоединилась к жестокой пионерке и радостным, игривым голоском пропела."
+    "Мику присоединилась к подруге и радостным, игривым голоском пропела."
+
+    hide dv with dissolve 
+
+    show dv grin pioneer at cleft with dissolve
     
-    show mi laugh pioneer at right with dissolve
+    show mi happy pioneer at right
     mi "Казнить, нельзя помиловать!.."
     $ renpy.pause(1,hard=True)
-    show mi shy pioneer at right
     mi "Я же правильно произнесла?"
-    hide mi with dissolve
+    hide mi
+    hide dv
+    with dissolve
+    show dv normal pioneer close with dissolve
     "Алиса одобрительно кивнула в её сторону, после перевела на меня свой взгляд."
     dv "Что ж, шпион, говори, кто послал тебя сюда и лучше бы тебе говорить правду."
     "Девушка чуть нагнулась вперёд, исказив лицо, которое теперь стало похоже на хитрую морду Ульяны!"
