@@ -11627,11 +11627,9 @@ label vino_day6:
 
     "Пошарив в кармане, Настя достала ключ и отворила дверь."
 
-    hide black 
-
     scene xyd_1 with dissolve 
 
-    play music fon_1 fadein 2
+    play music anarchist_m fadein 2
 
     "Как только мы зашли внутрь, она сразу бросилась что-то искать.{w} Наверное,та самая вещь, о которой говорила.{w} Я же сел за стоящий у окна мольберт.{w} Карандаш и ластик уже имелись в стойке. "
 
@@ -11661,7 +11659,7 @@ label vino_day6:
     
     play sound sfx_paper_bag
     
-    scene gg_prt_nstl with dissolve
+    show gg_prt_nstl at truecenter
 
     "Это был самый настоящий портрет.{w} Мой портрет.{w} Взяв листок в руки, я подошёл к зеркалу.{w} Поразительно!{w} Один в один!{w} Каждая мельчайшая деталь была на своём месте.{w} Даже маленькая родинка на правой скуле."
 
@@ -11733,7 +11731,7 @@ label vino_day6:
 
     "Поначалу было тяжело: то криво вырисовывал линию, то солнце уходило в облако и в комнате становилось темно, отчего приходилось включать свет, то Настя отвлекалась.{w} Спустя полтора часа я закончил рисунок.{w} Соседка моя, зевая и потягиваясь, подошла ко мне и устремила взгляд на мольберт."
 
-    scene nstl_prt with dissolve
+    show nstl_prt at truecenter
     
     nstl "Ого!{w} Даня, ты отлично рисуешь!"
 
@@ -13947,10 +13945,10 @@ label vino_day6:
     
     pause(1) 
     
-    label vino_day8:
+    #label vino_day8:
 
-    $ vino_backdrop('8', 'dva_houses2', False)
-    $ save_name = ("Вино из Одуванчиков: День восьмой")
-    show hata_g_day with fade2
-    with dissolve
-    $ vino.change_time('day')
+    #$ vino_backdrop('8', 'dva_houses2', False)
+    #$ save_name = ("Вино из Одуванчиков: День восьмой")
+    #show hata_g_day with fade2
+    #with dissolve
+    #$ vino.change_time('day')
