@@ -1142,6 +1142,7 @@ screen vino_days_developer:
         textbutton 'День 5' style "vino_button_none" text_style "vino_text_%s" % time hover_sound vino_hover action Start('vino_day5')
         textbutton 'День 6' style "vino_button_none" text_style "vino_text_%s" % time hover_sound vino_hover action Start('vino_day6')
         textbutton 'День 7' style "vino_button_none" text_style "vino_text_%s" % time hover_sound vino_hover action Start('vino_day7')
-
+        textbutton 'День 8' style "vino_button_none" text_style "vino_text_%s" % time hover_sound vino_hover action Start('vino_day8')
+        
     # hbox align(0.5,0.6) spacing 20:
     # textbutton 'Титры' style "vino_button_none" text_style "vino_text_%s" % time hover_sound vino_hover action Start('titry')
