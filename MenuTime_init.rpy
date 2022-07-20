@@ -162,11 +162,13 @@ transform vino_plate_anim:
 init:
 
     $ config.developer = True
-
+    $ reb = Character (u'Мальчик', color = "#2ae672", what_color="f2f2f2")
     $ dnll = Character (u'Даниил', color = "00FF7F", what_color="f2f2f2")
     $ momsd= Character (u'Мама', color = "00BFFF", what_color="f2f2f2")
     $ loxqt= Character (u'Миша', color = "DB7093", what_color="f2f2f2")
     $ nstl = Character(u'Настя', color = "00FFFF", what_color="f2f2f2")
+    $dvchk = Character(u'Девочка', color = "#F25D9C", what_color="f2f2f2")
+    $jen = Character(u'Женя', color = "#F25D9C", what_color="f2f2f2")
     $ neznakqqwy = Character (u'...', color = "DB7093", what_color="f2f2f2")
     define mimikumi = Character('Я', kind=nvl, color="#c8c8ff")
     $ xzktoqtwqwe = Character (u'Отголоски', color = "191970", what_color="f2f2f2")
