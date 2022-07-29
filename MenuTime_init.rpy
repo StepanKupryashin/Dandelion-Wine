@@ -181,6 +181,7 @@ init:
     $ macksya = Character (u'Макс', color = "d41114")
     $ matvey = Character (u'...', color = "#B03F35")
     $ devs = Character (u'Девочки', color = "#C6FF18")
+    $ dnlnstl = Character (u'Данил|Настя', color = "#14dbd1")
     $ usdnl = Character (u'Данил|Ульяна', color = "#FFA518")
     $ uragan = Character(U'Ураган', color = "#FF1818")
     $ oduv = Character (u'Одуванчики', color = "#FFE418")
