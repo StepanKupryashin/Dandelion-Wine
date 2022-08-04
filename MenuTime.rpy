@@ -14775,11 +14775,13 @@ label vino_day6:
     
     th "Его было легко отличить от остальных сооружений, не только потому что о том гласила вывеска, но и общим своим видом. Яркий вид его был некоторой отдушиной среди тусклых, ничем не примечательных, деревенских домиков."
     
+    show sl normal pioneer with dissolve
+    
     sl "Я скоро."
+
+    hide sl with dissolve
     
     "Улыбнулась мне блондинка, и скрылась за дверью."
-    
-    nvl show dissolve
 
     th "Да уж, надо ли нам это? Ехать в магазин и только ради Ольги!{w} Да и Славя странно себя ведет: боятся немилости родителей только потому, что водички вожатой не принес?"
     
@@ -14790,8 +14792,6 @@ label vino_day6:
     th "Приняв какое-то импульсивное решение, я поддался зову момента и оказался прямиком в ловушке Славиных покатушек на великах. Нет, конечно, прогуляться с девчонкой для меня не было особым страхом, но… Как-то неудобно, что за все те восемь дней лагерной смены я так и не смог поговорить с ней, разделить свои переживания по поводу и без."
 
     th "А нужно ли оно мне?{w} Я уже сказал Насте, что нет смысла так хвататься за эти “узы” между нами – пионерами, а потому можно говорить все, что угодно – ибо все равно, по итогу, мы все разбредёмся по разным концам нашей необъятной родины, под названием Союз." 
-    
-    nvl clear
     
     th "Растворившись в собственных мыслях, я даже не заметил тяфкующую у меня в ногах собачонку, которая ругала меня за проникновение на ее территории. Ее старание меня умилило, и я присел на колени. Собачонка злилась на меня совсем не долго, её лай быстро сменился на ласку. Она терлась о мои руки, ей явно понравилась моя компания. Я невольно улыбнулся этой глупой мордашке."
 
@@ -14927,6 +14927,8 @@ label vino_day6:
     
     "Бросилась вслед за ней девочка.{w} Мне она более ничего не сказала."
 
+    show sl happy pioneer with dissolve
+
     sl "Вижу, уже знакомых на новом месте нашел."
     
     "Подойдя ко мне, заключила Славя."
@@ -14944,10 +14946,16 @@ label vino_day6:
     sl "Я все купила, так что…{w} По коням?"
     
     dnll "По коням!"
+
+    hide sl with dissolve
     
     "Сказал я и бросился к велосипеду."
+
+    scene ext_road_day with dissolve
+
+    pause 0.5
     
-    $ set_mode_nvl()
+    $ set_mode_nvl() 
     
     "По дороге назад у меня не возникло никаких особых мыслей, да и со Славей мы почти не общались.{w} Проезжая повторно эту узкую асфальтную полоску на фоне бескрайних полей, складывается ощущение, словно я герой той самой задачки по математике: “Велосипедист движется из пункта А в пункт B, расстояние между которыми равно….” – Да уж.{w} В целом, моя ситуация ничем не отличима от задачки.{w} Разница лишь в том, что в подобного рода вопросах, как эта задача, обычно задается вопрос о времени поездки, когда моя велогонка уже подходила к концу, так и не успев начаться.{w} Мы прибыли в Пункт А, иначе говоря, обратно в “Совёнок”.{w} Доволен ли я проделанной работой и впечатлениями, полученными во время поездки?{w} Определенно.{w} Оставив велосипеды около памятников двум неизвестными пионерам, Славя глубоко вздохнула."
     
@@ -14985,7 +14993,7 @@ label vino_day6:
     
     play music music_list["eat_some_trouble"] fadein 0.5
     scene bg ext_square_day with dissolve
-    show us smile sport far with dissolve(3)
+    show us smile sport far with dissolve
     
     "Пройдя на территорию лагеря, я приметил множество детей. “Ничего необычного” – подумал бы я,{w} если бы во главе этой шайки-лейки не стояла Ульяна."
     
@@ -15046,6 +15054,8 @@ label vino_day6:
     reb "Пошли, Ребят, нечего с ней разговаривать{w} – все равно ничерта не поймет…!"
     
     th "И все, как один, последовали его примеру, удаляясь от девчонки."
+
+    show us sad sport far with dissolve
 
     th "Ульянка несколько поникла. Когда она опустила голову, уставившись в пол, ее волосы стали прикрывать лицо.{w} Я подошел к горе-лидеру, чтобы обсудить произошедшее."
     
@@ -15469,7 +15479,7 @@ label vino_day6:
     
     nstl "Убери."
     th "Я поднял томный взгляд от книги."
-    show nstl pio norm with dissolve
+    show nstl pio norm normal at cright with dissolve
     th "Предо мной стояла Настя."
     dnll "Зачем же так грубо…"
     th "Я обиженно отбросил книгу."
@@ -15487,9 +15497,14 @@ label vino_day6:
     th "Настя отвела взгляд в окно."
     nstl "Черт знает, зачем они ему были нужны.{w} Но…"
     dnll "Понятно…{w=0.5} Ну, что ж, раз уж ты пришла, то я могу быть сво…"
+    
+    show nstl pio shocked normal at cright with dissolve
+
     un "Настя!"
 
     "Дверь в кружок со стуком распахнулась.{w} В клуб влетела Лена."
+
+    show un normal pioneer at left with moveinleft
 
     un "Где тебя черти носят?!"
 
@@ -15497,7 +15512,13 @@ label vino_day6:
 
     "Настя явно недоумевала."
 
+    show un smile pioneer with dissolve
+
     un "Даниил, спасибо, что посидел. "
+
+    hide un with dissolve
+
+    show un normal pioneer at left with dissolve
 
     "Лена украдкой мне улыбнулась."
 
@@ -15540,6 +15561,8 @@ label vino_day6:
     un "Принеси воды. "
 
     "Отрезала Лена. "
+
+    hide nstl with moveoutright
     
     "Настя тут же направилась в подсобку."
 
@@ -15549,7 +15572,17 @@ label vino_day6:
 
     un "Да если бы…{w} Ольга все время созывает руководителей кружков, а толку…{w} “К концу смены держите кружок в чистоте, чтобы следующей смене не пришлось долго возится”. "
 
+    show nstl shy pio normal at cright with moveinright
+
+    window hide dissolve
+
+    pause 1
+
+    window show dissolve
+
     "Лена отпила принесённую Настей воду."
+
+    show un laugh pioneer at left with dissolve
 
     un "Теперь я понимаю, почему ты так бегаешь от Ольги. "
 
@@ -15557,9 +15590,23 @@ label vino_day6:
 
     dnll "Я слышал, вы давно дружите."
 
+    hide un
+    hide nstl
+    with dissolve
+
+    show un normal pioneer at left 
+    show nstl pio norm normal at cright
+    with dissolve
+
     "Девочки удовлетворительно кивнули."
 
+    hide nstl with dissolve 
+
+    show nstl pio happy normal at cright with dissolve
+
     nstl "Это я тебе ещё на острове рассказала. "
+
+    hide nstl with dissolve
 
     "Хихикнула Настя, найдя себе место около окна."
 
@@ -15567,17 +15614,39 @@ label vino_day6:
 
     "Подтвердил я, невольно поглядывая на Настю.{w} Та всматривалась в окно, пытаясь высмотреть чего-нибудь интересного. "
 
+    hide un with dissolve
+    
+    show un serious pioneer at left with dissolve
+
     un "Стоп…{w} На острове?! "
 
     "Возникла Лена."
 
     nstl "Я же тебе рассказывала. "
 
+    hide un with dissolve 
+
+    show un normal pioneer at left 
+    show nstl pio norm normal at cright 
+    with dissolve
+
     "Настя попыталась отвлечься от окна, повернувшись к Лене.{w} Однако на пути ее взгляда оказался я. "
+
+    hide nstl with dissolve
+    
+    show nstl pio shy normal at cright  with dissolve
 
     "Встретившись глазами буквально на пару секунд, она мигом отвернулась обратно к окну. "
 
+    hide nstl with dissolve
+
     "Подступавший закат окрасил ее щёки в розовый цвет.{w} Не рановато ли ему наступать?" 
+
+    window hide dissolve
+
+    $ renpy.pause (1, hard = True)
+
+    window show dissolve
 
     dnll "И все же…"
 
@@ -15585,9 +15654,9 @@ label vino_day6:
 
     dnll "Настя."
 
-    "Отрывисто начал я." "
+    "Отрывисто начал я." 
     
-    Девушка даже не обернулась в мою сторону. "
+    "Девушка даже не обернулась в мою сторону. "
 
     dnll "Слыхал, ты уже всем свои планы выдала?"
 
@@ -15603,17 +15672,33 @@ label vino_day6:
 
     nstl "Да и к тому же, часто ли ты с ней общалась за смену?"
 
+    hide un with dissolve
+
+    show un laugh pioneer at left with dissolve
+
     un "Благодаря одной прекрасной девице…"
 
     nstl "Ой, не начинай! "
 
     "Обиженно сказала Настя. Лена захихикала."
 
+    hide un with dissolve
+
+    show un normal pioneer at left with dissolve
+
     dnll "Если подумать, то правда."
+
+    window hide dissolve
+
+    pause 0.5
+
+    window show dissolve
 
     "Я на пару секунд задумался."
 
     dnll "Ольгу я почти и не замечаю рядом с нами. "
+
+    show nstl pio norm normal at cright with dissolve
 
     nstl "С детьми возится больше.{w} Это нам на руку. "
 
@@ -15627,9 +15712,17 @@ label vino_day6:
 
     un "Не думаю, что оставшееся время смены Ольга даст нам так же спокойно гулять."
 
+    hide nstl with dissolve
+
+    show nstl pio happy normal at cright with dissolve
+    
     nstl "Ну и что!{w} За то будет весело."
 
     un "Ты прямо как Ульянка."
+
+    hide nstl with dissolve
+
+    show nstl pio norm normal at cright with dissolve
 
     nstl "Бе…"
 
@@ -15637,9 +15730,17 @@ label vino_day6:
 
     nstl "Ну, раз вы так боитесь Ольги – не идите.{w} Я одна схожу."
 
+    hide un with dissolve
+
+    show un laugh pioneer at left with dissolve
+    
     un "…Или с Алисой. "
 
     "Колко подметила Лена."
+
+    hide nstl with dissolve
+
+    show nstl pio happy normal at cright with dissolve
 
     nstl "Эй!{w} Да ты ревнуешь! "
 
@@ -15649,16 +15750,34 @@ label vino_day6:
 
     nstl "Да!{w} Это все потому, что мы с Алисой хорошо поладили с первых же дней смены!"
 
+    hide un with dissolve
+
+    show un normal pioneer at left with dissolve
+
     un "Тц…{w} Ну и дура же ты. "
+
+    hide un with dissolve
+
+    show un laugh pioneer at left with dissolve
 
     "Рассмеялась Лена."
 
+    hide nstl with dissolve
+
+    show nstl pio norm normal at cright with dissolve
+
     nstl "Бе."
+
+    hide un
+    hide nstl
+    with dissolve
 
     window hide dissolve
 
     $ renpy.pause (1, hard = True)
 
+    scene xyd_1_sunset with dissolve
+    
     window show dissolve
 
     "Так и прошёл вечер в художественном кружке.{w} Мы сидели, пили чай да разговаривали уже не упомню о чем именно. "
@@ -15667,10 +15786,14 @@ label vino_day6:
 
     "Лена заварила нам теплого чаю, и так мы просидели пару часов точно."
 
+    show nstl pio norm normal at cright with dissolve
+    
     nstl "Кажется, дождь собирается… "
 
     "Расстроено заявила Настя."
 
+    show un normal pioneer at left with dissolve
+    
     un "Ну вот, видишь, даже погода не на нашей стороне."
 
     nstl "Отстой. "
@@ -15703,12 +15826,18 @@ label vino_day6:
 
     "С удовольствием согласилась Настя."
 
+    hide un
+    hide nstl
+    with dissolve
+
     window hide dissolve
     
     $ renpy.pause (1, hard = True)
 
     window show dissolve
- 
+    
+    play sound sfx_dinner_horn_processed
+    
     "Горн."
 
     "Этот звук значил намного больше, чем просто призыв на ужин. {w} В этом звоне сочеталось многое: вместе с ним прекращалась всякая беседа, всякая игровая партия и отдых.{w} Все, словно роботы, идут по сигналу в одну точку на карте – столовая. "
@@ -15717,9 +15846,11 @@ label vino_day6:
 
     window hide dissolve
 
-    $ set_mode_nvl()
-
+    scene int_dining_hall_rain_people with dissolve
     
+    pause 0.5
+    
+    $ set_mode_nvl()
 
     "Ужин.{w} Вечерний прием пищи весьма важен, ведь не будет его – сон не был бы настолько сладким.{w} На голодный желудок уснуть тяжело, в особенности потому, что все твои мысли сосредоточены на еде.{w} Господи, даже сейчас я думаю только о ней.{w} Разговоры, прерываемые редкими глотками чая, утомляют не меньше, чем тренировка к соревнованиям по волейболу.{w} Что-ж, поскольку худеть в ближайшее время я не планирую, стоит отнестись к еде с должным на то аппетитом. "
 
@@ -15731,6 +15862,8 @@ label vino_day6:
     
     window show dissolve
 
+    show nstl pio sad normal with dissolve
+
     nstl "В общем… "
 
     "Она несколько задумалась. "
@@ -15739,10 +15872,18 @@ label vino_day6:
 
     dnll "И не говори… "
 
+    hide nstl with dissolve
+    
     "Не придумав никаких других занятий, я предложил Насте поход в не менее замечательное место: домой.{w} От делать нечего она согласилась, и мы вместе направились домой. "
 
+    scene ext_dining_hall_away_after_rain with dissolve
+    
     "Дорога до него была тихой, мы почти не разговаривали.{w} Оно и понятно: большую часть дня мы только и делали что болтали.{w} Дам ей немного времени на отдых.{w} Немного…"
 
+    scene hata_gg_evening with dissolve
+    
+    show nstl pio smile normal with dissolve
+    
     nstl "Слушай…"
 
     "Начала она, когда мы были уже на пороге дома. "
@@ -15755,9 +15896,17 @@ label vino_day6:
 
     dnll "Куда?{w} Надеюсь, не в старый Лагерь…"
 
+    hide nstl with dissolve
+
+    show nstl pio norm normal with dissolve
+    
     nstl "Бука."
 
+    hide nstl with dissolve
+    
     "С недовольством сказала она, и отвернулась к двери.{w} Щелчок, и дверь была распахнута.{w} Проход был свободен."
+
+    scene hata_g_sunset with dissolve
 
     nstl "Ску-у-чно. "
 
@@ -15847,23 +15996,37 @@ label vino_day6:
 
     $ renpy.pause (1, hard = True)
 
-    scene hata_gg_night with dissolve
+    scene hata_gg_night
 
     window show dissolve
+
+    show nstl pio norm normal with dissolve
 
     "И вот мы уже на улице.{w} Стоит признать, нынче очень рано темнеет. "
 
     "С ужина прошло всего-ничего, а на лагерь уже нашла тьма.{w} Может, зря это я ей предложил?{w} Отправил бы ее одну – не маленькая ведь, а сам бы спал. "
-
+    
     nstl "О чем думаешь? "
 
     "Спросила меня Настя, довольная нашей прогулкой."
 
     dnll "Да так… "
 
+    hide nstl with dissolve 
+
+    show nstl pio happy normal with dissolve
+
     nstl "Когда ты о чем-то думаешь, у тебя лицо такое недовольное… "
 
+    hide nstl with dissolve 
+
+    show nstl pio angry normal with dissolve
+
     "Она попыталась его изобразить."
+
+    hide nstl with dissolve 
+
+    show nstl pio happy normal with dissolve
 
     dnll "Ну что за ребячество… "
 
@@ -15873,9 +16036,23 @@ label vino_day6:
 
     "Я несколько улыбнулся."
 
+    hide nstl with dissolve
+
+    show nstl pio norm normal with dissolve
+
     nstl "Да ну тебя! "
 
+    hide nstl with dissolve
+    
+    window hide dissolve
+    
+    pause 0.5
+
+    window show dissolve
+
     "Настя ненадолго замолчала. "
+
+    show nstl pio norm normal with dissolve
 
     nstl "Кстати, ты ее сегодня видел?"
 
@@ -15891,16 +16068,34 @@ label vino_day6:
 
     dnll "…Почему у неё?"
 
+    hide nstl with dissolve
+
+    show nstl pio smile normal with dissolve
+
     nstl "Ну, она же туда с Алиской обычно ходит. "
 
     "Настя еле заметно улыбнулась."
 
+    hide nstl with dissolve
+
+    show nstl pio sad  normal with dissolve
+
     nstl "Наш Рыжик ничего нам не расскажет толком.{w} Я думала, что мы с ней хорошо сдружились, но на самом деле… "
 
+    hide nstl with dissolve
+    
+    window hide dissolve
+    
+    pause 0.5
+
+    window show dissolve
+    
     "Девочка заметно поникла, не решаясь продолжить свой монолог."
 
     dnll "Ну, а с Ульяной то что?"
 
+    show nstl pio smile normal with dissolve
+    
     nstl "А, ну…"
     
     nstl "Она точно все обо всем знает!{w} Может, расскажет мне о каких-то тайных местах… "
@@ -15909,13 +16104,25 @@ label vino_day6:
 
     dnll "Да уж…{w} Может быть и рассказала, если б не…"
 
+    hide nstl with dissolve
+
+    show nstl pio norm normal with dissolve
+    
     nstl "Если б не…?"
 
     dnll "Если бы не прибывала в плохом расположении духа."
 
+    hide nstl with dissolve
+    
+    show nstl pio shocked normal with dissolve
+    
     nstl "Что?! "
 
     "Воскликнула Настя. "
+
+    hide nstl with dissolve
+
+    show nstl pio angry normal with dissolve
 
     nstl "Так.{w} Что-то тут нечисто.{w} Признайся, ты её обидел?!"
 
@@ -15933,6 +16140,10 @@ label vino_day6:
 
     dnll "Я видел, как она с какими-то парнями ругалась."
 
+    hide nstl with dissolve
+
+    show nstl pio norm normal with dissolve
+
     nstl "Обычное дело, что в этом такого?"
 
     dnll "Да и я не особо понимаю, "
@@ -15943,10 +16154,20 @@ label vino_day6:
 
     nstl "Ужас какой!{w} Надо срочно с ней поговорить! "
 
+    hide nstl with dissolve
+
     "Девушка ускорилась."
+
+    window hide dissolve
+    
+    scene domiki_night with dissolve
+
+    window show dissolve
 
     dnll "Эй, погоди, спасатель Малибу.{w} Я к ней уже ходил, поговорить даже пытался…"
 
+    show nstl pio norm normal with dissolve
+    
     nstl "Ещё хуже…!"
 
     dnll "Да ты…"
@@ -15989,6 +16210,10 @@ label vino_day6:
 
     dnll "Как самоотверженно с твоей стороны."
 
+    hide nstl with dissolve
+
+    show nstl pio happy normal with dissolve
+    
     nstl "Эй, ты чего это сегодня какой грубый! "
 
     "Она шутливо мне пригрозила."
@@ -15999,6 +16224,10 @@ label vino_day6:
 
     "Равнодушно ответил ей я."
 
+    hide nstl with dissolve
+
+    show nstl pio norm normal with dissolve
+    
     nstl "Да ты даже не стараешься! "
 
     "На этом моменте я позволил себе рассмеяться."
@@ -16009,13 +16238,25 @@ label vino_day6:
 
     dnll "Ну, а что?{w} Дай мне возможность соединить два любящих сердца!"
 
+    hide nstl with dissolve
+
+    show nstl pio angry normal with dissolve
+    
     nstl "Дурак. "
 
-    "Она наступила мне на ногу."
+    "Она наступила мне на ногу." with hpunch
 
     dnll "Ай!"
 
+    hide nstl with dissolve
+
+    show nstl pio happy normal with dissolve
+
     "Девочка захихикала моей реакции. "
+
+    hide nstl with dissolve
+
+    show nstl pio norm normal with dissolve
 
     nstl "И все же, возможно, ты в чем-то да прав…"
 
@@ -16037,6 +16278,10 @@ label vino_day6:
 
     "Девочка несколько призадумалась, а потом выдала."
 
+    hide nstl with dissolve
+
+    show nstl pio happy normal with dissolve
+    
     nstl "Ты уж не ревнуй, ладно?! "
 
     "Ухмылка, стоящая моего красного лица.{w} Черт, кажись я застеснялся. "
@@ -16051,6 +16296,10 @@ label vino_day6:
 
     "Довольно произнесла она, когда мы проходили мимо какого-то домика."
 
+    hide nstl with dissolve
+
+    show nstl pio norm normal with dissolve
+    
     nstl "...Странно, Славя в это время обычно спит."
 
     "Прокомментировала моя соседка."
@@ -16059,16 +16308,28 @@ label vino_day6:
 
     nstl "Нет, а ты – может быть и следишь. "
 
+    hide nstl with dissolve
+
+    show nstl pio happy normal with dissolve
+
     "Снова подмигнула. "
 
     nstl "Уже все знают, что вы куда-то вместе на великах ездили."
 
     dnll "{i}…Ты уж не ревнуй, ладно?!{/i}"
 
+    hide nstl with dissolve
+
+    show nstl pio norm normal with dissolve
+
     "Теперь мы поменялись с ней местами. "
 
-    "Немного покраснев, она снова наступила мне на ногу.{w} Неприятно."
+    "Немного покраснев, она снова наступила мне на ногу.{w} Неприятно." with hpunch
 
+    hide nstl with dissolve
+
+    show nstl pio happy normal with dissolve
+    
     nstl "Противный какой… "
 
     "Улыбнулась мне девочка и мы продолжили свой путь."
@@ -16095,11 +16356,17 @@ label vino_day6:
 
     "Издалека начал я."
 
+    show nstl pio norm normal with dissolve
+    
     nstl "м?"
 
     dnll "Ну вот что толку, что мы сейчас…"
 
-    nstl "Заткнись! "
+    hide nstl with dissolve
+
+    show nstl pio angry normal with dissolve
+    
+    nstl "Заткнись! " with hpunch
 
     "Отрезала Настя, ткнув меня в бок. "
 
@@ -16113,9 +16380,13 @@ label vino_day6:
 
     dnll "Бргх, к черту. "
 
+    hide nstl with dissolve    
+
     "Я откинулся на скамье."
 
     dnll "Наслаждаться ночью, значит…"
+
+    scene night_sky with dissolve
 
     "Я невольно перевел взгляд на ночное небо.{w} Звезд не было видно, весь вид преградили облака, что в свете луны отдавали желтизной.{w} Черт, никакой романтики мне не светит."
 
@@ -16217,6 +16488,10 @@ label vino_day6:
 
     "Послышалось где-то снизу. "
 
+    scene ext_square_night with dissolve
+
+    show mt angry pioneer with dissolve
+
     "Этим кем-то оказалась Ольга.{w} Она злостно на нас смотрела. "
 
     mt "Надеюсь, вы собираетесь расходится по домам?"
@@ -16231,15 +16506,29 @@ label vino_day6:
 
     dnlnstl "Спокойной ночи, Ольга Дмитриевна. "
 
+    hide mt with dissolve
+
     "Та удовлетворительно кивнула, и направилась восвояси. "
 
+    window hide dissolve
+    
+    scene hata_gg_night with dissolve
+
+    window show dissolve
+    
     dnll "Даже не ответила… "
 
     "Проворчал я."
 
+    show nstl pio norm normal with dissolve
+
     nstl "Забей, она всегда такая. "
 
     dnll "Даже спорить не стану."
+
+    hide nstl with dissolve
+
+    show nstl pio happy normal with dissolve
 
     nstl "…Но, скажу по секрету. "
 
